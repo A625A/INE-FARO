@@ -1,0 +1,67 @@
+depto_id,departamento,anio,indicador,valor,unidad,fuente,n,upm_n,ponderador,cv,ic95_inf,ic95_sup,precision,estado
+01,Guatemala,2023,ocupacion_sector_informal,49.416559,porcentaje,ENCOVI 2023 - INE,1523,124,FACTOR,3.91293,45.626632,53.206485,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+02,El Progreso,2023,ocupacion_sector_informal,64.752118,porcentaje,ENCOVI 2023 - INE,782,65,FACTOR,3.45437,60.368032,69.136203,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+03,Sacatepéquez,2023,ocupacion_sector_informal,62.732566,porcentaje,ENCOVI 2023 - INE,1200,92,FACTOR,3.08912,58.934308,66.530825,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+04,Chimaltenango,2023,ocupacion_sector_informal,80.08103,porcentaje,ENCOVI 2023 - INE,896,69,FACTOR,3.01803,75.343967,84.818093,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+05,Escuintla,2023,ocupacion_sector_informal,60.042954,porcentaje,ENCOVI 2023 - INE,1137,85,FACTOR,3.60466,55.800834,64.285074,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+06,Santa Rosa,2023,ocupacion_sector_informal,71.633857,porcentaje,ENCOVI 2023 - INE,613,56,FACTOR,3.47886,66.749455,76.518258,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+07,Sololá,2023,ocupacion_sector_informal,84.338438,porcentaje,ENCOVI 2023 - INE,711,50,FACTOR,2.14917,80.785792,87.891085,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+08,Totonicapán,2023,ocupacion_sector_informal,85.871588,porcentaje,ENCOVI 2023 - INE,645,48,FACTOR,2.53234,81.609449,90.133726,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+09,Quetzaltenango,2023,ocupacion_sector_informal,77.947024,porcentaje,ENCOVI 2023 - INE,794,74,FACTOR,3.21005,73.042829,82.851219,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+10,Suchitepéquez,2023,ocupacion_sector_informal,66.626821,porcentaje,ENCOVI 2023 - INE,816,70,FACTOR,3.57782,61.954601,71.299041,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+11,Retalhuleu,2023,ocupacion_sector_informal,68.762666,porcentaje,ENCOVI 2023 - INE,614,52,FACTOR,2.72013,65.096612,72.42872,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+12,San Marcos,2023,ocupacion_sector_informal,81.594441,porcentaje,ENCOVI 2023 - INE,619,59,FACTOR,3.11577,76.611535,86.577346,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+13,Huehuetenango,2023,ocupacion_sector_informal,84.542766,porcentaje,ENCOVI 2023 - INE,626,55,FACTOR,3.34588,78.998522,90.087011,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+14,Quiché,2023,ocupacion_sector_informal,86.459586,porcentaje,ENCOVI 2023 - INE,685,60,FACTOR,2.48626,82.246349,90.672823,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+15,Baja Verapaz,2023,ocupacion_sector_informal,77.959065,porcentaje,ENCOVI 2023 - INE,730,53,FACTOR,3.68787,72.324015,83.594115,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+16,Alta Verapaz,2023,ocupacion_sector_informal,81.060473,porcentaje,ENCOVI 2023 - INE,822,61,FACTOR,2.55683,76.998214,85.122731,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+17,Petén,2023,ocupacion_sector_informal,76.638562,porcentaje,ENCOVI 2023 - INE,724,64,FACTOR,3.1086,71.96908,81.308044,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+18,Izabal,2023,ocupacion_sector_informal,64.001563,porcentaje,ENCOVI 2023 - INE,814,65,FACTOR,5.2352,57.434368,70.568758,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+19,Zacapa,2023,ocupacion_sector_informal,68.548353,porcentaje,ENCOVI 2023 - INE,770,61,FACTOR,3.38145,64.005219,73.091487,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+20,Chiquimula,2023,ocupacion_sector_informal,81.622563,porcentaje,ENCOVI 2023 - INE,579,50,FACTOR,3.48888,76.041039,87.204087,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+21,Jalapa,2023,ocupacion_sector_informal,81.567466,porcentaje,ENCOVI 2023 - INE,656,58,FACTOR,3.40387,76.125631,87.009301,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+22,Jutiapa,2023,ocupacion_sector_informal,78.631737,porcentaje,ENCOVI 2023 - INE,767,76,FACTOR,2.60652,74.614619,82.648854,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+01,Guatemala,2023,pobreza_total,21.610155,porcentaje,ENCOVI 2023 - INE,887,124,Factor3,9.95598,17.393211,25.827098,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+02,El Progreso,2023,pobreza_total,46.400239,porcentaje,ENCOVI 2023 - INE,530,65,Factor3,7.36686,39.700487,53.099991,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+03,Sacatepéquez,2023,pobreza_total,38.748647,porcentaje,ENCOVI 2023 - INE,656,92,Factor3,7.80041,32.824442,44.672851,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+04,Chimaltenango,2023,pobreza_total,47.750718,porcentaje,ENCOVI 2023 - INE,514,69,Factor3,7.13775,41.070399,54.431038,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+05,Escuintla,2023,pobreza_total,39.183385,porcentaje,ENCOVI 2023 - INE,679,85,Factor3,7.73953,33.239471,45.127298,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+06,Santa Rosa,2023,pobreza_total,73.984721,porcentaje,ENCOVI 2023 - INE,423,56,Factor3,3.78068,68.50235,79.467092,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+07,Sololá,2023,pobreza_total,61.937357,porcentaje,ENCOVI 2023 - INE,382,50,Factor3,6.3151,54.270996,69.603718,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+08,Totonicapán,2023,pobreza_total,62.117718,porcentaje,ENCOVI 2023 - INE,357,48,Factor3,6.54414,54.150178,70.085258,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+09,Quetzaltenango,2023,pobreza_total,44.120882,porcentaje,ENCOVI 2023 - INE,505,74,Factor3,7.15229,37.935801,50.305963,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+10,Suchitepéquez,2023,pobreza_total,53.660871,porcentaje,ENCOVI 2023 - INE,540,70,Factor3,5.72327,47.641407,59.680336,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+11,Retalhuleu,2023,pobreza_total,50.865778,porcentaje,ENCOVI 2023 - INE,403,52,Factor3,6.14769,44.736716,56.994841,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+12,San Marcos,2023,pobreza_total,53.746086,porcentaje,ENCOVI 2023 - INE,416,59,Factor3,5.48787,47.965038,59.527134,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+13,Huehuetenango,2023,pobreza_total,81.271072,porcentaje,ENCOVI 2023 - INE,409,55,Factor3,3.36615,75.90909,86.633054,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+14,Quiché,2023,pobreza_total,86.400065,porcentaje,ENCOVI 2023 - INE,447,60,Factor3,2.03175,82.959416,89.840715,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+15,Baja Verapaz,2023,pobreza_total,80.139383,porcentaje,ENCOVI 2023 - INE,440,53,Factor3,4.20305,73.537519,86.741248,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+16,Alta Verapaz,2023,pobreza_total,90.297607,porcentaje,ENCOVI 2023 - INE,500,61,Factor3,2.17264,86.452404,94.14281,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+17,Petén,2023,pobreza_total,50.555939,porcentaje,ENCOVI 2023 - INE,484,64,Factor3,7.26661,43.355478,57.756399,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+18,Izabal,2023,pobreza_total,50.544119,porcentaje,ENCOVI 2023 - INE,494,65,Factor3,8.98474,41.643254,59.444983,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+19,Zacapa,2023,pobreza_total,52.560942,porcentaje,ENCOVI 2023 - INE,483,61,Factor3,8.60716,43.693889,61.427994,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+20,Chiquimula,2023,pobreza_total,59.559579,porcentaje,ENCOVI 2023 - INE,394,50,Factor3,8.69939,49.404191,69.714967,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+21,Jalapa,2023,pobreza_total,79.944206,porcentaje,ENCOVI 2023 - INE,440,58,Factor3,3.53256,74.40902,85.479392,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+22,Jutiapa,2023,pobreza_total,73.966823,porcentaje,ENCOVI 2023 - INE,547,76,Factor3,3.36196,69.092823,78.840823,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+01,Guatemala,2023,pobreza_extrema,1.117656,porcentaje,ENCOVI 2023 - INE,887,124,Factor3,38.60323,0.272011,1.963301,aproximada_depto_upm_sin_estratos_originales,no_publicable
+02,El Progreso,2023,pobreza_extrema,5.111156,porcentaje,ENCOVI 2023 - INE,530,65,Factor3,27.61397,2.344826,7.877486,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+03,Sacatepéquez,2023,pobreza_extrema,2.537178,porcentaje,ENCOVI 2023 - INE,656,92,Factor3,31.46913,0.972259,4.102096,aproximada_depto_upm_sin_estratos_originales,no_publicable
+04,Chimaltenango,2023,pobreza_extrema,5.798242,porcentaje,ENCOVI 2023 - INE,514,69,Factor3,27.68698,2.65174,8.944744,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+05,Escuintla,2023,pobreza_extrema,2.637436,porcentaje,ENCOVI 2023 - INE,679,85,Factor3,31.78476,0.994363,4.280509,aproximada_depto_upm_sin_estratos_originales,no_publicable
+06,Santa Rosa,2023,pobreza_extrema,16.179006,porcentaje,ENCOVI 2023 - INE,423,56,Factor3,16.93466,10.80888,21.549132,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+07,Sololá,2023,pobreza_extrema,8.761112,porcentaje,ENCOVI 2023 - INE,382,50,Factor3,26.13377,4.273479,13.248745,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+08,Totonicapán,2023,pobreza_extrema,10.073389,porcentaje,ENCOVI 2023 - INE,357,48,Factor3,27.11305,4.720232,15.426547,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+09,Quetzaltenango,2023,pobreza_extrema,2.769854,porcentaje,ENCOVI 2023 - INE,505,74,Factor3,33.41783,0.955629,4.584079,aproximada_depto_upm_sin_estratos_originales,no_publicable
+10,Suchitepéquez,2023,pobreza_extrema,7.657909,porcentaje,ENCOVI 2023 - INE,540,70,Factor3,21.01168,4.504161,10.811658,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+11,Retalhuleu,2023,pobreza_extrema,4.130147,porcentaje,ENCOVI 2023 - INE,403,52,Factor3,35.84744,1.228265,7.03203,aproximada_depto_upm_sin_estratos_originales,no_publicable
+12,San Marcos,2023,pobreza_extrema,6.860858,porcentaje,ENCOVI 2023 - INE,416,59,Factor3,21.91489,3.913902,9.807815,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+13,Huehuetenango,2023,pobreza_extrema,29.725815,porcentaje,ENCOVI 2023 - INE,409,55,Factor3,13.83922,21.662726,37.788905,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+14,Quiché,2023,pobreza_extrema,34.425465,porcentaje,ENCOVI 2023 - INE,447,60,Factor3,8.60897,28.616654,40.234276,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+15,Baja Verapaz,2023,pobreza_extrema,35.757914,porcentaje,ENCOVI 2023 - INE,440,53,Factor3,13.62653,26.20769,45.308137,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+16,Alta Verapaz,2023,pobreza_extrema,58.529898,porcentaje,ENCOVI 2023 - INE,500,61,Factor3,5.91315,51.746415,65.313381,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+17,Petén,2023,pobreza_extrema,8.44112,porcentaje,ENCOVI 2023 - INE,484,64,Factor3,20.84659,4.992136,11.890103,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+18,Izabal,2023,pobreza_extrema,14.866752,porcentaje,ENCOVI 2023 - INE,494,65,Factor3,21.1627,8.700187,21.033317,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+19,Zacapa,2023,pobreza_extrema,13.453429,porcentaje,ENCOVI 2023 - INE,483,61,Factor3,24.54066,6.982371,19.924487,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+20,Chiquimula,2023,pobreza_extrema,25.250773,porcentaje,ENCOVI 2023 - INE,394,50,Factor3,21.13552,14.790486,35.71106,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+21,Jalapa,2023,pobreza_extrema,34.472791,porcentaje,ENCOVI 2023 - INE,440,58,Factor3,11.8025,26.498237,42.447344,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+22,Jutiapa,2023,pobreza_extrema,18.773765,porcentaje,ENCOVI 2023 - INE,547,76,Factor3,17.51564,12.328609,25.21892,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva

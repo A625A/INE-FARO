@@ -15,4 +15,22 @@ También puede ejecutarse `notebooks/02_indicadores.ipynb` desde la raíz. Requi
 
 **Contrato:** `depto_id` texto de 2 dígitos, `anio=2023`, `indicador` en `ocupacion_sector_informal`, `pobreza_total`, `pobreza_extrema`, `valor` expresado en porcentaje, `n`, `upm_n`, `ponderador`, `cv`, `ic95_inf`, `ic95_sup`, `precision` y `estado`.
 
-**Estado de entrega:** código y pruebas sintéticas listos; ejecución completa con los SAV originales pendiente en el entorno del equipo.
+**Ejecución con los SAV originales.** El script y el notebook ejecutado generaron CSV idénticos. Se comprobaron 66 claves únicas, tres por departamento, y cinco resultados nacionales o por área. Para repetir la ejecución desde la raíz con las dependencias de la rama instaladas:
+
+```bash
+python -m jupyter nbconvert --to notebook --execute --inplace notebooks/02_indicadores.ipynb
+```
+
+| Indicador | Registros | Denominador ponderado (personas) | Porcentaje |
+|---|---:|---:|---:|
+| Informalidad nacional | 17,523 | 6,623,170 | 70.304975 |
+| Informalidad urbana | 9,764 | 3,883,725 | 61.332870 |
+| Informalidad rural | 7,759 | 2,739,445 | 83.024773 |
+| Pobreza total | 10,930 hogares | 17,237,068 | 56.041264 |
+| Pobreza extrema | 10,930 hogares | 17,237,068 | 16.236599 |
+
+Las 44 tasas departamentales de pobreza total y extrema coinciden al primer decimal con las secciones 2.5 y 2.9 de *ENCOVI 2023, Pobreza y desigualdad*. Las diferencias máximas son 0.049282 y 0.049227 puntos porcentuales, respectivamente.
+
+Se verificaron los CV y los IC95 de las 71 estimaciones mediante los totales ponderados por UPM. Los CV de informalidad urbana y rural son 1.57366% y 0.86470%. M-01 conserva las 1,447 UPM y asigna contribución cero a las que quedan fuera del área. Restringir primero la muestra al área reproduce los CV de I-03 (1.51% y 0.81%). Las tasas puntuales coinciden en ambos cálculos.
+
+Cinco estimaciones de pobreza extrema tienen CV superior al 30% y quedan marcadas como `no_publicable`: Guatemala, Sacatepéquez, Escuintla, Quetzaltenango y Retalhuleu.

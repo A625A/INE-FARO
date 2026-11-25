@@ -1,0 +1,6 @@
+ambito,area,anio,indicador,ponderador,valor,n,upm_n,cv,ic95_inf,ic95_sup,precision,estado
+nacional,,2023,ocupacion_sector_informal,FACTOR,70.304975,17523,1447,0.97213,68.965403,71.644547,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+nacional,,2023,pobreza_total,Factor3,56.041264,10930,1447,1.44912,54.44954,57.632989,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+nacional,,2023,pobreza_extrema,Factor3,16.236599,10930,1447,4.21798,14.894281,17.578918,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+area,urbana,2023,ocupacion_sector_informal_urbana,FACTOR,61.33287,9764,812,1.57366,59.441136,63.224604,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
+area,rural,2023,ocupacion_sector_informal_rural,FACTOR,83.024773,7759,640,0.8647,81.617652,84.431895,aproximada_depto_upm_sin_estratos_originales,publicable_con_reserva
