@@ -1,0 +1,1232 @@
+{
+  "bases": {
+    "personas": {
+      "filas": 46017,
+      "columnas": 626,
+      "unidad": "persona",
+      "clave": [
+        "NO_HOGAR",
+        "CP"
+      ],
+      "duplicados_clave": 0,
+      "faltantes_clave": 0,
+      "hogares_distintos": 10964,
+      "celdas_faltantes_sistema": 19373204
+    },
+    "hogares": {
+      "filas": 10964,
+      "columnas": 129,
+      "unidad": "hogar",
+      "clave": [
+        "NO_HOGAR"
+      ],
+      "duplicados_clave": 0,
+      "faltantes_clave": 0,
+      "hogares_distintos": 10964,
+      "celdas_faltantes_sistema": 432821
+    },
+    "consumo": {
+      "filas": 10930,
+      "columnas": 29,
+      "unidad": "hogar con consumo",
+      "clave": [
+        "NO_HOGAR"
+      ],
+      "duplicados_clave": 0,
+      "faltantes_clave": 0,
+      "hogares_distintos": 10930,
+      "celdas_faltantes_sistema": 0
+    },
+    "negocios_1": {
+      "filas": 10964,
+      "columnas": 11,
+      "unidad": "hogar",
+      "clave": [
+        "NO_HOGAR"
+      ],
+      "duplicados_clave": 0,
+      "faltantes_clave": 0,
+      "hogares_distintos": 10964,
+      "celdas_faltantes_sistema": 8785
+    },
+    "negocios_2": {
+      "filas": 2490,
+      "columnas": 26,
+      "unidad": "negocio del hogar",
+      "clave": [
+        "NO_HOGAR",
+        "ID_NEGOCIO"
+      ],
+      "duplicados_clave": 0,
+      "faltantes_clave": 0,
+      "hogares_distintos": 2142,
+      "celdas_faltantes_sistema": 2103
+    }
+  },
+  "categorias": [
+    {
+      "base": "personas",
+      "variable": "POBREZA",
+      "codigo": 0.0,
+      "etiqueta": "Sin etiqueta SAV",
+      "n_no_ponderado": 95
+    },
+    {
+      "base": "personas",
+      "variable": "POBREZA",
+      "codigo": 1.0,
+      "etiqueta": "Pobre ext.",
+      "n_no_ponderado": 7222
+    },
+    {
+      "base": "personas",
+      "variable": "POBREZA",
+      "codigo": 2.0,
+      "etiqueta": "Pobre no extr.",
+      "n_no_ponderado": 19394
+    },
+    {
+      "base": "personas",
+      "variable": "POBREZA",
+      "codigo": 3.0,
+      "etiqueta": "No pobre",
+      "n_no_ponderado": 19306
+    },
+    {
+      "base": "personas",
+      "variable": "FORMAL_INFORMAL",
+      "codigo": 1.0,
+      "etiqueta": "Informal",
+      "n_no_ponderado": 13239
+    },
+    {
+      "base": "personas",
+      "variable": "FORMAL_INFORMAL",
+      "codigo": 2.0,
+      "etiqueta": "Formal",
+      "n_no_ponderado": 4797
+    },
+    {
+      "base": "personas",
+      "variable": "PET",
+      "codigo": 1.0,
+      "etiqueta": "Población en edad de trabajar",
+      "n_no_ponderado": 39062
+    },
+    {
+      "base": "personas",
+      "variable": "PEA",
+      "codigo": 1.0,
+      "etiqueta": "Poblacíon económicamente activa",
+      "n_no_ponderado": 18301
+    },
+    {
+      "base": "personas",
+      "variable": "OCUPADOS",
+      "codigo": 1.0,
+      "etiqueta": "Población ocupada",
+      "n_no_ponderado": 18036
+    },
+    {
+      "base": "personas",
+      "variable": "DOMINIO",
+      "codigo": 1.0,
+      "etiqueta": "Urbano Metropolitano",
+      "n_no_ponderado": 2848
+    },
+    {
+      "base": "personas",
+      "variable": "DOMINIO",
+      "codigo": 2.0,
+      "etiqueta": "Resto Urbano",
+      "n_no_ponderado": 20325
+    },
+    {
+      "base": "personas",
+      "variable": "DOMINIO",
+      "codigo": 3.0,
+      "etiqueta": "Rural Nacional",
+      "n_no_ponderado": 22844
+    },
+    {
+      "base": "personas",
+      "variable": "AREA",
+      "codigo": 1.0,
+      "etiqueta": "Urbana",
+      "n_no_ponderado": 23173
+    },
+    {
+      "base": "personas",
+      "variable": "AREA",
+      "codigo": 2.0,
+      "etiqueta": "Rural",
+      "n_no_ponderado": 22844
+    },
+    {
+      "base": "hogares",
+      "variable": "POBREZA",
+      "codigo": 0.0,
+      "etiqueta": "Sin etiqueta SAV",
+      "n_no_ponderado": 34
+    },
+    {
+      "base": "hogares",
+      "variable": "POBREZA",
+      "codigo": 1.0,
+      "etiqueta": "Pobre extremo",
+      "n_no_ponderado": 1173
+    },
+    {
+      "base": "hogares",
+      "variable": "POBREZA",
+      "codigo": 2.0,
+      "etiqueta": "Pobre no extremo",
+      "n_no_ponderado": 4047
+    },
+    {
+      "base": "hogares",
+      "variable": "POBREZA",
+      "codigo": 3.0,
+      "etiqueta": "No pobre",
+      "n_no_ponderado": 5710
+    },
+    {
+      "base": "hogares",
+      "variable": "DOMINIO",
+      "codigo": 1.0,
+      "etiqueta": "Urbano Metropolitano",
+      "n_no_ponderado": 815
+    },
+    {
+      "base": "hogares",
+      "variable": "DOMINIO",
+      "codigo": 2.0,
+      "etiqueta": "Resto Urbano",
+      "n_no_ponderado": 5117
+    },
+    {
+      "base": "hogares",
+      "variable": "DOMINIO",
+      "codigo": 3.0,
+      "etiqueta": "Rural Nacional",
+      "n_no_ponderado": 5032
+    },
+    {
+      "base": "hogares",
+      "variable": "AREA",
+      "codigo": 1.0,
+      "etiqueta": "Urbana",
+      "n_no_ponderado": 5932
+    },
+    {
+      "base": "hogares",
+      "variable": "AREA",
+      "codigo": 2.0,
+      "etiqueta": "Rural",
+      "n_no_ponderado": 5032
+    },
+    {
+      "base": "consumo",
+      "variable": "pobreza",
+      "codigo": 1.0,
+      "etiqueta": "Pobre ext.",
+      "n_no_ponderado": 1173
+    },
+    {
+      "base": "consumo",
+      "variable": "pobreza",
+      "codigo": 2.0,
+      "etiqueta": "Pobre no extr.",
+      "n_no_ponderado": 4047
+    },
+    {
+      "base": "consumo",
+      "variable": "pobreza",
+      "codigo": 3.0,
+      "etiqueta": "No pobre",
+      "n_no_ponderado": 5710
+    },
+    {
+      "base": "consumo",
+      "variable": "DOMINIO",
+      "codigo": 1.0,
+      "etiqueta": "Urbano Metropolitano",
+      "n_no_ponderado": 814
+    },
+    {
+      "base": "consumo",
+      "variable": "DOMINIO",
+      "codigo": 2.0,
+      "etiqueta": "Resto Urbano",
+      "n_no_ponderado": 5100
+    },
+    {
+      "base": "consumo",
+      "variable": "DOMINIO",
+      "codigo": 3.0,
+      "etiqueta": "Rural Nacional",
+      "n_no_ponderado": 5016
+    },
+    {
+      "base": "consumo",
+      "variable": "AREA",
+      "codigo": 1.0,
+      "etiqueta": "Urbana",
+      "n_no_ponderado": 5914
+    },
+    {
+      "base": "consumo",
+      "variable": "AREA",
+      "codigo": 2.0,
+      "etiqueta": "Rural",
+      "n_no_ponderado": 5016
+    },
+    {
+      "base": "negocios_1",
+      "variable": "POBREZA",
+      "codigo": 0.0,
+      "etiqueta": "Sin etiqueta SAV",
+      "n_no_ponderado": 34
+    },
+    {
+      "base": "negocios_1",
+      "variable": "POBREZA",
+      "codigo": 1.0,
+      "etiqueta": "Pobre extremo",
+      "n_no_ponderado": 1173
+    },
+    {
+      "base": "negocios_1",
+      "variable": "POBREZA",
+      "codigo": 2.0,
+      "etiqueta": "Pobre no extremo",
+      "n_no_ponderado": 4047
+    },
+    {
+      "base": "negocios_1",
+      "variable": "POBREZA",
+      "codigo": 3.0,
+      "etiqueta": "No pobre",
+      "n_no_ponderado": 5710
+    },
+    {
+      "base": "negocios_1",
+      "variable": "DOMINIO",
+      "codigo": 1.0,
+      "etiqueta": "Urbano Metropolitano",
+      "n_no_ponderado": 815
+    },
+    {
+      "base": "negocios_1",
+      "variable": "DOMINIO",
+      "codigo": 2.0,
+      "etiqueta": "Resto Urbano",
+      "n_no_ponderado": 5117
+    },
+    {
+      "base": "negocios_1",
+      "variable": "DOMINIO",
+      "codigo": 3.0,
+      "etiqueta": "Rural Nacional",
+      "n_no_ponderado": 5032
+    },
+    {
+      "base": "negocios_1",
+      "variable": "AREA",
+      "codigo": 1.0,
+      "etiqueta": "Urbana",
+      "n_no_ponderado": 5932
+    },
+    {
+      "base": "negocios_1",
+      "variable": "AREA",
+      "codigo": 2.0,
+      "etiqueta": "Rural",
+      "n_no_ponderado": 5032
+    },
+    {
+      "base": "negocios_1",
+      "variable": "P14A01",
+      "codigo": 1.0,
+      "etiqueta": "SI",
+      "n_no_ponderado": 2142
+    },
+    {
+      "base": "negocios_1",
+      "variable": "P14A01",
+      "codigo": 2.0,
+      "etiqueta": "NO",
+      "n_no_ponderado": 8822
+    },
+    {
+      "base": "negocios_2",
+      "variable": "POBREZA",
+      "codigo": 0.0,
+      "etiqueta": "Sin etiqueta SAV",
+      "n_no_ponderado": 4
+    },
+    {
+      "base": "negocios_2",
+      "variable": "POBREZA",
+      "codigo": 1.0,
+      "etiqueta": "Pobre extremo",
+      "n_no_ponderado": 112
+    },
+    {
+      "base": "negocios_2",
+      "variable": "POBREZA",
+      "codigo": 2.0,
+      "etiqueta": "Pobre no extremo",
+      "n_no_ponderado": 783
+    },
+    {
+      "base": "negocios_2",
+      "variable": "POBREZA",
+      "codigo": 3.0,
+      "etiqueta": "No pobre",
+      "n_no_ponderado": 1591
+    },
+    {
+      "base": "negocios_2",
+      "variable": "DOMINIO",
+      "codigo": 1.0,
+      "etiqueta": "Urbano Metropolitano",
+      "n_no_ponderado": 241
+    },
+    {
+      "base": "negocios_2",
+      "variable": "DOMINIO",
+      "codigo": 2.0,
+      "etiqueta": "Resto Urbano",
+      "n_no_ponderado": 1317
+    },
+    {
+      "base": "negocios_2",
+      "variable": "DOMINIO",
+      "codigo": 3.0,
+      "etiqueta": "Rural Nacional",
+      "n_no_ponderado": 932
+    },
+    {
+      "base": "negocios_2",
+      "variable": "AREA",
+      "codigo": 1.0,
+      "etiqueta": "Urbana",
+      "n_no_ponderado": 1558
+    },
+    {
+      "base": "negocios_2",
+      "variable": "AREA",
+      "codigo": 2.0,
+      "etiqueta": "Rural",
+      "n_no_ponderado": 932
+    }
+  ],
+  "pesos": [
+    {
+      "base": "personas",
+      "variable": "FACTOR",
+      "etiqueta": "Factor de Expansión",
+      "faltantes": 0,
+      "ceros": 0,
+      "negativos": 0,
+      "no_finitos": 0
+    },
+    {
+      "base": "personas",
+      "variable": "Factor2",
+      "etiqueta": "Factor de expansión de hogares con agregado de consumo",
+      "faltantes": 0,
+      "ceros": 95,
+      "negativos": 0,
+      "no_finitos": 0
+    },
+    {
+      "base": "hogares",
+      "variable": "FACTOR",
+      "etiqueta": "Factor de Expansión",
+      "faltantes": 0,
+      "ceros": 0,
+      "negativos": 0,
+      "no_finitos": 0
+    },
+    {
+      "base": "hogares",
+      "variable": "Factor3",
+      "etiqueta": "Factor2 * personas (con consumo)",
+      "faltantes": 0,
+      "ceros": 34,
+      "negativos": 0,
+      "no_finitos": 0
+    },
+    {
+      "base": "consumo",
+      "variable": "FACTOR",
+      "etiqueta": "Factor de expansión de hogares con agregado de consumo",
+      "faltantes": 0,
+      "ceros": 0,
+      "negativos": 0,
+      "no_finitos": 0
+    },
+    {
+      "base": "consumo",
+      "variable": "Factor3",
+      "etiqueta": "Factor2 * personas",
+      "faltantes": 0,
+      "ceros": 0,
+      "negativos": 0,
+      "no_finitos": 0
+    },
+    {
+      "base": "negocios_1",
+      "variable": "FACTOR",
+      "etiqueta": "Factor de Expansión",
+      "faltantes": 0,
+      "ceros": 0,
+      "negativos": 0,
+      "no_finitos": 0
+    },
+    {
+      "base": "negocios_2",
+      "variable": "FACTOR",
+      "etiqueta": "Factor de Expansión",
+      "faltantes": 0,
+      "ceros": 0,
+      "negativos": 0,
+      "no_finitos": 0
+    }
+  ],
+  "cobertura": [
+    {
+      "base": "personas",
+      "depto_id": "01",
+      "n_registros": 3188
+    },
+    {
+      "base": "personas",
+      "depto_id": "02",
+      "n_registros": 2009
+    },
+    {
+      "base": "personas",
+      "depto_id": "03",
+      "n_registros": 2571
+    },
+    {
+      "base": "personas",
+      "depto_id": "04",
+      "n_registros": 2228
+    },
+    {
+      "base": "personas",
+      "depto_id": "05",
+      "n_registros": 2704
+    },
+    {
+      "base": "personas",
+      "depto_id": "06",
+      "n_registros": 1555
+    },
+    {
+      "base": "personas",
+      "depto_id": "07",
+      "n_registros": 1676
+    },
+    {
+      "base": "personas",
+      "depto_id": "08",
+      "n_registros": 1805
+    },
+    {
+      "base": "personas",
+      "depto_id": "09",
+      "n_registros": 2102
+    },
+    {
+      "base": "personas",
+      "depto_id": "10",
+      "n_registros": 2255
+    },
+    {
+      "base": "personas",
+      "depto_id": "11",
+      "n_registros": 1677
+    },
+    {
+      "base": "personas",
+      "depto_id": "12",
+      "n_registros": 1950
+    },
+    {
+      "base": "personas",
+      "depto_id": "13",
+      "n_registros": 1962
+    },
+    {
+      "base": "personas",
+      "depto_id": "14",
+      "n_registros": 2187
+    },
+    {
+      "base": "personas",
+      "depto_id": "15",
+      "n_registros": 1909
+    },
+    {
+      "base": "personas",
+      "depto_id": "16",
+      "n_registros": 2567
+    },
+    {
+      "base": "personas",
+      "depto_id": "17",
+      "n_registros": 1905
+    },
+    {
+      "base": "personas",
+      "depto_id": "18",
+      "n_registros": 2190
+    },
+    {
+      "base": "personas",
+      "depto_id": "19",
+      "n_registros": 1913
+    },
+    {
+      "base": "personas",
+      "depto_id": "20",
+      "n_registros": 1728
+    },
+    {
+      "base": "personas",
+      "depto_id": "21",
+      "n_registros": 1841
+    },
+    {
+      "base": "personas",
+      "depto_id": "22",
+      "n_registros": 2095
+    },
+    {
+      "base": "hogares",
+      "depto_id": "01",
+      "n_registros": 888
+    },
+    {
+      "base": "hogares",
+      "depto_id": "02",
+      "n_registros": 530
+    },
+    {
+      "base": "hogares",
+      "depto_id": "03",
+      "n_registros": 656
+    },
+    {
+      "base": "hogares",
+      "depto_id": "04",
+      "n_registros": 514
+    },
+    {
+      "base": "hogares",
+      "depto_id": "05",
+      "n_registros": 684
+    },
+    {
+      "base": "hogares",
+      "depto_id": "06",
+      "n_registros": 423
+    },
+    {
+      "base": "hogares",
+      "depto_id": "07",
+      "n_registros": 383
+    },
+    {
+      "base": "hogares",
+      "depto_id": "08",
+      "n_registros": 357
+    },
+    {
+      "base": "hogares",
+      "depto_id": "09",
+      "n_registros": 514
+    },
+    {
+      "base": "hogares",
+      "depto_id": "10",
+      "n_registros": 542
+    },
+    {
+      "base": "hogares",
+      "depto_id": "11",
+      "n_registros": 403
+    },
+    {
+      "base": "hogares",
+      "depto_id": "12",
+      "n_registros": 423
+    },
+    {
+      "base": "hogares",
+      "depto_id": "13",
+      "n_registros": 411
+    },
+    {
+      "base": "hogares",
+      "depto_id": "14",
+      "n_registros": 447
+    },
+    {
+      "base": "hogares",
+      "depto_id": "15",
+      "n_registros": 440
+    },
+    {
+      "base": "hogares",
+      "depto_id": "16",
+      "n_registros": 500
+    },
+    {
+      "base": "hogares",
+      "depto_id": "17",
+      "n_registros": 486
+    },
+    {
+      "base": "hogares",
+      "depto_id": "18",
+      "n_registros": 497
+    },
+    {
+      "base": "hogares",
+      "depto_id": "19",
+      "n_registros": 483
+    },
+    {
+      "base": "hogares",
+      "depto_id": "20",
+      "n_registros": 395
+    },
+    {
+      "base": "hogares",
+      "depto_id": "21",
+      "n_registros": 440
+    },
+    {
+      "base": "hogares",
+      "depto_id": "22",
+      "n_registros": 548
+    },
+    {
+      "base": "consumo",
+      "depto_id": "01",
+      "n_registros": 887
+    },
+    {
+      "base": "consumo",
+      "depto_id": "02",
+      "n_registros": 530
+    },
+    {
+      "base": "consumo",
+      "depto_id": "03",
+      "n_registros": 656
+    },
+    {
+      "base": "consumo",
+      "depto_id": "04",
+      "n_registros": 514
+    },
+    {
+      "base": "consumo",
+      "depto_id": "05",
+      "n_registros": 679
+    },
+    {
+      "base": "consumo",
+      "depto_id": "06",
+      "n_registros": 423
+    },
+    {
+      "base": "consumo",
+      "depto_id": "07",
+      "n_registros": 382
+    },
+    {
+      "base": "consumo",
+      "depto_id": "08",
+      "n_registros": 357
+    },
+    {
+      "base": "consumo",
+      "depto_id": "09",
+      "n_registros": 505
+    },
+    {
+      "base": "consumo",
+      "depto_id": "10",
+      "n_registros": 540
+    },
+    {
+      "base": "consumo",
+      "depto_id": "11",
+      "n_registros": 403
+    },
+    {
+      "base": "consumo",
+      "depto_id": "12",
+      "n_registros": 416
+    },
+    {
+      "base": "consumo",
+      "depto_id": "13",
+      "n_registros": 409
+    },
+    {
+      "base": "consumo",
+      "depto_id": "14",
+      "n_registros": 447
+    },
+    {
+      "base": "consumo",
+      "depto_id": "15",
+      "n_registros": 440
+    },
+    {
+      "base": "consumo",
+      "depto_id": "16",
+      "n_registros": 500
+    },
+    {
+      "base": "consumo",
+      "depto_id": "17",
+      "n_registros": 484
+    },
+    {
+      "base": "consumo",
+      "depto_id": "18",
+      "n_registros": 494
+    },
+    {
+      "base": "consumo",
+      "depto_id": "19",
+      "n_registros": 483
+    },
+    {
+      "base": "consumo",
+      "depto_id": "20",
+      "n_registros": 394
+    },
+    {
+      "base": "consumo",
+      "depto_id": "21",
+      "n_registros": 440
+    },
+    {
+      "base": "consumo",
+      "depto_id": "22",
+      "n_registros": 547
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "01",
+      "n_registros": 888
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "02",
+      "n_registros": 530
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "03",
+      "n_registros": 656
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "04",
+      "n_registros": 514
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "05",
+      "n_registros": 684
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "06",
+      "n_registros": 423
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "07",
+      "n_registros": 383
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "08",
+      "n_registros": 357
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "09",
+      "n_registros": 514
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "10",
+      "n_registros": 542
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "11",
+      "n_registros": 403
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "12",
+      "n_registros": 423
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "13",
+      "n_registros": 411
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "14",
+      "n_registros": 447
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "15",
+      "n_registros": 440
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "16",
+      "n_registros": 500
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "17",
+      "n_registros": 486
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "18",
+      "n_registros": 497
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "19",
+      "n_registros": 483
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "20",
+      "n_registros": 395
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "21",
+      "n_registros": 440
+    },
+    {
+      "base": "negocios_1",
+      "depto_id": "22",
+      "n_registros": 548
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "01",
+      "n_registros": 259
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "02",
+      "n_registros": 84
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "03",
+      "n_registros": 96
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "04",
+      "n_registros": 154
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "05",
+      "n_registros": 210
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "06",
+      "n_registros": 90
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "07",
+      "n_registros": 155
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "08",
+      "n_registros": 116
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "09",
+      "n_registros": 125
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "10",
+      "n_registros": 85
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "11",
+      "n_registros": 71
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "12",
+      "n_registros": 78
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "13",
+      "n_registros": 119
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "14",
+      "n_registros": 74
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "15",
+      "n_registros": 133
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "16",
+      "n_registros": 72
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "17",
+      "n_registros": 75
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "18",
+      "n_registros": 133
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "19",
+      "n_registros": 111
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "20",
+      "n_registros": 87
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "21",
+      "n_registros": 66
+    },
+    {
+      "base": "negocios_2",
+      "depto_id": "22",
+      "n_registros": 97
+    }
+  ],
+  "uniones_a_hogares": {
+    "personas": {
+      "cardinalidad": "muchos_a_uno",
+      "filas_antes": 46017,
+      "filas_despues": 46017,
+      "filas_sin_hogar": 0,
+      "hogares_sin_registro_hijo": 0,
+      "departamento_discordante": 0,
+      "upm_discordante": 0
+    },
+    "consumo": {
+      "cardinalidad": "uno_a_uno",
+      "filas_antes": 10930,
+      "filas_despues": 10930,
+      "filas_sin_hogar": 0,
+      "hogares_sin_registro_hijo": 34,
+      "departamento_discordante": 0,
+      "upm_discordante": 0
+    },
+    "negocios_1": {
+      "cardinalidad": "uno_a_uno",
+      "filas_antes": 10964,
+      "filas_despues": 10964,
+      "filas_sin_hogar": 0,
+      "hogares_sin_registro_hijo": 0,
+      "departamento_discordante": 0,
+      "upm_discordante": 0
+    },
+    "negocios_2": {
+      "cardinalidad": "muchos_a_uno",
+      "filas_antes": 2490,
+      "filas_despues": 2490,
+      "filas_sin_hogar": 0,
+      "hogares_sin_registro_hijo": 8822,
+      "departamento_discordante": 0,
+      "upm_discordante": 0
+    }
+  },
+  "consumo": {
+    "guia_hogares_con_consumo": 10930,
+    "observados": 10930,
+    "diferencia_con_guia": 0,
+    "hogares_sin_consumo": 34,
+    "personas_en_hogares_sin_consumo": 95,
+    "clasificacion_pobreza_sin_consumo": {
+      "0": 34
+    },
+    "Factor3_cero_sin_consumo": 34
+  },
+  "relaciones_pesos": {
+    "hogares_con_pesos_personas_no_constantes": 0,
+    "n_comparados": 10930,
+    "consumo_FACTOR_igual_personas_Factor2": 10821,
+    "consumo_FACTOR_vs_personas_Factor2_max_diferencia_absoluta": 0.004999999999967031,
+    "consumo_FACTOR_vs_personas_Factor2_discordancias_rtol_1e5": 43,
+    "consumo_Factor3_igual_personas_Factor2_por_personas": 10821,
+    "consumo_Factor3_igual_consumo_FACTOR_por_personas": 10930,
+    "consumo_Factor3_igual_hogares_Factor3": 10833,
+    "consumo_Factor3_vs_hogares_Factor3_max_diferencia_absoluta": 0.0049999999999954525,
+    "consumo_Factor3_vs_hogares_Factor3_discordancias_rtol_1e5": 6,
+    "personas_FACTOR_igual_hogares_FACTOR": 10964,
+    "tamano_consumo_igual_conteo_personas": 10930,
+    "tolerancia_numpy": {
+      "rtol": 1e-10,
+      "atol": 1e-08
+    }
+  },
+  "negocios": {
+    "hogares_declaran_negocio": 2142,
+    "hogares_con_detalle": 2142,
+    "declaran_sin_detalle": 0,
+    "filas_detalle_fuera_hogares_declaran": 0,
+    "suma_P14A02A_todos_hogares": 2469.0,
+    "suma_P14A02A_hogares_declarantes": 2440.0,
+    "filas_detalle": 2490,
+    "hogares_no_declarantes_con_cantidad": 37,
+    "hogares_no_declarantes_con_cantidad_positiva": 23,
+    "saldo_detalle_menos_declarado_en_declarantes": 50.0,
+    "hogares_discrepantes_tambien_sin_consumo": 0,
+    "hogares_cantidad_declarada_distinta_del_detalle": 73,
+    "hogares_declaran_con_cantidad_faltante": 0
+  },
+  "tasas_poblacionales_calculadas": false,
+  "I03": "Publicada en main; se conserva docs/metodologia.md sin recalcular indicadores",
+  "contraste_xlsx": {
+    "personas": {
+      "variables_sav": 626,
+      "variables_xlsx": 626,
+      "solo_sav": [],
+      "solo_xlsx": []
+    },
+    "hogares": {
+      "variables_sav": 129,
+      "variables_xlsx": 129,
+      "solo_sav": [],
+      "solo_xlsx": []
+    },
+    "consumo": {
+      "variables_sav": 29,
+      "variables_xlsx": 29,
+      "solo_sav": [],
+      "solo_xlsx": []
+    },
+    "negocios_1": {
+      "variables_sav": 11,
+      "variables_xlsx": 11,
+      "solo_sav": [],
+      "solo_xlsx": []
+    },
+    "negocios_2": {
+      "variables_sav": 26,
+      "variables_xlsx": 26,
+      "solo_sav": [],
+      "solo_xlsx": []
+    }
+  },
+  "insumos": [
+    {
+      "archivo": "data/raw/encovi_2023/encovi_2023_personas.sav",
+      "sha256": "a4368d13aa666157f8f054c956a76b17f18b41f951062b87b17cd49a78efe726",
+      "bytes": 60283812
+    },
+    {
+      "archivo": "data/raw/encovi_2023/encovi_2023_hogares.sav",
+      "sha256": "b486dee30f06e8ea34474d9141d4bdca94695259b076463183f09f827457d0e1",
+      "bytes": 2667037
+    },
+    {
+      "archivo": "data/raw/encovi_2023/encovi_2023_agregado_consumo.sav",
+      "sha256": "a04cbdf8607c3b399300ea6de0371a0263664d2fa79fe1b87694ad8cdf9c3b72",
+      "bytes": 1745994
+    },
+    {
+      "archivo": "data/raw/encovi_2023/encovi_2023_c14sa_negocios_1.sav",
+      "sha256": "0444c2df1dd98ab368a5bb482394889525b7327c231adad4c94bb9bac9f4a592",
+      "bytes": 456714
+    },
+    {
+      "archivo": "data/raw/encovi_2023/encovi_2023_c14sa_negocios_2.sav",
+      "sha256": "fda896a329a03b272288f5ab2374a2264c92303c1313f511fcc9d8ff8a68e8e0",
+      "bytes": 221954
+    },
+    {
+      "archivo": "data/raw/encovi_2023/dd_encovi_2023_personas.xlsx",
+      "sha256": "708f55b1afa41ba6d9453d36a410dbefacaa593d2e7c55854346848009714191",
+      "bytes": 105864
+    },
+    {
+      "archivo": "data/raw/encovi_2023/dd_encovi_2023_hogares.xlsx",
+      "sha256": "c6984854bd46ac0785015875ba696627ee7871f023c4d1f471433047dec6c704",
+      "bytes": 25699
+    },
+    {
+      "archivo": "data/raw/encovi_2023/dd_encovi_2023_agregado_consumo.xlsx",
+      "sha256": "3495e7b439878611af15e26acf269ba3ca78d6fe794704ae1472986b523949de",
+      "bytes": 13078
+    },
+    {
+      "archivo": "data/raw/encovi_2023/dd_encovi_2023_c14sa_negocios_1.xlsx",
+      "sha256": "5c0c39cfe887bf465aada41fe7792ce2156dcdc6c3959b921e6fbf593f92b0f3",
+      "bytes": 10876
+    },
+    {
+      "archivo": "data/raw/encovi_2023/dd_encovi_2023_c14sa_negocios_2.xlsx",
+      "sha256": "035c31393ce9ce8a17b3c84714767a778d0941df1aae79f76fb4b7dea3c1eda3",
+      "bytes": 16847
+    },
+    {
+      "archivo": "data/raw/encovi_2023/Guia-para-el-uso-de-bases-de-datos_v_final.pdf",
+      "sha256": "35dde7b7314a345d4bafc7efcd09df39b4f7895d21529042507b9f28d185e30f",
+      "bytes": 1578981
+    }
+  ],
+  "privacidad": "Sólo metadatos y conteos agregados; sin filas individuales ni identificadores.",
+  "referencia_metodologica": "docs/metodologia.md",
+  "decisiones_I03_conservadas": {
+    "informalidad": "FACTOR en ocupados de 15 años o más",
+    "pobreza": "Factor3 en Agregado de Consumo",
+    "precision": "aproximado_depto_upm"
+  },
+  "limitacion_negocios": "Cantidades no conciliadas; no se imputan ni se atribuye una causa no demostrada"
+}
