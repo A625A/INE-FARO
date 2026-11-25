@@ -3,7 +3,7 @@
 Prototipo del Datatón INE Guatemala 2026 para investigar contrastes territoriales
 entre ocupación en el sector informal, condiciones de vida y producción.
 
-Esta rama entrega **I-04 (PIB Banguat)**. I-05 se desarrolla en una rama separada.
+Esta entrega implementa **I-04 (PIB Banguat)** e **I-05 (auditoría DINESE)**.
 Todavía no hay app, indicadores ENCOVI calculados ni radar. Main está preparado
 sólo localmente; no se publicaron ramas ni se integró trabajo del equipo.
 
@@ -16,6 +16,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python scripts/procesar_pib.py
+python scripts/auditar_dinese.py
 python -m pytest -q
 ```
 
@@ -38,9 +39,12 @@ falla, no usar las salidas de una ejecución previa como si fueran nuevas.
   de valor agregado e impuestos; corrientes y volumen encadenado separados.
 - `data/processed/pib_per_capita.csv`: producción por habitante en quetzales.
 - `data/processed/pib_conciliacion.csv`: nacional y Extrarregional, fuera del mapa.
+- `data/processed/dinese_resumen.csv`: conteos por año/departamento/sección/movimiento.
+  Sólo uso descriptivo transversal; crecimiento excluido del radar.
 - `docs/evidencia/`: hashes, controles, procedencia y revisión de fuentes oficiales.
 
-Consultar [metadatos PIB](docs/metadata_pib.md), [contratos](docs/CONTRATOS_DE_DATOS.md), [especificación](docs/specs/I-04-I-05.md),
+Consultar [metadatos PIB](docs/metadata_pib.md), [dictamen DINESE](docs/viabilidad_dinese.md),
+[contratos](docs/CONTRATOS_DE_DATOS.md), [especificación](docs/specs/I-04-I-05.md),
 [estado](docs/ESTADO_PROYECTO.md) y [preparación Git](docs/git_integracion.md).
 
 Los tests ejercitan los comandos completos con controles oficiales y copias
