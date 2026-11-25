@@ -1,0 +1,22 @@
+seccion_codigo,seccion,sector_banguat
+A,"Agricultura, ganadería, silvicultura y pesca",A
+B,Explotación de minas y canteras,B
+C,Industrias manufactureras,C
+D,"Suministro de electricidad, gas, vapor y aire acondicionado",D-E
+E,"Suministro de agua; evacuación de aguas residuales, gestión de desechos y descontaminación",D-E
+F,Construcción,F
+G,Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas,G
+H,Transporte y almacenamiento,H
+I,Actividades de alojamiento y de servicio de comidas,I
+J,Información y comunicaciones,J
+K,Actividades financieras y de seguros,K
+L,Actividades inmobiliarias,L
+M,"Actividades profesionales, científicas y técnicas",M
+N,Actividades de servicios administrativos y de apoyo,N
+O,Administración pública y defensa; planes de seguridad social de afiliación obligatoria,O
+P,Enseñanza,P
+Q,Actividades de atención de la salud humana y de asistencia social,Q
+R,"Actividades artísticas, de entretenimiento y recreativas",R-S-T-U
+S,Otras actividades de servicios,R-S-T-U
+T,Actividades de los hogares como empleadores; actividades no diferenciadas de los hogares como productores de bienes y servicios para uso propio,R-S-T-U
+U,Actividades de organizaciones y órganos extraterritoriales,R-S-T-U

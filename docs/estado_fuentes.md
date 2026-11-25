@@ -39,3 +39,12 @@
 
 - **Congelamiento de alcance:** Se decidió descartar ENEIC y ENIGH para mitigar riesgos de tiempo y complejidad en el procesamiento.
 - **Enfoque:** Todo el esfuerzo analítico se concentrará en el núcleo **ENCOVI 2023 + PIB Banguat**, garantizando hallazgos explicables y verificables para los 22 departamentos.
+
+## 4. Actualización local I-04 / I-05 — 24/11/2026
+
+- F3: procesado 2023 y validado; 836 observaciones departamentales, PIB por
+  habitante y conciliación nacional separados. Ver `metadata_pib.md` y `evidencia/I-04.json`.
+- URLs exactas y SHA-256 de ambos grupos: `data/reference/fuentes_I04_I05.json`.
+  Los cinco hashes coinciden con descargas oficiales independientes.
+- Esta actualización no implica integración, publicación ni cierre de I-02/I-03.
+  Las cifras de informalidad aún deben validarse antes de usarse en el radar.
