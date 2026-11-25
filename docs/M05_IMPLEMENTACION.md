@@ -8,11 +8,22 @@ streamlit run app.py
 El tablero usa archivos locales. Presenta PIB por habitante de Banguat (2023,
 precios corrientes) para 22 departamentos, con ficha, comparación, gráficas y mapa.
 
-Cuando M-01 entregue `data/processed/indicadores_encovi_2023.csv`, se mostrarán
-informalidad y pobreza con fuente, año, unidad, CV e IC de precisión aproximada.
-Las filas `no_publicable` muestran «N/D — precisión insuficiente» y conservan
-su CV. El valor y el intervalo se ocultan, y las gráficas y comparaciones omiten
-la estimación. Si falta el CSV o no cumple el contrato, se muestra el PIB con un aviso.
+Las fichas usan el CSV departamental de ENCOVI 2023 integrado en M-01. Las
+estimaciones con al menos 30 observaciones y CV determinado son publicables
+con reserva si M-01 permite su publicación y el CV no supera el 30 %.
+Verde indica mayor precisión (CV ≤ 20 %) y amarillo precisión moderada
+(20 % < CV ≤ 30 %). Gris indica una estimación no publicable. Cada color lleva
+una etiqueta textual. La aplicación oculta el valor y ambos límites del IC
+antes de construir fichas, tablas y gráficas. Si falta el CSV o su estructura
+es inválida, se puede seguir consultando el PIB.
+
+En **Calidad estadística**, los filtros de departamento, indicador y clasificación
+se aplican a los conteos, al gráfico y al diagnóstico. El exceso se calcula en
+puntos porcentuales como `max(CV − 30, 0)`; queda vacío si el CV es indeterminado.
+El CSV integrado contiene 66 estimaciones, de las cuales 61 son publicables con
+reserva. Los cinco casos restringidos corresponden a pobreza extrema. Los CV e
+intervalos son aproximados por departamento y UPM, sin los estratos originales
+ni la corrección de población finita.
 
 La pestaña de radar espera `data/processed/hallazgos.csv` de M-04. La presentación
 final se verificará con sus reglas, evidencia y limitaciones cuando se entregue.

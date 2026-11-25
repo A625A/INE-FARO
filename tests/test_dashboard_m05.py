@@ -99,8 +99,8 @@ def test_app_local_y_cobertura_del_mapa(tmp_path, pib):
     filas.to_csv(ruta, index=False)
     vista.selectbox[0].select('Guatemala').run()
     assert not vista.exception and not vista.warning
-    assert [m.value for m in vista.metric[1:]] == ['50.0 %', '50.0 %']
-    assert any('N/D — precisión insuficiente' in m.value for m in vista.markdown)
+    assert [m.value for m in vista.tabs[0].metric[1:]] == ['N/D', '50.0 %', '50.0 %']
+    assert vista.tabs[0].metric[1].proto.help == 'N/D — precisión insuficiente'
     detalle = vista.dataframe[0].value.set_index('Indicador')
     fila = detalle.loc['Ocupación en el sector informal']
     assert pd.isna(fila['Valor (%)']) and fila['CV (%)'] == 5.0
@@ -108,3 +108,64 @@ def test_app_local_y_cobertura_del_mapa(tmp_path, pib):
     assert detalle['Valor (%)'].count() == 2
     resumen = vista.dataframe[1].value.set_index('Departamento')
     assert pd.isna(resumen.at['Guatemala', 'Ocupación en el sector informal (%)'])
+
+
+def test_precision_csv_integrado(pib):
+    detalle = cargar_encovi(ROOT / 'data/processed', pib)
+    assert detalle.clasificacion.value_counts().to_dict() == {
+        'Mayor precisión': 51, 'Precisión moderada': 10, 'No publicable': 5,
+    }
+    restringidas = detalle.loc[detalle.estado.eq('no_publicable')].set_index('departamento')
+    assert restringidas.indicador.eq('pobreza_extrema').all()
+    assert restringidas[['valor', 'ic95_inf', 'ic95_sup']].isna().all().all()
+    esperado = {
+        'Guatemala': (38.60323, 8.60323), 'Sacatepéquez': (31.46913, 1.46913),
+        'Escuintla': (31.78476, 1.78476), 'Quetzaltenango': (33.41783, 3.41783),
+        'Retalhuleu': (35.84744, 5.84744),
+    }
+    for depto, (cv, exceso) in esperado.items():
+        assert restringidas.at[depto, 'cv'] == cv
+        assert restringidas.at[depto, 'exceso_pp'] == pytest.approx(exceso)
+    assert detalle.loc[detalle.estado.ne('no_publicable'), 'exceso_pp'].eq(0).all()
+
+
+@pytest.mark.parametrize('cv,n,clasificacion', [
+    (20, 30, 'Mayor precisión'), (20.00001, 30, 'Precisión moderada'),
+    (30, 30, 'Precisión moderada'), (30.00001, 30, 'No publicable'),
+    (0, 29, 'No publicable'), (None, 30, 'No publicable'),
+    ('indeterminado', 30, 'No publicable'), ('inf', 30, 'No publicable'),
+    (-1, 30, 'No publicable'), (2, None, 'No publicable'),
+])
+def test_umbral_independiente_del_estado_de_origen(tmp_path, pib, cv, n, clasificacion):
+    ruta = ROOT / 'data/processed/indicadores_encovi_2023.csv'
+    filas = pd.read_csv(ruta, dtype=str)
+    filas.loc[0, ['cv', 'n']] = [str(cv), str(n)]
+    filas.to_csv(tmp_path / ruta.name, index=False)
+    fila = cargar_encovi(tmp_path, pib).iloc[0]
+    assert fila.clasificacion == clasificacion
+    if clasificacion == 'No publicable':
+        assert fila.estado == 'no_publicable'
+        assert fila[['valor', 'ic95_inf', 'ic95_sup']].isna().all()
+        if cv in (None, 'indeterminado', 'inf', -1):
+            assert pd.isna(fila.exceso_pp)
+    else:
+        assert fila.valor == float(filas.at[0, 'valor'])
+
+
+def test_calidad_interactiva_con_csv_integrado():
+    vista = AppTest.from_file(str(ROOT / 'app.py'), default_timeout=20).run()
+    calidad = next((tab for tab in vista.tabs if tab.label == 'Calidad estadística'), None)
+    assert calidad is not None
+    assert [m.value for m in calidad.metric] == ['66', '61', '5']
+    calidad.selectbox[2].select('No publicable').run()
+    calidad = vista.tabs[-1]
+    assert [m.value for m in calidad.metric] == ['5', '0', '5']
+    calidad.selectbox[0].select('Guatemala').run()
+    diagnostico = vista.tabs[-1].dataframe[0].value
+    assert list(diagnostico.Departamento) == ['Guatemala']
+    assert set(diagnostico) == {'Departamento', 'Indicador', 'Clasificación', 'CV (%)',
+                                'Muestra (n)', 'Estado', 'Exceso (pp)'}
+    assert diagnostico.iloc[0]['Exceso (pp)'] == pytest.approx(8.60323)
+    vista.tabs[-1].selectbox[1].select('Pobreza total').run()
+    assert [m.value for m in vista.tabs[-1].metric] == ['0', '0', '0']
+    assert vista.tabs[-1].info and not vista.exception

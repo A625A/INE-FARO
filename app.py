@@ -6,6 +6,7 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
+from dashboard_precision import METODO, leyenda, marca, mostrar_calidad
 from dashboard_utils import INDICADORES, cargar_encovi, cargar_pib
 
 ROOT = Path(__file__).resolve().parent
@@ -20,11 +21,11 @@ ERROR_CSV = (OSError, ValueError, pd.errors.ParserError)
 
 
 def grafica_pib(tabla, seleccionado):
-    return alt.Chart(tabla).mark_bar(cornerRadiusEnd=3).encode(
+    return alt.Chart(tabla).mark_bar().encode(
         y=alt.Y('departamento:N', sort='-x', title=None, axis=alt.Axis(labelOverlap=False)),
         x=alt.X('pib_per_capita:Q', title=UNIDAD_PIB, axis=alt.Axis(format=',.0f')),
         color=alt.condition(alt.datum.departamento == seleccionado,
-                            alt.value('#087F75'), alt.value('#6289AD')),
+                            alt.value('#174e61'), alt.value('#829ba5')),
         tooltip=[alt.Tooltip('departamento:N', title='Departamento'),
                  alt.Tooltip('pib_per_capita:Q', title=UNIDAD_PIB, format=',.0f')],
     ).properties(height=max(120, 23 * len(tabla)))
@@ -45,16 +46,27 @@ def mapa_pib(tabla, seleccionado):
         lookup='properties.shapeName',
         from_=alt.LookupData(tabla, 'departamento', ['departamento', 'pib_per_capita']),
     ).project(type='mercator').encode(
-        color=alt.Color('pib_per_capita:Q', title=UNIDAD_PIB, scale=alt.Scale(scheme='teals'),
+        color=alt.Color('pib_per_capita:Q', title=UNIDAD_PIB, scale=alt.Scale(scheme='blues'),
                         legend=alt.Legend(orient='bottom', format=',.0f')),
         strokeWidth=alt.condition(alt.datum.departamento == seleccionado,
                                   alt.value(2.5), alt.value(0.8)),
         tooltip=[alt.Tooltip('departamento:N', title='Departamento'),
                  alt.Tooltip('pib_per_capita:Q', title=UNIDAD_PIB, format=',.0f')],
-    ).properties(height=390)
+    ).properties(height=440)
 
 
 st.set_page_config(page_title='INE FARO | Radar territorial', layout='wide')
+st.html('''<style>
+    [data-testid="stMainBlockContainer"] {max-width: 1520px; padding-top: 3.5rem;}
+    [data-testid="stMain"] :is(h1, h2) {font-family: Georgia, "Times New Roman", serif; font-weight: 500; color: #173f4a;}
+    [data-testid="stMetricValue"] {font-variant-numeric: tabular-nums;}
+    .marca {display: inline-flex; align-items: center; gap: 8px; color: var(--tinta);
+            font-weight: 600; font-size: 0.9375rem;}
+    [data-testid="stCaptionContainer"] p {color: #52636a;}
+    .marca > span {width: 12px; height: 12px; border-radius: 50%; background: var(--tinta);}
+    .leyenda {display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 12px 0;
+              border-block: 1px solid #cbd3d4; font-size: 0.9375rem;}
+    </style>''')
 st.title('INE FARO')
 st.caption('Radar territorial de Guatemala · 22 departamentos')
 
@@ -72,7 +84,9 @@ except ERROR_CSV as exc:
     encovi = None
     st.warning(f'Se muestra únicamente el PIB. Revisá el archivo de ENCOVI 2023: {exc}')
 
-territorio, comparacion, radar = st.tabs(['Departamento', 'Comparar departamentos', 'Hallazgos del radar'])
+territorio, comparacion, radar, calidad = st.tabs([
+    'Departamento', 'Comparar departamentos', 'Hallazgos del radar', 'Calidad estadística',
+])
 departamentos = tabla.departamento.tolist()
 
 with territorio:
@@ -87,9 +101,11 @@ with territorio:
         for tarjeta, (clave, nombre) in zip(ficha[1:], NOMBRES_ENCOVI.items()):
             valor = detalle.at[clave, 'valor']
             if pd.isna(valor):
-                tarjeta.markdown(f'**{nombre}**  \n{NO_DISPONIBLE}')
+                tarjeta.metric(nombre, 'N/D', help=NO_DISPONIBLE)
             else:
                 tarjeta.metric(nombre, f'{valor:.1f} %')
+            tarjeta.html(marca(detalle.at[clave, 'clasificacion']))
+        leyenda()
         with st.expander('Fuente y precisión de ENCOVI'):
             campos = {
                 'indicador': 'Indicador', 'valor': 'Valor (%)', 'fuente': 'Fuente', 'anio': 'Año',
@@ -102,12 +118,11 @@ with territorio:
                 'publicable_con_reserva': 'Publicable con reserva', 'no_publicable': NO_DISPONIBLE,
             })
             st.dataframe(detalle[list(campos)].rename(columns=campos), hide_index=True)
-            st.caption('Precisión aproximada por departamento y UPM, sin los estratos originales. '
-                       'Los CV e intervalos no son errores muestrales oficiales del INE.')
+            st.write(METODO)
 
     st.caption('Fuente del PIB: Banco de Guatemala · 2023 · Precios corrientes · Quetzales por habitante. '
                'Cifras preliminares y revisables. Mide producción por persona, no ingreso familiar.')
-    barras, mapa = st.columns(2)
+    mapa, barras = st.columns([1.1, 1])
     with barras:
         st.subheader('PIB por habitante por departamento')
         st.altair_chart(grafica_pib(tabla, seleccionado))
@@ -140,7 +155,7 @@ with comparacion:
             puntos = resumen.dropna(subset=[INDICADORES[0]])
             if len(puntos) >= 2:
                 st.subheader('PIB por habitante y ocupación en el sector informal')
-                st.altair_chart(alt.Chart(puntos).mark_circle(size=95, color='#087F75').encode(
+                st.altair_chart(alt.Chart(puntos).mark_circle(size=95, color='#174e61').encode(
                     x=alt.X('pib_per_capita:Q', title=UNIDAD_PIB),
                     y=alt.Y(f'{INDICADORES[0]}:Q', title='Ocupación en el sector informal (%)'),
                     tooltip=[alt.Tooltip('departamento:N', title='Departamento')],
@@ -163,3 +178,6 @@ with radar:
                 st.dataframe(tabla_hallazgos, hide_index=True)
         except ERROR_CSV as exc:
             st.warning(f'No se pudo leer hallazgos.csv: {exc}')
+
+with calidad:
+    mostrar_calidad(encovi, NOMBRES_ENCOVI)
