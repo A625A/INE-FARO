@@ -55,7 +55,7 @@ def test_r1_contraste_independiente_con_encovi_y_banguat(tmp_path):
     pairs = list(combinations(sorted(y), 2))
     assert len(pairs) == 231
     for tolerance, poverty_count, union in [(2, 14, 16), (3, 22, 26), (5, 36, 44)]:
-        run_radar(tmp_path, "--mode", "exploratory", "--set", f"r1_i={tolerance}")
+        run_radar(tmp_path, "--rule", "R1", "--mode", "exploratory", "--set", f"r1_i={tolerance}")
         result = read_run(tmp_path)
         expected = []
         for a, b in pairs:
@@ -95,7 +95,7 @@ def test_vista_vacia_conserva_referencias(tmp_path):
     filtered = read_run(tmp_path)
     assert filtered["cobertura"] == full["cobertura"]
     assert filtered["sensibilidad"] == full["sensibilidad"]
-    assert filtered["conteos"] == {"R1": 0}
+    assert filtered["conteos"] == dict.fromkeys(full["conteos"], 0)
     assert filtered["hallazgos"] == []
     assert len((tmp_path / "hallazgos.csv").read_text().splitlines()) == 1
 
@@ -153,3 +153,20 @@ def test_robustez_y_diferencias_por_escenario(tmp_path):
     for finding in standard["hallazgos"]:
         hits = sum(finding["id"] in case for case in members)
         assert finding["robustez"] == {"presentes": hits, "escenarios": 7, "proporcion": hits / 7}
+
+
+def test_corte_completo_y_ejemplos(tmp_path):
+    run_radar(tmp_path)
+    report = read_run(tmp_path)
+    assert report["conteos"] == {"R1": 26, "R2a": 0, "R2b": 1, "R3": 7, "R4": 10}
+    assert len(report["sensibilidad"]) == 21
+    cards = {r["id"]: r for r in report["hallazgos"]}
+    assert len(cards) == 44
+    assert cards["R2b:2023:06"]["territorios"] == ["06"]
+    r3 = cards["R3:2023:04-18"]["magnitudes"]
+    assert round(r3["distancia_pp"], 2) == 9.85
+    assert round(r3["brecha_informalidad_pp"], 2) == 16.08
+    assert round(r3["umbral_distancia_pp"], 8) == 12.24314885
+    r4 = cards["R4:2023:16:A"]["magnitudes"]
+    assert round(r4["lq"], 2) == 1.97
+    assert round(r4["participacion_local_pct"], 2) == 20.31

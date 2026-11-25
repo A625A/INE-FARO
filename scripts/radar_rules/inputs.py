@@ -30,6 +30,9 @@ class Territory:
     name: str
     encovi: dict
     pib_per_capita: Decimal | None
+    amounts: dict
+    shares: dict
+    vab_total: Decimal
 
 
 @dataclass
@@ -106,7 +109,7 @@ def read_rows(path, columns, keys, canonical, raw):
     return rows
 
 
-def check_vab(row):
+def read_vab(row):
     total = number(row["vab_total_millones_q_2023"])
     amounts, shares = {}, {}
     for group in GROUPS:
@@ -125,6 +128,9 @@ def check_vab(row):
         raise ValueError("Conciliación productiva incompatible con M-03")
 
 
+    return amounts, shares, total
+
+
 def load_inputs(data_dir):
     folder = data_dir / "processed"
     canonical, raw = {}, {}
@@ -136,11 +142,12 @@ def load_inputs(data_dir):
         code = row["depto_id"]
         if row["departamento"] != DEPARTAMENTOS[int(code)]:
             raise ValueError("Nombre y código departamental incompatibles")
-        check_vab(row)
+        amounts, shares, total = read_vab(row)
         estimates = {ind: estimate({k: row[f"{ind}_{k}_2023"] for k in DIAGNOSTICS}, weight)
                      for ind, weight in WEIGHTS.items()}
         y = number(row["pib_por_habitante_q_2023"]) if row["pib_por_habitante_q_2023"] else None
-        territories.append(Territory(code, row["departamento"], estimates, y if y and y > 0 else None))
+        territories.append(Territory(code, row["departamento"], estimates, y if y and y > 0 else None,
+                                     amounts, shares, total))
     keys = ["ambito", "area", "indicador"]
     cols = "ambito area anio indicador ponderador valor n upm_n cv ic95_inf ic95_sup precision estado".split()
     national = read_rows(folder / "indicadores_encovi_nacional_2023.csv", cols, keys, canonical, raw)

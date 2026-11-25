@@ -2,25 +2,11 @@
 from itertools import combinations
 
 from .inputs import I, P
+from .evidence import evidence
 
 RANK = {"ambos": 0, "solo_pobreza": 1, "solo_pib": 2}
 LABELS = {"ambos": "la pobreza total y el PIB por habitante",
           "solo_pobreza": "la pobreza total", "solo_pib": "el PIB por habitante"}
-
-
-def evidence(d):
-    result = []
-    for key, universe in ((I, "Personas ocupadas de 15 años o más"),
-                          (P, "Personas representadas por hogares con clasificación de consumo válida")):
-        est = d.encovi[key]
-        result.append({"territorio": d.code, "indicador": key, "valor": est.value,
-                       "unidad": "%", "fuente": "INE, ENCOVI 2023", "universo": universe,
-                       "diagnostico": {**est.diagnostic, "ic95_inf": est.lower, "ic95_sup": est.upper}})
-    result.append({"territorio": d.code, "indicador": "pib_por_habitante",
-                   "valor": d.pib_per_capita, "unidad": "Q corrientes por habitante",
-                   "fuente": "Banguat, cuadro 8, 2023", "universo": "Población departamental proyectada",
-                   "diagnostico": {"elegible": d.pib_per_capita is not None, "revision": "preliminar"}})
-    return result
 
 
 def order(f):
