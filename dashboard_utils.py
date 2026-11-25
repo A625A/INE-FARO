@@ -6,6 +6,13 @@ import pandas as pd
 INDICADORES = ('ocupacion_sector_informal', 'pobreza_total', 'pobreza_extrema')
 
 
+MAYOR = 'Mayor precisión'
+MODERADA = 'Precisión moderada'
+RESTRINGIDA = 'No publicable'
+UMBRAL_MODERADA = 20
+UMBRAL_PUBLICACION = 30
+MIN_MUESTRA = 30
+
 COLUMNAS_ENCOVI = (
     'depto_id', 'departamento', 'anio', 'indicador', 'valor', 'unidad', 'fuente',
     'n', 'upm_n', 'ponderador', 'cv', 'ic95_inf', 'ic95_sup', 'precision', 'estado',
@@ -49,9 +56,21 @@ def cargar_encovi(procesados: Path, pib: pd.DataFrame) -> pd.DataFrame | None:
     if not encovi.estado.isin(['publicable_con_reserva', 'no_publicable']).all():
         raise ValueError('ENCOVI contiene estados de publicación desconocidos')
     encovi = encovi[list(COLUMNAS_ENCOVI)].copy()
-    publicables = encovi.loc[encovi.estado.eq('publicable_con_reserva')]
+    # La interfaz puede restringir una fila, pero nunca levantar una reserva de M-01.
+    cv = pd.to_numeric(encovi.cv, errors='coerce')
+    encovi['cv'] = cv.where(cv.ge(0) & cv.lt(float('inf')))
+    n = pd.to_numeric(encovi.n, errors='coerce')
+    encovi['n'] = n.where(n.ge(0) & n.mod(1).eq(0)).astype('Int64')
+    elegible = encovi.cv.le(UMBRAL_PUBLICACION) & encovi.n.ge(MIN_MUESTRA).fillna(False)
+    encovi.loc[~elegible, 'estado'] = 'no_publicable'
+    publicar = encovi.estado.eq('publicable_con_reserva')
+    encovi['clasificacion'] = RESTRINGIDA
+    encovi.loc[publicar, 'clasificacion'] = MODERADA
+    encovi.loc[publicar & encovi.cv.le(UMBRAL_MODERADA), 'clasificacion'] = MAYOR
+    encovi['exceso_pp'] = (encovi.cv - UMBRAL_PUBLICACION).clip(lower=0)
+    publicables = encovi.loc[publicar]
     if (not publicables.unidad.eq('porcentaje').all()
             or not pd.to_numeric(publicables.valor, errors='coerce').between(0, 100).all()):
         raise ValueError('ENCOVI contiene unidades o tasas inválidas en filas publicables')
-    encovi.loc[encovi.estado.eq('no_publicable'), ['valor', 'ic95_inf', 'ic95_sup']] = pd.NA
+    encovi.loc[~publicar, ['valor', 'ic95_inf', 'ic95_sup']] = pd.NA
     return encovi

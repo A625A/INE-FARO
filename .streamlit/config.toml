@@ -2,4 +2,11 @@
 gatherUsageStats = false
 
 [theme]
-primaryColor = "#087F75"
+base = "light"
+primaryColor = "#174e61"
+backgroundColor = "#fcfcfa"
+secondaryBackgroundColor = "#f0f3f2"
+textColor = "#24343a"
+
+[client]
+toolbarMode = "viewer"
