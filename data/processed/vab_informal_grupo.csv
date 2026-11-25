@@ -1,0 +1,375 @@
+anio,tipo_precio,unidad,preliminar,revision,grupo_ciiu,grupo_nombre,vab_informal,vab_total_grupo,composicion_pct,participacion_informal_grupo_pct
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",12720.857051,43121.567413,14.559446199,29.499987626
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,808.592783,5826.657297,0.925461474,13.877472825
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,13521.039551,60027.565987,15.475281824,22.524717317
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1212.41388,11882.625342,1.387648221,10.203249241
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1764.69411,17835.379317,2.019751409,9.894345832
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,31182.009936,76016.418829,35.688852899,41.020098574
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,3916.175203,11073.502784,4.482193452,35.365279437
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,5403.673878,11492.266437,6.184685418,47.020088749
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,552.116175,19122.512455,0.631915422,2.8872575
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,92.41204,14001.805665,0.105768669,0.660000876
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,5606.20605,36214.018646,6.41649026,15.480762035
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1481.65796,10343.14624,1.695807072,14.325021861
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,459.58008,14549.231477,0.526004767,3.158792825
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,16754.245456,0.0,0.0
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,292.075525,17803.140933,0.334290204,1.640584244
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,1663.374654,9168.439486,1.903787904,18.142396605
+2013,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,6694.968083,16785.644477,7.662614808,39.885082114
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",12720.857051,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,808.592783,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,13521.039551,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1212.41388,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1764.69411,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,31182.009936,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,3916.175203,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,5403.673878,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,552.116175,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,92.41204,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,5606.20605,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1481.65796,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,459.58008,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,292.075525,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,1663.374654,,,
+2013,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,6694.968083,,,
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",13316.20131,45065.816959,14.363543424,29.54834109
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,851.932938,7372.691878,0.918938927,11.555249454
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,14120.487808,62968.556938,15.231088437,22.424664777
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1306.983861,12541.299147000002,1.409780387,10.421439164
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1951.84192,20864.579733,2.105357641,9.354810617
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,33139.670535,82963.003759,35.746162566,39.945118949
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4217.289077,12090.538358,4.548986109,34.880903994
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,5837.081083,12390.78773,6.29617754,47.108232424
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,576.254133,19434.880574,0.621577511,2.965051063
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,101.20633,15520.867287000001,0.109166382,0.652066203
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,5878.959298,38053.356168,6.341349549,15.449253075
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1571.040009,10913.467091,1.694605005,14.395425357
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,489.937807,15547.796077,0.528472257,3.151172067
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,17930.846207000002,0.0,0.0
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,248.953485,19559.028709,0.268534104,1.272831533
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,1984.306695,10151.154312,2.140375826,19.547596598
+2014,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7116.184216,17859.74457,7.675884332,39.844826381
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",12596.942519,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,829.823669,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,13785.896767,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1277.215469,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1838.681663,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,31681.068834,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4061.818049,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,5718.000737,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,570.379331,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,100.668591,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,5832.964772,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1560.859614,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,482.870016,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,236.42465,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,1940.866929,,,
+2014,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,6882.72862,,,
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",14110.469655,47445.209665,14.246674404,29.740557065
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,922.158493,5571.744411,0.931059853,16.550624454
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,15245.199167,68196.593579,15.392357169,22.354781034
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1410.99547,11281.852672,1.424615448,12.506770927
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1932.159466,23185.550501,1.950810106,8.333463835
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,34710.393851,86989.812959,35.045444392,39.901676611
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4981.771058,14565.715435,5.029858818,34.202034773
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,6587.591595,13867.455442999999,6.651179929,47.503967992
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,610.703531,20814.196397,0.616598496,2.934072108
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,109.059047,16598.899898,0.110111766,0.657025753
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,6152.394941,40138.25337,6.211782433,15.328008631
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1657.365401,11612.924572,1.673363525,14.271731386
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,662.863612,16703.536179,0.669262065,3.968402887
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,19184.211136,0.0,0.0
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,298.991024,21770.853329999998,0.301877108,1.373354638
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2140.352496,11203.637117,2.16101277,19.104086232
+2015,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7511.485275,19061.815995,7.583991718,39.405926891
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",12877.068077,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,846.472772,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,13959.427962,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1311.17224,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1675.33154,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,32928.443844,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4150.003196,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,6046.689466,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,597.002692,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,106.967469,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,6043.944829,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1593.265018,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,645.236417,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,269.544264,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2052.590598,,,
+2015,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7074.623109,,,
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",14489.048715,48500.369997,13.730143567,29.874099344
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,989.575077,5076.534068,0.937743267,19.493123926
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,15784.410085,71237.057383,14.9576567,22.157582956
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1576.604659,11913.656475,1.494025505,13.233591738
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1804.177934,25297.632191,1.709678982,7.13180554
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,38086.775693,94627.647931,36.091872459,40.249098996
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,5360.202822,15635.600161999999,5.079446949,34.282040769
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,7317.100161,15267.355902,6.933846223,47.926439968
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,620.754203,21081.079655999998,0.588240436,2.94460347
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,112.195176,17827.445806,0.106318634,0.629339599
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,6431.352853,42223.602839,6.09449245,15.231653437
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1701.271201,11672.517425,1.612162282,14.575015304
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,515.993823,16874.876099,0.488967179,3.057763624
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,20451.053451,0.0,0.0
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,334.970977,22724.921445,0.317425919,1.474024796
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2292.541227,11982.346962,2.172462858,19.132656017
+2016,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,8110.317548,20304.5612,7.685516592,39.943328339
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",13141.993844,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,886.348628,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,14280.842106,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1351.316803,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1588.894586,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,34470.714685,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4266.826159,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,6388.252512,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,612.386536,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,109.094511,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,6255.084711,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1581.078052,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,504.905542,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,289.484459,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2154.960652,,,
+2016,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7306.511445,,,
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",15237.615692,51051.668502,13.65053504,29.847439152
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1108.218214,3743.135359,0.992791252,29.60668284
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,16645.536495,74450.475954,14.911813225,22.357864448
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1655.659841,12021.226179000001,1.483213853,13.772803343
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1783.413524,25116.135867,1.597661294,7.100668405
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,40484.562695,100877.926735,36.267875029,40.132231109
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,5616.143348,16097.889903,5.031191435,34.887450354
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,7892.50895,16347.47754,7.070461164,48.279674529
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,635.840761,21250.063626,0.569614483,2.992182857
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,123.818155,18896.437334,0.11092182,0.655246028
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,6743.152779,44317.775643,6.040816697,15.21545854
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1792.01149,12574.671953000001,1.605363735,14.250960158
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,533.933707,17533.788895,0.478321604,3.045170158
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,21910.926161000003,0.0,0.0
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,373.55652,24607.571584,0.334648574,1.5180552
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2351.165612,12815.514478,2.10627891,18.346244437
+2017,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,8649.370973,21700.850698,7.748491885,39.857289898
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",13594.724082,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,921.337634,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,14612.540006,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1387.342762,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1652.880168,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,35563.398106,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4459.214708,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,6701.104816,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,627.656306,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,119.723349,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,6499.526673,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1607.232625,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,517.258229,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,305.239455,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2167.011262,,,
+2017,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7468.800902,,,
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",15754.039993,52024.377093999996,13.440682401,30.282034833
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1189.157293,2981.549766,1.014538843,39.883865316
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,17413.054392,76939.426035,14.856083507,22.632160505
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1679.899876,12106.947219,1.433219714,13.875503425
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,2002.173292,26110.58632,1.708169799,7.668051829
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,42560.877606,105840.901748,36.311145513,40.212126789
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,5832.785013,17032.295394,4.97628614,34.245443013
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,8456.508742,17257.011606,7.214736555,49.003320709
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,652.345045,21824.276384,0.556553276,2.989079837
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,143.446282,20606.665222,0.122382317,0.696115943
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,7099.96601,46812.936102,6.057391516,15.166675285
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1901.165057,13654.097849,1.621993834,13.923769099
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,553.975832,18365.123984,0.472628813,3.016455715
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,24019.888319,0.0,0.0
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,395.855711,25531.520055,0.337727395,1.550458845
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2440.437502,13935.912364,2.082078337,17.511860281
+2018,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,9135.920538,22806.799413,7.794382041,40.057880865
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",13971.842581,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,977.263066,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,14902.16449,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1369.795307,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1687.37613,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,36550.238401,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4534.742751,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,7102.336621,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,648.943495,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,136.97652,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,6756.480687,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1666.130993,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,532.099275,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,312.420726,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2185.491227,,,
+2018,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7617.79438,,,
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",17059.405253,55885.197229,13.632036064,30.525803073
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1320.591173,3161.581101,1.055273981,41.769960371
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,18380.242752,82035.20253,14.687506882,22.405311604
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1621.104078,14015.185887,1.295411471,11.566768297
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,2183.870557,31118.900231,1.745113722,7.017826918
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,45804.310712,113797.932657,36.601863092,40.250564876
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,6193.553148,17847.152701,4.949219426,34.703312353
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,9100.546502,18451.326749,7.272174866,49.321908532
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,681.055722,22957.795797,0.544226251,2.966555361
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,152.411504,22992.183979,0.12179083,0.662883979
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,7462.690151,49182.955783,5.963376786,15.173325865
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1956.327478,14382.000053,1.563285844,13.602610699
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,674.695768,19130.763038,0.539144062,3.526758272
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,25184.973877,0.0,0.0
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,421.564681,27758.479502000002,0.336869009,1.518687942
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2547.269361,15635.467525,2.035502837,16.291609809
+2019,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,9582.380836,24045.748245,7.657204879,39.850624478
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",14180.397986,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1050.151132,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,15246.995034,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1317.822979,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1694.997559,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,38147.524931,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4750.640635,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,7643.821243,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,676.045057,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,143.340481,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,7053.355255,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1688.353627,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,640.184724,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,324.568858,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2234.958411,,,
+2019,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7700.486687,,,
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",18811.447146,61341.339866,13.513361904,30.66683445
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1481.315673,3673.448152,1.064115622,40.324937544
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,19844.739675,93126.15495,14.255636317,21.309523287
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1888.626509,15176.24189,1.356710801,12.444625769
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,2449.445887,36752.423279,1.759580136,6.664719407
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,53385.331482,133559.051908,38.349803662,39.971331572
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,6518.69485,19603.910651,4.68275949,33.252012652
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,9188.343984,17396.245615,6.600524488,52.817971115
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,724.126074,24380.198191,0.52018208,2.970140227
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,155.853507,25876.586852,0.111958683,0.602295457
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,8225.81965,54069.055216,5.909087005,15.213544267
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",2124.900131,15919.095294,1.526439952,13.348121182
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,667.975983,21646.415156,0.479846188,3.085850374
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,27567.410017000002,0.0,0.0
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,475.513007,30187.117227000002,0.341588784,1.57521834
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,3370.595421,20213.391338,2.421295682,16.675061422
+2021,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,9893.541677,23892.951288,7.107109206,41.407784069
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",14810.965478,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1152.591693,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,15541.871998,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1445.13187,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1650.231938,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,41537.818303,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4189.497375,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,7582.128866,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,718.144796,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,140.106478,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,7624.067169,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1780.014376,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,604.906674,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,343.573547,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2790.957346,,,
+2021,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7479.748359,,,
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",20824.968811,67261.06658,13.378449865,30.961401402
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1679.31906,4226.406929000001,1.07883407,39.733965238
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,22613.199203,104363.031066,14.527251137,21.667825256
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1997.253889,17019.654938,1.283082883,11.734984618
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,2758.494035,42109.579158,1.772121461,6.550751848
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,60003.181382,152414.95465200001,38.547455277,39.368303143
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,7561.232063,22108.152581,4.857513353,34.201103124
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,10770.264647,20844.012627,6.919071377,51.670783547
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,764.582674,25081.560956,0.491185896,3.048385526
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,171.714466,28679.162898,0.110313412,0.59874295
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,8745.641797,57661.989434,5.618406029,15.167083
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",2314.498444,17282.544943,1.486888248,13.39211587
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,768.657559,24764.617176,0.493803698,3.103853993
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,29770.865948,0.0,0.0
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,521.279983,32250.742787000003,0.334882524,1.616334813
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,3562.734723,20836.058876,2.288784598,17.09888969
+2022,corrientes,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,10603.528529,25636.120166,6.811956172,41.361674311
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",15318.631771,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1221.045774,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,16057.750795,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1474.798,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,F,Construcción,1748.296546,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,42289.952265,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4514.329057,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,8633.900323,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,731.0859,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,147.652205,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,7989.971944,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1876.623376,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,651.076014,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,P,Enseñanza,362.01649,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,Q,Salud,2844.453762,,,
+2022,volumen_encadenado_2013,millones_de_quetzales,False,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7739.014449,,,
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",23624.969066,78597.511313,13.692564051,30.058164274
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1831.09834,3817.7344190000003,1.061268323,47.962957583
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,25029.8267,114464.085665,14.506791704,21.866969499
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",2185.803708,18711.775821,1.266848528,11.681433814
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,F,Construcción,2915.295893,45286.529209,1.689647746,6.437446066
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,66519.796145,169370.393097,38.553556062,39.274748631
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,8571.2416,24572.070645,4.967721832,34.882048501
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,12796.576082,25039.554618000002,7.416641992,51.105446072
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,801.144143,25251.201364,0.464327274,3.172697138
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,181.08472,34720.910628,0.104953116,0.521543694
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,9260.853849,61227.82999,5.36740743,15.125236107
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",2455.447856,18530.439187,1.423128934,13.250888612
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,879.224884,26544.939313,0.509581325,3.312212824
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,32652.906999000003,0.0,0.0
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,P,Enseñanza,554.267391,34262.737746,0.3212424,1.617697322
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,Q,Salud,3721.414973,22509.184758,2.156858396,16.532873194
+2023,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,11210.633154,27321.559114,6.497460889,41.032186733
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",15457.865661,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1251.587992,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,16350.306541,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1584.465456,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,F,Construcción,1805.751472,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,43962.825113,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4780.299357,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,9103.131739,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,748.952074,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,142.407795,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,8328.721275,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",1937.621313,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,704.134608,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,P,Enseñanza,376.106149,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,Q,Salud,2882.27769,,,
+2023,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,7814.850576,,,
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",24808.975805,84835.192941,13.338919931,29.243731222
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1848.742506,3649.736381,0.994004285,50.65413808
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,26369.591462,118927.001035,14.178008472,22.17292224
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",2357.501218,19960.058384,1.267546078,11.811093799
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,F,Construcción,3187.191234,47780.226716,1.713641426,6.670523463
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,72208.942041,186914.857406,38.824226514,38.631996965
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,9088.291369,26882.850277,4.886456895,33.807022973
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,14844.50939,29149.448251,7.981374311,50.925524429
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,848.60091,25613.618501999998,0.456263075,3.313084834
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,190.252456,39082.247667999996,0.102292102,0.48680019
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,9819.527183,64912.211209,5.279616857,15.127395909
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",2563.91862,19294.547097,1.378529507,13.288306832
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,900.031962,27465.078759,0.483915756,3.277004846
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,35160.27942,0.0,0.0
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,P,Enseñanza,590.765762,36067.561697,0.31763412,1.637942057
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,Q,Salud,4078.507066,24857.19353,2.192870823,16.407753599
+2024,corrientes,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,12284.040954,29515.510193000002,6.604699848,41.618934837
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,A,"Agricultura, ganadería, silvicultura y pesca",15456.709406,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,B,Explotación de minas y canteras,1229.998293,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,C,Industrias manufactureras,16857.276973,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,D-E,"Suministro de electricidad, agua y saneamiento",1699.294857,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,F,Construcción,1906.636276,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,G,Comercio y reparación de vehículos,45572.154035,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,H,Transporte y almacenamiento,4902.386115,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,I,Actividades de alojamiento y de servicio de comidas,9609.457214,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,J,Información y comunicaciones,794.454874,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,K,Actividades financieras y de seguros,137.609724,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,L,Actividades inmobiliarias,8740.094517,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,M,"Actividades profesionales, científicas y técnicas",2020.826751,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,N,Actividades de servicios administrativos y de apoyo,705.877632,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,O,Administración pública y defensa,0,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,P,Enseñanza,388.231717,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,Q,Salud,3070.329049,,,
+2024,volumen_encadenado_2013,millones_de_quetzales,True,referencia_2013_snapshot_2026-11-25,R-S-T-U,Otras actividades de servicios,8303.070432,,,
