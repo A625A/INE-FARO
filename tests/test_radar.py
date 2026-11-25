@@ -170,3 +170,35 @@ def test_corte_completo_y_ejemplos(tmp_path):
     r4 = cards["R4:2023:16:A"]["magnitudes"]
     assert round(r4["lq"], 2) == 1.97
     assert round(r4["participacion_local_pct"], 2) == 20.31
+
+
+def test_restriccion_laboral_aplica_a_todas_las_variantes_y_escenarios(tmp_path):
+    import shutil
+
+    data = tmp_path / "data"
+    inputs = data / "processed"
+    inputs.mkdir(parents=True)
+    out = tmp_path / "salida"
+    for name in ("matriz_departamental.csv", "indicadores_encovi_nacional_2023.csv"):
+        shutil.copy(ROOT / "data/processed" / name, inputs)
+    path = inputs / "matriz_departamental.csv"
+    with path.open() as stream:
+        table = list(csv.DictReader(stream))
+    for row in table:
+        if row["depto_id"] in ("06", "16"):
+            for field in ("valor", "ic95_inf", "ic95_sup"):
+                row[f"ocupacion_sector_informal_{field}_2023"] = "76.54321999"
+            row["ocupacion_sector_informal_estado_2023"] = "no_publicable"
+    with path.open("w") as stream:
+        writer = csv.DictWriter(stream, table[0])
+        writer.writeheader()
+        writer.writerows(table)
+    run_radar(out, "--mode", "exploratory", "--set", "r4_s=8", data=data)
+    report = read_run(out)
+    assert report["cobertura"]["encovi_departamental"]["ocupacion_sector_informal"]["elegibles"] == 20
+    assert all(not {"06", "16"}.intersection(f["territorios"]) for f in report["hallazgos"])
+    for scenario in report["sensibilidad"]:
+        for ident in scenario["aparecen"] + scenario["desaparecen"]:
+            assert not {"06", "16"}.intersection(ident.split(":")[2].split("-"))
+    for name in ("hallazgos.csv", "hallazgos.json", "radar_fuentes.json"):
+        assert b"76.54321999" not in (out / name).read_bytes()
