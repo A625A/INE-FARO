@@ -179,9 +179,9 @@ Regla operativa del prototipo:
 
 1. Todo indicador departamental informa `n` no ponderado, ponderador usado, CV e
    IC al 95%.
-2. Si `n < 30` o `CV > 30%`, la etiqueta es `no_publicable`. Todos los
-   departamentos calculados cumplen `n >= 357` y `CV <= 9.96%`, por lo que son
-   `publicable` bajo esta regla.
+2. Si `n < 30`, el CV es indeterminado o `CV > 30%`, la etiqueta es
+   `no_publicable`. En M-01 hay 61 estimaciones `publicable_con_reserva` y cinco
+   restricciones de pobreza extrema. M-03 suprime sus valores y ambos límites del IC95.
 3. El cálculo implementado es una aproximación con `DEPTO` como estrato y `UPM`
    como PSU, sin factor de corrección por población finita. La varianza de una
    razón se linealiza con `z_i = w_i * (y_i - r * x_i)` y se suma, por estrato,
@@ -271,8 +271,8 @@ hogares ni establece una relación causal.
 2. I-02 quedó ejecutado y validado: notebook con salidas, diccionario
    reconciliado, códigos y universo confirmados, `NO_HOGAR` verificado,
    ponderadores asignados y 70.3% reproducido.
-3. I-03 quedó documentado con precisión aproximada por `DEPTO`/`UPM` y todos los
-   departamentos son `publicable` según la regla local.
+3. I-03 documenta la precisión aproximada por `DEPTO`/`UPM`. La política de
+   publicación y los cinco casos restringidos se aplican en el corte M-01/M-03.
 4. Queda pendiente descargar los PDF de F8 al repositorio, obtener una tasa de
    respuesta documental y agregar la distinción OIT como archivo local si se
    requiere cita offline. Ninguno de esos pendientes cambia los valores calculados.

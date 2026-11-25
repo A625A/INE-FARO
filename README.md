@@ -3,14 +3,35 @@
 Prototipo del Datatón INE Guatemala 2026 para investigar contrastes territoriales
 entre ocupación en el sector informal, condiciones de vida y producción.
 
-Esta entrega implementa **I-04 (PIB Banguat)** e **I-05 (auditoría DINESE)**.
-Todavía no hay app, indicadores ENCOVI calculados ni radar. Esta sesión preparó main
-localmente y no publicó ramas ni integró trabajo remoto. Al cierre aparecieron
-main/master remotos por cambios concurrentes del equipo; ver docs/git_integracion.md.
+M-05 integra Empleo e ingresos (ENEIC IV-2025), Territorio y hogares
+(ENCOVI y Banguat 2023), Producción (VAB informal nacional), Radar de inteligencia
+y Metodología y calidad. La demostración funciona con los agregados y recursos
+locales. Abre por defecto en Empleo e ingresos.
 
-## Instalar y reproducir
+## Ejecutar la demostración
 
-Python 3.10 o superior. Desde la raíz del repositorio:
+Desde la raíz, con Python 3.12 o posterior. Se verificó con Python 3.14.
+
+```sh
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
+
+En Windows, activar con `.venv\Scripts\Activate.ps1`. Con las dependencias
+instaladas, abrir [Streamlit local](http://localhost:8501). La ejecución no
+requiere XLSX, microdatos, servicios cartográficos ni internet.
+
+La copia portátil incluye archivos regulares para el radar. Desde un checkout
+del repositorio, generar el ZIP con
+`python -m scripts.empacar_m05 --output faro-m05.zip`.
+Consulta la [documentación de M-05](docs/M05_IMPLEMENTACION.md) y el
+[informe de evaluación](docs/evaluation/m05_final/INFORME.md).
+
+## Reproducir I-04 e I-05
+
+Desde la raíz, con el entorno anterior o con Python 3.12 o posterior:
 
 ```sh
 python3 -m venv .venv

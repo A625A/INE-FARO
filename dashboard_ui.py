@@ -45,7 +45,8 @@ def selector(label, opciones, campo, default=None, formato=str, contenedor=st):
     if valor not in opciones:
         valor = opciones[0]
     st.session_state[campo] = valor
-    st.session_state[clave] = valor
+    if st.session_state.get(clave) != valor:
+        st.session_state[clave] = valor
     return contenedor.selectbox(label, opciones, format_func=formato, key=clave,
                                 on_change=conservar, args=(campo, clave))
 

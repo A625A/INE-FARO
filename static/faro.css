@@ -48,6 +48,7 @@
 @media (max-width: 640px) {
     [data-testid="stMainBlockContainer"] {padding: 48px 16px 32px;}
     [data-testid="stHorizontalBlock"] {gap: 16px;}
+    .faro-cifras {grid-template-columns: repeat(auto-fit, minmax(min(148px, 100%), 1fr)); gap: 8px 16px;}
     .st-key-seccion [role="radiogroup"] {gap: 0 8px;}
     .st-key-seccion [role="radiogroup"] label {padding: 8px 2px;}
     .st-key-seccion [role="radiogroup"] label p {font-size: .875rem;}

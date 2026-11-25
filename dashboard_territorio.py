@@ -91,7 +91,9 @@ def mapa_departamental(geometrias, datos, indicador, seleccionado):
                     scale=alt.Scale(scheme='blues', zero=True),
                     legend=alt.Legend(orient='bottom', direction='horizontal', gradientLength=140))
     if indicador == PREVALENTE:
-        eje = alt.Color('valor:N', scale=alt.Scale(scheme='tableau20'), legend=None)
+        eje = alt.Color('valor_visible:N', title='Actividad', scale=alt.Scale(scheme='tableau20'),
+                        legend=alt.Legend(orient='bottom', direction='horizontal', columns=2,
+                                          labelLimit=125))
     seleccion = alt.selection_point(name='departamento_mapa', fields=['depto_id'],
                                     toggle=False, clear=False)
     return alt.Chart(alt.Data(values=features)).mark_geoshape().project(type='mercator').encode(

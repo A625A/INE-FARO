@@ -45,7 +45,9 @@ def mostrar_produccion(nacional, grupos):
             ('Comercio y reparación', f'{comercio:.2f} %', 'Del VAB del sector informal'),
         ])
     cifras(medidas)
-    st.caption(f'{anio} · {"Cifras preliminares y revisables" if corte.preliminar else "Serie histórica"} · {PRECIOS[precio]} · Revisión {corte.revision}.')
+    revision = corte.revision.replace('referencia_2013_snapshot_', 'edición consultada el ')
+    estado = 'Cifras preliminares y revisables' if corte.preliminar else 'Serie histórica'
+    st.caption(f'{anio} · {estado} · {PRECIOS[precio]} · {revision}.')
     st.divider()
     if nominal:
         st.subheader('Evolución de la participación informal')
