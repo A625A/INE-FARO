@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from xlsx_fixture import xlsx_minimo
+from xlsx_fixture import xlsx_minimo, manifiesto_fixture
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -54,9 +54,11 @@ def test_dinese_rechaza_categorias_invalidas_sin_publicar(cambio, error, tmp_pat
     headers = ['CÓDIGO', 'AÑO', 'SECCION_CIIU_4', 'TIPO_PERSONERIA', 'CLA_RANGO_VENTAS',
                'MOVIMIENTO_DE_VENTAS', 'NOMBRE_DEPARTAMENTO', 'NOMBRE_MUNICIPIO']
     xlsx_minimo(entrada / 'dinese-2023.xlsx', [headers, list(row.values())])
+    manifiesto = manifiesto_fixture(ROOT / 'data/reference/fuentes_I04_I05.json',
+                                    entrada, tmp_path / 'fixture.json')
     result = subprocess.run([sys.executable, str(ROOT / 'scripts/auditar_dinese.py'),
         '--input-dir', str(entrada), '--output-dir', str(tmp_path / 'salida'),
-        '--evidence-dir', str(tmp_path / 'evidencia')], capture_output=True, text=True)
+        '--evidence-dir', str(tmp_path / 'evidencia'), '--manifest', str(manifiesto)], capture_output=True, text=True)
     assert result.returncode != 0
     assert error in result.stderr
     assert not (tmp_path / 'salida').exists()
@@ -84,9 +86,23 @@ def test_dinese_rechaza_duplicados_esquema_y_conteos(modo, error, tmp_path):
     if modo == 'columnas':
         headers[0] = 'IDENTIFICADOR_NO_DOCUMENTADO'
     xlsx_minimo(entrada / 'dinese-2023.xlsx', [headers, *rows])
+    manifiesto = manifiesto_fixture(ROOT / 'data/reference/fuentes_I04_I05.json',
+                                    entrada, tmp_path / 'fixture.json')
     result = subprocess.run([sys.executable, str(ROOT / 'scripts/auditar_dinese.py'),
         '--input-dir', str(entrada), '--output-dir', str(tmp_path / 'salida'),
-        '--evidence-dir', str(tmp_path / 'evidencia')], capture_output=True, text=True)
+        '--evidence-dir', str(tmp_path / 'evidencia'), '--manifest', str(manifiesto)], capture_output=True, text=True)
     assert result.returncode != 0
     assert error in result.stderr
+    assert not (tmp_path / 'salida').exists()
+
+
+def test_dinese_sin_descarga_rechaza_snapshot_no_acreditado(tmp_path):
+    entrada = tmp_path / 'entrada'
+    entrada.mkdir()
+    xlsx_minimo(entrada / 'dinese-2023.xlsx', [['Archivo alterado']])
+    result = subprocess.run([sys.executable, str(ROOT / 'scripts/auditar_dinese.py'),
+        '--input-dir', str(entrada), '--output-dir', str(tmp_path / 'salida')],
+        capture_output=True, text=True)
+    assert result.returncode != 0
+    assert 'SHA-256' in result.stderr
     assert not (tmp_path / 'salida').exists()

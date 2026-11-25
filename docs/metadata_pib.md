@@ -88,6 +88,13 @@ permiten trabajar en otra ubicación. Primero se valida toda la tarea; después 
 escriben las salidas. Si falla la validación no se reemplazan salidas anteriores:
 no deben tratarse como resultado de la ejecución fallida.
 
+También sin descarga se exige coincidencia de SHA-256 con el manifiesto antes
+de procesar. Para un snapshot nuevo se deben revisar su origen y controles y
+actualizar el manifiesto explícitamente. `--manifest` selecciona otro manifiesto
+ya revisado, útil para versiones documentadas y pruebas; no acredita por sí solo
+que el operador haya obtenido los hashes de fuentes oficiales. Las pruebas
+semánticas usan manifiestos de fixtures sintéticos en directorios temporales.
+
 Evidencia técnica: `docs/evidencia/I-04.json`, con hashes y hoja/fila de encabezado/
 columna del año de cada bloque. Las pruebas usan el comando completo y controles
 literales de fuente; también alteran copias para detectar faltantes, duplicados,

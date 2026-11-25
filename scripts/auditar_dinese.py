@@ -25,12 +25,12 @@ PUBLICACIONES = {
 }
 
 
-def auditar(input_dir):
+def auditar(input_dir, manifiesto=None):
     resumen, evidencia = [], []
     codigos_seccion = {nombre: codigo for codigo, nombre in SECCIONES_CIIU.items()}
     for anio in (2023, 2024):
         path = input_dir / f'dinese-{anio}.xlsx'
-        fuente = procedencia(path)
+        fuente = procedencia(path, manifiesto)
         libro = load_workbook(path, read_only=True, data_only=True)
         conteos, codigos, departamentos, secciones = Counter(), set(), set(), set()
         faltantes = Counter()
@@ -105,15 +105,16 @@ def main():
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'data/processed')
     parser.add_argument('--evidence-dir', type=Path, default=ROOT / 'docs/evidencia')
     parser.add_argument('--download', action='store_true', help='Descargar snapshot oficial si falta; verificar SHA-256')
+    parser.add_argument('--manifest', type=Path, help='Manifiesto alternativo de snapshots previamente revisados')
     args = parser.parse_args()
     try:
         if args.download:
-            descargar_fuentes('dinese', args.input_dir)
-        filas, evidencia = auditar(args.input_dir)
+            descargar_fuentes('dinese', args.input_dir, args.manifest)
+        filas, evidencia = auditar(args.input_dir, args.manifest)
         escribir_csv(args.output_dir / 'dinese_resumen.csv', filas, list(filas[0]))
         escribir_json(args.evidence_dir / 'I-05.json', evidencia)
     except (ValueError, OSError, KeyError, StopIteration) as error:
-        print(f'I-05: {error}. No se generaron salidas nuevas; revise las anteriores.', file=sys.stderr)
+        print(f'I-05 falló: {error}. No use salidas previas o parciales como resultado de esta ejecución.', file=sys.stderr)
         return 1
     print(f'I-05 auditado: {len(filas)} agregados; crecimiento excluido del radar.')
     return 0

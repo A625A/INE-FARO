@@ -91,6 +91,10 @@ red. La descarga verifica SHA-256 y no reemplaza archivos distintos. Se validan
 ambos años antes de escribir CSV y `docs/evidencia/I-05.json`. Un fallo no debe
 confundirse con las salidas válidas de una ejecución anterior.
 
+La comprobación de hash es obligatoria con o sin descarga. `--manifest` permite
+seleccionar un snapshot previamente revisado; modificar hashes sin comprobar
+origen, universo y controles oficiales no acredita una fuente nueva.
+
 Para reconsiderar el uso temporal hacen falta documentación de cobertura y
 depuración comparable, tratamiento de revisiones y prueba del significado de
 los identificadores. No hay un bloqueo que requiera nueva decisión del usuario.
