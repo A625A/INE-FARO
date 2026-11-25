@@ -1,6 +1,8 @@
 """XLSX mínimos sintéticos y copias alteradas, sólo para probar errores del CLI."""
 
 import shutil
+import hashlib
+import json
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from zipfile import ZIP_DEFLATED, ZipFile
@@ -33,10 +35,10 @@ def xlsx_minimo(path, filas, titulo='Empresas 2023'):
         out.writestr('xl/worksheets/sheet1.xml', ET.tostring(hoja))
 
 
-def copiar_pib_alterado(origen, destino, cambios):
+def copiar_pib_alterado(origen, destino, cambios, archivo='5_PIB_total_por_departamento.xlsx'):
     destino.mkdir()
     for path in origen.glob('*.xlsx'):
-        if path.name != '5_PIB_total_por_departamento.xlsx':
+        if path.name != archivo:
             shutil.copyfile(path, destino / path.name)
             continue
         with ZipFile(path) as source, ZipFile(destino / path.name, 'w', ZIP_DEFLATED) as out:
@@ -55,3 +57,15 @@ def copiar_pib_alterado(origen, destino, cambios):
                             ET.SubElement(cell, f'{{{NS}}}v').text = str(valor)
                     contenido = ET.tostring(hoja)
                 out.writestr(item, contenido)
+
+
+def manifiesto_fixture(original, entrada, destino):
+    """Fija hashes de archivos sintéticos para ejercitar validación semántica."""
+    fuentes = json.loads(original.read_text())
+    for fuente in fuentes:
+        path = entrada / Path(fuente['path']).name
+        if path.exists():
+            fuente['sha256'] = hashlib.sha256(path.read_bytes()).hexdigest()
+            fuente['bytes'] = path.stat().st_size
+    destino.write_text(json.dumps(fuentes))
+    return destino
