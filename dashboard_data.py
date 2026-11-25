@@ -69,6 +69,8 @@ def leer_csv(ruta, columnas, **dtype):
     faltantes = set(columnas) - set(datos)
     if faltantes:
         raise ValueError(f'{ruta.name}: faltan {", ".join(sorted(faltantes))}.')
+    if set(datos) - set(columnas):
+        raise ValueError(f'{ruta.name}: el archivo contiene columnas ajenas al contrato público.')
     return datos[list(columnas)].copy()
 
 

@@ -1,12 +1,21 @@
 [browser]
 gatherUsageStats = false
 
+[server]
+enableStaticServing = true
+
 [theme]
 base = "light"
-primaryColor = "#174e61"
-backgroundColor = "#fcfcfa"
-secondaryBackgroundColor = "#f0f3f2"
-textColor = "#24343a"
+primaryColor = "#004080"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f1f5fa"
+textColor = "#10243b"
+font = "Ubuntu Sans"
+
+[[theme.fontFaces]]
+family = "Ubuntu Sans"
+url = "app/static/UbuntuSans.ttf"
+weight = "400 700"
 
 [client]
 toolbarMode = "viewer"

@@ -4,6 +4,8 @@ import streamlit as st
 
 from dashboard_utils import MAYOR, MODERADA, RESTRINGIDA, UMBRAL_PUBLICACION
 
+ETIQUETAS_PRECISION = {MAYOR: 'Mayor precisión relativa', MODERADA: 'Precisión limitada',
+                       RESTRINGIDA: RESTRINGIDA}
 COLORES = {MAYOR: '#175943', MODERADA: '#8a6000', RESTRINGIDA: '#575e62'}
 ETIQUETAS_ESTADO = {
     'publicable_con_reserva': 'Publicable con reserva', 'no_publicable': RESTRINGIDA,
@@ -20,7 +22,7 @@ METODO = (
 
 def marca(clase):
     return (f'<span class="marca" style="--tinta:{COLORES[clase]}">'
-            f'<span aria-hidden="true"></span>{clase}</span>')
+            f'<span aria-hidden="true"></span>{ETIQUETAS_PRECISION[clase]}</span>')
 
 
 def leyenda():
@@ -57,7 +59,7 @@ def grafica_cv(filas):
     linea = alt.Chart(alt.Data(values=[{'umbral': UMBRAL_PUBLICACION}])).mark_rule(
         color='#173f4a', strokeDash=[4, 3], size=2,
     ).encode(x='umbral:Q')
-    return (barras + etiquetas + linea).properties(height=alt.Step(32))
+    return (barras + etiquetas + linea).properties(height=max(104, 32 * len(datos)))
 
 
 def mostrar_calidad(encovi, nombres):
@@ -74,7 +76,9 @@ def mostrar_calidad(encovi, nombres):
         ('Departamento', 'Indicador', 'Clasificación'),
         (sorted(datos.departamento.unique()), nombres.values(), COLORES),
     ):
-        elegido = columna.selectbox(titulo, ['Todos', *opciones], key=f'calidad_{campo}')
+        etiquetas = ETIQUETAS_PRECISION if campo == 'clasificacion' else {}
+        elegido = columna.selectbox(titulo, ['Todos', *opciones], key=f'calidad_{campo}',
+                                   format_func=lambda o: etiquetas.get(o, o))
         if elegido != 'Todos':
             datos = datos.loc[datos[campo].eq(elegido)]
 
@@ -94,7 +98,7 @@ def mostrar_calidad(encovi, nombres):
     else:
         indicadores = ', '.join(altas.indicador.unique())
         st.caption(f'{indicadores} · La línea discontinua marca el umbral de publicación del 30 %.')
-        st.altair_chart(grafica_cv(altas), use_container_width=True)
+        st.altair_chart(grafica_cv(altas), width='stretch')
 
     st.subheader('Diagnóstico por estimación')
     st.caption('El exceso se expresa en puntos porcentuales por encima del 30 %. '
@@ -103,7 +107,8 @@ def mostrar_calidad(encovi, nombres):
               'cv': 'CV (%)', 'n': 'Muestra (n)', 'estado': 'Estado', 'exceso_pp': 'Exceso (pp)'}
     tabla = datos.sort_values(['departamento', 'indicador'])[list(campos)].copy()
     tabla['estado'] = tabla.estado.map(ETIQUETAS_ESTADO)
-    st.dataframe(tabla.rename(columns=campos), hide_index=True, use_container_width=True,
+    tabla['clasificacion'] = tabla.clasificacion.map(ETIQUETAS_PRECISION)
+    st.dataframe(tabla.rename(columns=campos), hide_index=True, width='stretch',
                  column_config={campo: st.column_config.NumberColumn(format='%.5f')
                                 for campo in ('CV (%)', 'Exceso (pp)')})
     with st.expander('Cómo interpretar la precisión'):

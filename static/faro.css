@@ -1,0 +1,54 @@
+:root {
+    --faro-azul: #004080;
+    --faro-tinta: #10243b;
+    --faro-secundario: #455971;
+    --faro-linea: #d6e0ea;
+    --faro-fondo: #f1f5fa;
+}
+[data-testid="stMainBlockContainer"] {max-width: 1320px; padding-top: 56px; padding-bottom: 48px;}
+[data-testid="stMain"] :is(h1, h2, h3) {color: var(--faro-azul);}
+[data-testid="stMain"] h1 {font-size: clamp(2.25rem, 4.4vw, 3.25rem); line-height: 1.05; padding: 0;}
+[data-testid="stMain"] h2 {font-size: clamp(1.42rem, 2.4vw, 1.75rem);}
+[data-testid="stCaptionContainer"] p {color: var(--faro-secundario); font-size: .875rem;}
+[data-testid="stHorizontalBlock"] {gap: 24px;}
+[data-testid="stMetricValue"], .faro-cifras {font-variant-numeric: tabular-nums;}
+.faro-cabecera {
+    border-top: 4px solid var(--faro-azul);
+    padding: 14px 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.faro-marca {display: block; font-size: 1.7rem; font-weight: 700; line-height: 1.05; color: var(--faro-azul);}
+.faro-dataton {display: block; font-size: .875rem; color: var(--faro-secundario); margin-top: 6px;}
+.faro-ine {display: block; width: 144px; max-width: 34%; height: auto;}
+.st-key-seccion [role="radiogroup"] {
+    flex-wrap: wrap; gap: 4px 12px; border-bottom: 1px solid var(--faro-linea); padding: 0 0 10px;
+}
+.st-key-seccion [role="radiogroup"] label {padding: 5px 8px 5px 2px;}
+.st-key-seccion label:has(input:checked) p {color: var(--faro-azul); font-weight: 700;}
+[data-testid="stMain"] :is(button, input, [role="combobox"]):focus-visible {
+    outline: 2px solid var(--faro-azul);
+    outline-offset: 3px;
+}
+.faro-pregunta {font-size: 1.12rem; color: var(--faro-secundario); margin: 0 0 2px;}
+.faro-cifras {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+    gap: 12px 24px; margin: 8px 0;
+}
+.faro-cifras > div {border-top: 2px solid var(--faro-linea); padding: 12px 0;}
+.faro-cifras :is(p, small) {color: var(--faro-secundario); margin: 0; line-height: 1.3;}
+.faro-cifras p {font-size: .94rem;}
+.faro-cifras strong {display: block; color: var(--faro-azul); font-size: clamp(1.3rem, 2.45vw, 2.2rem); margin: 4px 0;}
+.faro-cifras small {display: block; font-size: .875rem;}
+.marca {display: inline-flex; align-items: center; gap: 8px; color: var(--tinta); font-weight: 600;}
+.marca > span {width: 12px; height: 12px; border-radius: 50%; background: var(--tinta);}
+.leyenda {display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 12px 0; border-block: 1px solid var(--faro-linea);}
+@media (max-width: 640px) {
+    [data-testid="stMainBlockContainer"] {padding: 48px 16px 32px;}
+    [data-testid="stHorizontalBlock"] {gap: 16px;}
+    .st-key-seccion [role="radiogroup"] {gap: 0 8px;}
+    .st-key-seccion [role="radiogroup"] label {padding: 8px 2px;}
+    .st-key-seccion [role="radiogroup"] label p {font-size: .875rem;}
+}
