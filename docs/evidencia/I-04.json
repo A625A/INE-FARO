@@ -1,0 +1,317 @@
+{
+  "anio": 2023,
+  "cobertura_original": [
+    2013,
+    2024
+  ],
+  "departamentos": 22,
+  "filas_pib": 836,
+  "filas_per_capita": 22,
+  "insumos": [
+    {
+      "path": "data/raw/banguat/5_PIB_total_por_departamento.xlsx",
+      "url": "https://banguat.gob.gt/sites/default/files/banguat/Publica/PIB_Regional/5_PIB_total_por_departamento.xlsx",
+      "sha256": "8c0001e23244fb1f8f62632ab964296befc1c9f96b2d3fbcae62d515b48c7797",
+      "bytes": 167382,
+      "fecha_verificacion": "2026-11-24",
+      "catalogo": "https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024",
+      "coincide_snapshot": true
+    },
+    {
+      "path": "data/raw/banguat/7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "url": "https://banguat.gob.gt/sites/default/files/banguat/Publica/PIB_Regional/7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "sha256": "7acce7a4f90c92245fe481e3c853e2b48659c8e84c9176c064bad4e09db6951a",
+      "bytes": 613362,
+      "fecha_verificacion": "2026-11-24",
+      "catalogo": "https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024",
+      "coincide_snapshot": true
+    },
+    {
+      "path": "data/raw/banguat/8_PIB_Per_Capita_por_departamento.xlsx",
+      "url": "https://banguat.gob.gt/sites/default/files/banguat/Publica/PIB_Regional/8_PIB_Per_Capita_por_departamento.xlsx",
+      "sha256": "8bbd3c1941cda67cbf28cff1d4c161fb5047139b7b4741b10212111e70d6274d",
+      "bytes": 146419,
+      "fecha_verificacion": "2026-11-24",
+      "catalogo": "https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024",
+      "coincide_snapshot": true
+    }
+  ],
+  "bloques": [
+    {
+      "archivo": "5_PIB_total_por_departamento.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "PIB Corriente",
+      "fila_encabezado": 7,
+      "columna_anio": 14
+    },
+    {
+      "archivo": "5_PIB_total_por_departamento.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "PIB Constante",
+      "fila_encabezado": 7,
+      "columna_anio": 14
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "A",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "A",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "B",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "B",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "C",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "C",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "D - E",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "D - E",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "F",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "F",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "G",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "G",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "H",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "H",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "I",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "I",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "J",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "J",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "K",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "K",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "L",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "L",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "M",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "M",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "N",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "N",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "O",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "O",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "P",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "P",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "Q",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "Q",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "R-S-T-U",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "R-S-T-U",
+      "fila_encabezado": 70,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "IPNS",
+      "fila_encabezado": 8,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+      "tipo_precio": "volumen_encadenado_2013",
+      "hoja": "IPNS",
+      "fila_encabezado": 68,
+      "columna_anio": 15
+    },
+    {
+      "archivo": "8_PIB_Per_Capita_por_departamento.xlsx",
+      "tipo_precio": "corrientes",
+      "hoja": "PIB Per Cápita",
+      "fila_encabezado": 7,
+      "columna_anio": 14
+    }
+  ],
+  "conciliacion_corriente": "validada",
+  "volumen_encadenado": "No se exige aditividad; referencia 2013",
+  "advertencia": "Producción económica; no es ingreso ni consumo de hogares."
+}

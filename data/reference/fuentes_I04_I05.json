@@ -1,0 +1,42 @@
+[
+  {
+    "path": "data/raw/banguat/5_PIB_total_por_departamento.xlsx",
+    "url": "https://banguat.gob.gt/sites/default/files/banguat/Publica/PIB_Regional/5_PIB_total_por_departamento.xlsx",
+    "sha256": "8c0001e23244fb1f8f62632ab964296befc1c9f96b2d3fbcae62d515b48c7797",
+    "bytes": 167382,
+    "fecha_verificacion": "2026-11-24",
+    "catalogo": "https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024"
+  },
+  {
+    "path": "data/raw/banguat/7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+    "url": "https://banguat.gob.gt/sites/default/files/banguat/Publica/PIB_Regional/7_Resultados_por_actividad_economica_en_departamentos.xlsx",
+    "sha256": "7acce7a4f90c92245fe481e3c853e2b48659c8e84c9176c064bad4e09db6951a",
+    "bytes": 613362,
+    "fecha_verificacion": "2026-11-24",
+    "catalogo": "https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024"
+  },
+  {
+    "path": "data/raw/banguat/8_PIB_Per_Capita_por_departamento.xlsx",
+    "url": "https://banguat.gob.gt/sites/default/files/banguat/Publica/PIB_Regional/8_PIB_Per_Capita_por_departamento.xlsx",
+    "sha256": "8bbd3c1941cda67cbf28cff1d4c161fb5047139b7b4741b10212111e70d6274d",
+    "bytes": 146419,
+    "fecha_verificacion": "2026-11-24",
+    "catalogo": "https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024"
+  },
+  {
+    "path": "data/raw/dinese/dinese-2023.xlsx",
+    "url": "https://datos.ine.gob.gt/dataset/794d0a7e-6c2b-4c21-809f-f23b8936407c/resource/a2acb752-479b-4c1f-8786-d2d7ee7fd4a9/download/dinese-2023.xlsx",
+    "sha256": "26212518ee2e66cd1c73b608750371bf74fd4ee1b4bff868215030e57b8d54dc",
+    "bytes": 15639188,
+    "fecha_verificacion": "2026-11-24",
+    "catalogo": "https://datos.ine.gob.gt/dataset/directorio-nacional-estadistico-de-empresas-dinese"
+  },
+  {
+    "path": "data/raw/dinese/dinese-2024.xlsx",
+    "url": "https://datos.ine.gob.gt/dataset/794d0a7e-6c2b-4c21-809f-f23b8936407c/resource/d6836e3d-c7fe-457b-adbf-26ab462dfb56/download/dinese-2024.xlsx",
+    "sha256": "7da9cbee0e64004d5869215c73ac0b14e0e3758b2577d7294b8f2906d523a04f",
+    "bytes": 22072728,
+    "fecha_verificacion": "2026-11-24",
+    "catalogo": "https://datos.ine.gob.gt/dataset/directorio-nacional-estadistico-de-empresas-dinese"
+  }
+]
