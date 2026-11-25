@@ -48,16 +48,18 @@ SECCIONES_CIIU = dict(zip('ABCDEFGHIJKLMNOPQRSTU', [
 ]))
 
 
-def procedencia(path):
-    fuentes = json.loads((ROOT / 'data/reference/fuentes_I04_I05.json').read_text())
+def procedencia(path, manifiesto=None):
+    fuentes = json.loads((manifiesto or ROOT / 'data/reference/fuentes_I04_I05.json').read_text())
     fuente = next(f for f in fuentes if Path(f['path']).name == path.name)
     digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    if digest != fuente['sha256']:
+        raise ValueError(f'SHA-256 distinto del manifiesto: {path.name}; revisar el snapshot')
     return {**fuente, 'sha256': digest, 'bytes': path.stat().st_size,
-            'coincide_snapshot': digest == fuente['sha256']}
+            'coincide_snapshot': True}
 
 
-def descargar_fuentes(grupo, destino):
-    fuentes = json.loads((ROOT / 'data/reference/fuentes_I04_I05.json').read_text())
+def descargar_fuentes(grupo, destino, manifiesto=None):
+    fuentes = json.loads((manifiesto or ROOT / 'data/reference/fuentes_I04_I05.json').read_text())
     for fuente in fuentes:
         if Path(fuente['path']).parent.name != grupo:
             continue

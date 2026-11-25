@@ -4,8 +4,9 @@ Prototipo del Datatón INE Guatemala 2026 para investigar contrastes territorial
 entre ocupación en el sector informal, condiciones de vida y producción.
 
 Esta rama entrega **I-04 (PIB Banguat)**. I-05 se desarrolla en una rama separada.
-Todavía no hay app, indicadores ENCOVI calculados ni radar. Main está preparado
-sólo localmente; no se publicaron ramas ni se integró trabajo del equipo.
+Todavía no hay app, indicadores ENCOVI calculados ni radar. Esta sesión preparó main
+localmente y no publicó ramas ni integró trabajo remoto. Al cierre aparecieron
+main/master remotos por cambios concurrentes del equipo; ver docs/git_integracion.md.
 
 ## Instalar y reproducir
 
@@ -27,6 +28,8 @@ existentes distintos ni acepta automáticamente una revisión oficial nueva.
 Los binarios ya rastreados se conservan; nuevas descargas quedan ignoradas.
 
 Los comandos admiten `--input-dir`, `--output-dir` y `--evidence-dir`.
+El SHA-256 se exige con y sin descarga. `--manifest` permite elegir otro snapshot
+previamente revisado; el operador debe acreditar su origen oficial y controles.
 PIB admite `--year` entre 2013 y 2024, por defecto 2023. Al probar otro año usar
 otro directorio para conservar los CSV 2023 destinados a ENCOVI.
 Cada tarea valida sus insumos completos antes de escribir. Si una ejecución

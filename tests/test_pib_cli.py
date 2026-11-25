@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from xlsx_fixture import copiar_pib_alterado
+from xlsx_fixture import copiar_pib_alterado, manifiesto_fixture
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -51,10 +51,12 @@ def test_pib_2023_conserva_departamentos_medidas_y_conciliacion(tmp_path):
 ])
 def test_pib_rechaza_insumos_invalidos_sin_publicar(cambios, error, tmp_path):
     copiar_pib_alterado(ROOT / 'data/raw/banguat', tmp_path / 'entrada', cambios)
+    manifiesto = manifiesto_fixture(ROOT / 'data/reference/fuentes_I04_I05.json',
+                                    tmp_path / 'entrada', tmp_path / 'fixture.json')
     result = subprocess.run(
         [sys.executable, str(ROOT / 'scripts/procesar_pib.py'),
          '--input-dir', str(tmp_path / 'entrada'), '--output-dir', str(tmp_path / 'salida'),
-         '--evidence-dir', str(tmp_path / 'evidencia')], capture_output=True, text=True)
+         '--evidence-dir', str(tmp_path / 'evidencia'), '--manifest', str(manifiesto)], capture_output=True, text=True)
     assert result.returncode != 0
     assert error in result.stderr
     assert not (tmp_path / 'salida').exists()
@@ -82,4 +84,15 @@ def test_pib_descarga_no_sobrescribe_un_snapshot_distinto(tmp_path):
     assert result.returncode != 0
     assert 'SHA-256' in result.stderr
     assert (tmp_path / 'entrada/5_PIB_total_por_departamento.xlsx').read_bytes() == original
+    assert not (tmp_path / 'salida').exists()
+
+
+def test_pib_sin_descarga_rechaza_per_capita_alterado(tmp_path):
+    copiar_pib_alterado(ROOT / 'data/raw/banguat', tmp_path / 'entrada', {'N9': 1},
+                        archivo='8_PIB_Per_Capita_por_departamento.xlsx')
+    result = subprocess.run([sys.executable, str(ROOT / 'scripts/procesar_pib.py'),
+        '--input-dir', str(tmp_path / 'entrada'), '--output-dir', str(tmp_path / 'salida'),
+        '--evidence-dir', str(tmp_path / 'evidencia')], capture_output=True, text=True)
+    assert result.returncode != 0
+    assert 'SHA-256' in result.stderr
     assert not (tmp_path / 'salida').exists()

@@ -85,11 +85,11 @@ def bloques(hoja, anio, per_capita=False, precio_unico=None):
     return encontrados
 
 
-def procesar(input_dir, anio):
+def procesar(input_dir, anio, manifiesto=None):
     tablas, per_capita, controles, origenes, trazas = [], [], [], [], []
     for tipo, nombre in ARCHIVOS.items():
         path = input_dir / nombre
-        fuente = procedencia(path)
+        fuente = procedencia(path, manifiesto)
         origenes.append(fuente)
         libro = load_workbook(path, read_only=True, data_only=True)
         try:
@@ -159,12 +159,13 @@ def main():
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'data/processed')
     parser.add_argument('--evidence-dir', type=Path, default=ROOT / 'docs/evidencia')
     parser.add_argument('--download', action='store_true', help='Descargar snapshot oficial si falta; verificar SHA-256')
+    parser.add_argument('--manifest', type=Path, help='Manifiesto alternativo de snapshots previamente revisados')
     parser.add_argument('--year', type=int, choices=range(2013, 2025), default=2023)
     args = parser.parse_args()
     try:
         if args.download:
-            descargar_fuentes('banguat', args.input_dir)
-        filas, per_capita, controles, evidencia = procesar(args.input_dir, args.year)
+            descargar_fuentes('banguat', args.input_dir, args.manifest)
+        filas, per_capita, controles, evidencia = procesar(args.input_dir, args.year, args.manifest)
         escribir_csv(args.output_dir / 'pib_departamental.csv', filas,
                      ['depto_id', 'departamento', 'anio', 'sector', 'pib_valor',
                       'unidad', 'tipo_precio', 'fuente', 'medida'])
@@ -172,8 +173,8 @@ def main():
                      ['depto_id', 'departamento', 'anio', 'pib_per_capita', 'unidad', 'tipo_precio', 'fuente'])
         escribir_csv(args.output_dir / 'pib_conciliacion.csv', controles, list(controles[0]))
         escribir_json(args.evidence_dir / 'I-04.json', evidencia)
-    except (ValueError, OSError, KeyError) as error:
-        print(f'I-04: {error}. No se generaron salidas nuevas; revise las anteriores.', file=sys.stderr)
+    except (ValueError, OSError, KeyError, StopIteration) as error:
+        print(f'I-04 falló: {error}. No use salidas previas o parciales como resultado de esta ejecución.', file=sys.stderr)
         return 1
     print(f'I-04 validado: {len(filas)} filas y 22 departamentos, año {args.year}.')
     return 0
