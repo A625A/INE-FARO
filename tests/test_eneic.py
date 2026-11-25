@@ -78,3 +78,90 @@ def test_codigos_dos_digitos_y_conciliacion(mapa):
     df.loc[0, "P05C04_1D"] = 10
     t = e.resumir(e.preparar(df, mapa))
     assert "R-S-T-U" in t.categoria.values
+
+
+def test_publicacion_solo_celdas_conciliadas(mapa):
+    t = e.resumir(e.preparar(personas(), mapa))
+    ref = [dict(dimension='nacional', categoria='GT', indicador='tasa_sector_informal',
+                valor=50, decimales=1, unidad='porcentaje', referencia='prueba sintética')]
+    p = e.publicar(t, ref)
+    assert len(p) == 1
+    assert p.iloc[0].valor == 50
+    assert p.iloc[0].denominador == 4
+    assert p.iloc[0].estado == 'oficial_conciliado'
+    assert 'mediana_ingreso' not in p.indicador.values
+    t.loc[t.dimension.eq('nacional'), 'tasa_sector_informal'] = 49
+    with pytest.raises(ValueError, match='Conciliación'):
+        e.publicar(t, ref)
+
+
+def test_control_independiente_detecta_diferencia(mapa):
+    t = e.resumir(e.preparar(personas(), mapa))
+    with pytest.raises(ValueError, match='independiente'):
+        e.validar_replica(t, {'nacional': {'volumenes': {'ocupados': {'n': 8}}}})
+
+
+def test_particiones_y_mediana_con_pesos_desiguales(mapa):
+    df = personas()
+    df.loc[1, 'FACTOR'] = 3
+    df['YLAB_PUBLI'] = df.YLAB_PUBLI.astype(object)
+    df.loc[2, 'YLAB_PUBLI'] = ' '
+    t = e.resumir(e.preparar(df, mapa))
+    nacional = t[t.dimension.eq('nacional')].iloc[0]
+    assert nacional.mediana_ingreso == 100
+    for dim, g in t.groupby('dimension'):
+        assert g.n_ocupados.sum() == nacional.n_ocupados
+        assert g.peso_ocupados.sum() == nacional.peso_ocupados
+
+
+def test_cli_fallo_hash_conserva_salida(tmp_path):
+    publico = tmp_path/'data/processed/eneic_iv_2025/agregados_publicos.csv'
+    publico.parent.mkdir(parents=True)
+    publico.write_text('previo\n')
+    raw = tmp_path/'raw'
+    raw.mkdir()
+    (raw/'Base-de-datos-Personas-ENEIC-IV-2025.xlsx').write_bytes(b'alterado')
+    assert e.main(['--input-dir', str(raw), '--output-root', str(tmp_path)]) == 1
+    assert publico.read_text() == 'previo\n'
+
+
+def test_datos_reales_publicacion_y_replica():
+    """Verifica las salidas ya generadas, sin repetir lectura del XLSX completo."""
+    root = Path(__file__).resolve().parents[1]
+    tabla = pd.read_csv(root/'docs/evidencia/eneic_iv_2025/diagnosticos_internos.csv',
+                        dtype={'categoria':str})
+    import json
+    replica = json.loads((root/'docs/evaluation/eneic_iv_2025/eneic_resultado_independiente.json').read_text())
+    e.validar_replica(tabla,replica)
+    publicos = pd.read_csv(root/'data/processed/eneic_iv_2025/agregados_publicos.csv')
+    assert len(publicos) == 21
+    assert set(publicos.dimension) == {'nacional','dominio','rama_ine'}
+    assert publicos.estado.eq('oficial_conciliado').all()
+    assert not publicos.indicador.isin(['mediana_ingreso','composicion_informal_pct']).any()
+    for _, grupo in tabla.groupby('dimension'):
+        assert grupo.n_ocupados.sum() == 21233
+        assert grupo.peso_ocupados.sum() == 7944838
+    assert tabla.loc[tabla.dimension.eq('grupo_ciiu'),'composicion_informal_pct'].sum() == pytest.approx(100)
+
+
+def test_volumen_nacional_derivado_y_numerador(mapa):
+    t = e.resumir(e.preparar(personas(), mapa))
+    ref = [dict(dimension='nacional',categoria='GT',indicador='peso_informal',valor=2,
+                decimales=0,unidad='personas',referencia='control derivado')]
+    p = e.publicar(t,ref)
+    assert p.iloc[0].valor == 2
+    assert p.iloc[0].denominador == 4
+    assert p.iloc[0].n == 2
+
+
+def test_orden_de_personas_no_cambia_agregados(mapa):
+    df = personas()
+    a = e.resumir(e.preparar(df,mapa)).to_csv(index=False)
+    b = e.resumir(e.preparar(df.iloc[::-1],mapa)).to_csv(index=False)
+    assert a == b
+
+
+def test_clave_agregada_duplicada_se_rechaza(mapa):
+    t = e.resumir(e.preparar(personas(),mapa))
+    with pytest.raises(ValueError,match='duplicada'):
+        e.publicar(pd.concat([t,t]),[])

@@ -2,7 +2,6 @@
 import argparse
 import hashlib
 import json
-import os
 import tempfile
 from operator import itemgetter
 from pathlib import Path
@@ -45,7 +44,7 @@ def leer_diccionario(path):
 
 def mapa_divisiones(catalogos):
     sectores = pd.read_csv(ROOT / 'data/reference/sectores_ciiu.csv').set_index(
-        'seccion_codigo', verify_integrity=True).sector_banguat
+        'seccion_codigo').sector_banguat
     mapa = {d: (s, sectores[s], r) for s, a, b, r in SECCIONES for d in range(a, b+1)}
     if set(catalogos['P05C04_2D']) != set(mapa) | {999}:
         raise ValueError('P05C04_2D: catálogo distinto de CIIU Rev.4')
@@ -137,3 +136,125 @@ def resumir(ocupados):
                 cobertura_ingreso_pct=porcentaje(py,total), media_ingreso=media, mediana_ingreso=mediana,
                 estado='solo_revision_interna'))
     return pd.DataFrame(filas)
+
+
+def publicar(tabla, referencias):
+    """Lista cerrada de celdas oficiales. El denominador cambia con el indicador."""
+    indice = tabla.set_index(['dimension', 'categoria'])
+    if not indice.index.is_unique:
+        raise ValueError('Clave agregada duplicada')
+    nacional = indice.loc[('nacional', 'GT')].peso_ocupados
+    filas = []
+    for ref in referencias:
+        fila = indice.loc[(ref['dimension'], ref['categoria'])]
+        ind = ref['indicador']
+        denominador, n = fila.peso_ocupados, fila.n_ocupados
+        cobertura = 100.0
+        if ind == 'composicion_ocupados_pct':
+            denominador = nacional
+            valor = porcentaje(fila.peso_ocupados, nacional)
+        elif ind == 'media_ingreso':
+            denominador, n = fila.peso_ingreso, fila.n_ingreso
+            cobertura = fila.cobertura_ingreso_pct
+            valor = fila[ind]
+        elif ind == 'tasa_sector_informal':
+            denominador, n = fila.peso_clasificados, fila.n_clasificados
+            cobertura = fila.cobertura_condicion_pct
+            valor = fila[ind]
+        elif ind in ('peso_informal', 'peso_formal'):
+            denominador, n = fila.peso_clasificados, fila.n_clasificados
+            cobertura = fila.cobertura_condicion_pct
+            valor = fila[ind]
+        elif ind == 'peso_ocupados':
+            valor = fila[ind]
+        else:
+            raise ValueError('Indicador sin autorización de publicación')
+        if not np.isfinite(valor) or round(valor, ref['decimales']) != ref['valor']:
+            raise ValueError(f'Conciliación fallida: {ref}')
+        filas.append(dict(periodo=PERIODO, dimension=ref['dimension'], categoria=ref['categoria'],
+            indicador=ind, valor=valor, valor_oficial=ref['valor'], unidad=ref['unidad'],
+            denominador=denominador, n=int(n), n_ocupados=int(fila.n_ocupados),
+            cobertura_pct=cobertura, ponderador='FACTOR', fuente='INE ENEIC IV-2025',
+            referencia=ref['referencia'], estado='oficial_conciliado',
+            tipo_validacion=ref.get('tipo_validacion','contraste_directo_boletin'),
+            precision='agregado_oficial_validado', ic95_inf=ref.get('ic95_inf'), ic95_sup=ref.get('ic95_sup')))
+    return pd.DataFrame(filas)
+
+
+def validar_replica(tabla, replica):
+    indice = tabla.set_index(['dimension','categoria'])
+    grupos = [('nacional', 'GT', replica['nacional'])]
+    grupos += [('dominio', next(nombre for nombre in DOMINIOS.values() if nombre.casefold() == k.casefold()), v) for k,v in replica.get('dominios', {}).items()]
+    for dim, cat, r in grupos:
+        f = indice.loc[(dim,cat)]
+        pares = [(f.n_ocupados, r['volumenes']['ocupados']['n'])]
+        if f.n_ocupados != pares[0][1]:
+            raise ValueError('Diferencia con cálculo independiente: n ocupados')
+        pares += [(f.peso_ocupados,r['volumenes']['ocupados']['personas_expandidas']),
+                  (f.peso_informal,r['volumenes']['informal']['personas_expandidas']),
+                  (f.peso_formal,r['volumenes']['formal']['personas_expandidas']),
+                  (f.tasa_sector_informal,r['tasas_pct']['informalidad'])]
+        y = r['ingresos']['ocupados']
+        pares += [(f.n_ingreso,y['n_valido']), (f.n_ingreso_cero,y['n_ceros']),
+                  (f.peso_ingreso,y['peso_valido']), (f.media_ingreso,y['media_quetzales']),
+                  (f.mediana_ingreso,y['mediana_quetzales']),
+                  (f.cobertura_ingreso_pct,y['cobertura_ponderada_pct'])]
+        if not all(np.isclose(a,b,rtol=0,atol=1e-8) for a,b in pares):
+            raise ValueError(f'Diferencia con cálculo independiente: {dim} {cat}')
+
+
+def escribir_atomico(path, contenido):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as f:
+        temporal = Path(f.name)
+        f.write(contenido)
+    try:
+        temporal.replace(path)
+    finally:
+        temporal.unlink(missing_ok=True)
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--input-dir', type=Path, default=ROOT/'data/raw/eneic_iv_2025')
+    parser.add_argument('--output-root', type=Path, default=ROOT)
+    parser.add_argument('--download', action='store_true')
+    args = parser.parse_args(argv)
+    try:
+        if args.download:
+            descargar_fuentes('eneic_iv_2025',args.input_dir,MANIFIESTO)
+        fuentes = json.loads(MANIFIESTO.read_text())
+        evidencia = [procedencia(args.input_dir/Path(f['path']).name,MANIFIESTO) for f in fuentes]
+        personas = leer_personas(args.input_dir/'Base-de-datos-Personas-ENEIC-IV-2025.xlsx')
+        if len(personas) != 49338:
+            raise ValueError('Control de 49,338 registros fallido')
+        catalogos = leer_diccionario(args.input_dir/'Diccionario-Personas-ENEIC-IV-2025.xlsx')
+        tabla = resumir(preparar(personas, mapa_divisiones(catalogos)))
+        replica = json.loads((ROOT/'docs/evaluation/eneic_iv_2025/eneic_resultado_independiente.json').read_text())
+        validar_replica(tabla,replica)
+        refs = json.loads((ROOT/'data/reference/controles_eneic_iv_2025.json').read_text())
+        publicos = publicar(tabla,refs)
+        nacional = tabla[tabla.dimension.eq('nacional')].iloc[0]
+        if (nacional.n_ocupados != 21233 or nacional.n_ingreso != 20239
+                or round(nacional.media_ingreso) != 2842
+                or round(nacional.tasa_sector_informal,6) != 65.628701):
+            raise ValueError('Controles de aceptación fallidos')
+        datos = publicos.to_csv(index=False,lineterminator='\n').encode()
+        informe = dict(schema_version='1.0',fuentes=evidencia,registros=len(personas),
+                       trimestre_observado=5,periodo=PERIODO,replica_conciliada=True,
+                       filas_publicas=len(publicos),sha256_publicos=hashlib.sha256(datos).hexdigest())
+        # Validar y serializar todo antes de reemplazar salidas. El CSV público es una unidad atómica.
+        controles = json.dumps(informe,ensure_ascii=False,indent=2,allow_nan=False).encode()+b'\n'
+        diag = args.output_root/'docs/evidencia/eneic_iv_2025'
+        escribir_atomico(diag/'diagnosticos_internos.csv',tabla.to_csv(index=False,lineterminator='\n').encode())
+        escribir_atomico(diag/'validacion.json',controles)
+        escribir_atomico(args.output_root/'data/processed/eneic_iv_2025/agregados_publicos.csv',datos)
+    except (ValueError, OSError, KeyError) as error:
+        print(f'Error ENEIC: {error}')
+        return 1
+    print(f'ENEIC validada: {len(publicos)} celdas oficiales; diagnósticos internos separados')
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

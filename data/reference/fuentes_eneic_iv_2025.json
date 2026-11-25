@@ -1,0 +1,29 @@
+[
+  {
+    "path": "data/raw/eneic_iv_2025/Base-de-datos-Personas-ENEIC-IV-2025.xlsx",
+    "url": "https://www.ine.gob.gt/wp-content/uploads/2026/06/Base-de-datos-Personas-ENEIC-IV-2025.xlsx",
+    "sha256": "123049f9adfbcbcd026a850082b99cff38f549f75e972d69971b08754e7214d1",
+    "bytes": 51329132,
+    "periodo": "IV-2025",
+    "consulta": "2026-11-25",
+    "revision": "Snapshot junio 2026 citado en especificación v1.1"
+  },
+  {
+    "path": "data/raw/eneic_iv_2025/Boletin-Estadistico-Edicion-No.3-ENEIC-2025-1.pdf",
+    "url": "https://www.ine.gob.gt/wp-content/uploads/2026/06/Boletin-Estadistico-Edicion-No.3-ENEIC-2025-1.pdf",
+    "sha256": "1df52baf98d2619efc62cf8d6628041d5e32ca60bdbc574278f983b027383bdd",
+    "bytes": 6209397,
+    "periodo": "IV-2025",
+    "consulta": "2026-11-25",
+    "revision": "Snapshot junio 2026 citado en especificación v1.1"
+  },
+  {
+    "path": "data/raw/eneic_iv_2025/Diccionario-Personas-ENEIC-IV-2025.xlsx",
+    "url": "https://www.ine.gob.gt/wp-content/uploads/2026/06/Diccionario-Personas-ENEIC-IV-2025.xlsx",
+    "sha256": "3336445f9e247f592b4f58415fbfa47080926000558b6f7f8c274964fce47abe",
+    "bytes": 72430,
+    "periodo": "IV-2025",
+    "consulta": "2026-11-25",
+    "revision": "Snapshot junio 2026 citado en especificación v1.1"
+  }
+]
