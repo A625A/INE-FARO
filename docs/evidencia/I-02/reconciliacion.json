@@ -1,0 +1,15 @@
+{
+  "base_git": "a6fe78e7231c11097f931159552ea1a1e7e6f003",
+  "archivos_main_preservados": 55,
+  "metodologia_y_diccionario_main_intactos": true,
+  "celdas_calculo_companero_preservadas": true,
+  "muestra_individual_sustituida_por_conteo": true,
+  "celdas_codigo_ejecutadas": 11,
+  "pruebas_dirigidas_aprobadas": 4,
+  "microdatos_modificados": false,
+  "hogares_sin_consumo": 34,
+  "personas_sin_consumo": 95,
+  "hogares_discrepantes_negocios": 73,
+  "interseccion_sin_consumo_y_discrepantes_negocios": 0,
+  "tasas_nuevas_calculadas": false
+}
