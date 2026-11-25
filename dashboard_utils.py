@@ -53,9 +53,14 @@ def cargar_encovi(procesados: Path, pib: pd.DataFrame) -> pd.DataFrame | None:
     if (not encovi.anio.eq(2023).all() or encovi.duplicated(claves).any()
             or set(encovi[claves].itertuples(index=False, name=None)) != esperadas):
         raise ValueError('ENCOVI debe tener 22 departamentos por tres indicadores únicos de 2023')
+    return aplicar_precision(encovi[list(COLUMNAS_ENCOVI)])
+
+
+def aplicar_precision(encovi: pd.DataFrame) -> pd.DataFrame:
+    """Aplica la política de presentación de ENCOVI a un agregado departamental."""
     if not encovi.estado.isin(['publicable_con_reserva', 'no_publicable']).all():
         raise ValueError('ENCOVI contiene estados de publicación desconocidos')
-    encovi = encovi[list(COLUMNAS_ENCOVI)].copy()
+    encovi = encovi.copy()
     # La interfaz puede restringir una fila, pero nunca levantar una reserva de M-01.
     cv = pd.to_numeric(encovi.cv, errors='coerce')
     encovi['cv'] = cv.where(cv.ge(0) & cv.lt(float('inf')))
@@ -69,6 +74,10 @@ def cargar_encovi(procesados: Path, pib: pd.DataFrame) -> pd.DataFrame | None:
     encovi.loc[publicar & encovi.cv.le(UMBRAL_MODERADA), 'clasificacion'] = MAYOR
     encovi['exceso_pp'] = (encovi.cv - UMBRAL_PUBLICACION).clip(lower=0)
     publicables = encovi.loc[publicar]
+    limites = publicables[['ic95_inf', 'valor', 'ic95_sup']].apply(pd.to_numeric, errors='coerce')
+    if not (limites.ic95_inf.ge(0) & limites.ic95_sup.le(100)
+            & limites.ic95_inf.le(limites.valor) & limites.ic95_sup.ge(limites.valor)).all():
+        raise ValueError('ENCOVI contiene intervalos incoherentes en filas publicables')
     if (not publicables.unidad.eq('porcentaje').all()
             or not pd.to_numeric(publicables.valor, errors='coerce').between(0, 100).all()):
         raise ValueError('ENCOVI contiene unidades o tasas inválidas en filas publicables')
