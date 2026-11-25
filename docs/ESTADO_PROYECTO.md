@@ -5,7 +5,7 @@ Actualizado 24/11/2026 (Guatemala). Estado local; no implica publicación ni mer
 | Tarea | Estado | Evidencia / dependencia |
 |---|---|---|
 | I-01 | Entrega remota parcial | dd73e11: datos e inventario; faltan detalles de procedencia en inventario original |
-| I-02 | Sin exploración publicada | 313796c añade plan y gitignore vacío; se conserva su rama |
+| I-02 | Entrega preliminar remota, revisión pendiente | avanzó a 476155b durante esta sesión; diccionario y notebook aún requieren validar códigos/pesos/columnas |
 | I-03 | Pendiente | pesos/universo/precisión y validación del 70.3% antes de usar informalidad |
 | I-04 | Validada localmente | CSV, script, metadatos y evidencia; lista para M-03 cuando M-01 esté validada |
 | I-05 | Auditada localmente | transversal separada viable; crecimiento/altas/formalización excluidos |
@@ -24,3 +24,8 @@ no utiliza esa tasa como resultado calculado del proyecto.
 
 Comandos y salidas: README, metadata_pib.md, viabilidad_dinese.md y evidencia/.
 Los documentos del ZIP no reemplazan por sí solos el estado de implementación.
+
+Al cierre se detectó main y master remotos en 5a5fb8f, con I-01/I-02 integrados
+por otro trabajo. No los creó esta sesión. Main local sigue en dd73e11; no se
+fusionó ni rebasó la entrega contra el nuevo main remoto. Ver git_integracion.md
+y revision_integracion_encovi.md antes de integrar.
