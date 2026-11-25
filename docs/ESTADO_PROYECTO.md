@@ -8,7 +8,7 @@ Actualizado 24/11/2026 (Guatemala). Estado local; no implica publicación ni mer
 | I-02 | Sin exploración publicada | 313796c añade plan y gitignore vacío; se conserva su rama |
 | I-03 | Pendiente | pesos/universo/precisión y validación del 70.3% antes de usar informalidad |
 | I-04 | Validada localmente | CSV, script, metadatos y evidencia; lista para M-03 cuando M-01 esté validada |
-| I-05 | En curso en rama separada | no es parte de esta entrega I-04 |
+| I-05 | Auditada localmente | transversal separada viable; crecimiento/altas/formalización excluidos |
 | I-06 | Opcional, sin implementación verificada | variables adicionales dentro de ENCOVI |
 | M-01 a M-06 | Pendientes | no se generaron indicadores ENCOVI, matriz, radar ni UI |
 | F-01 a F-05 | Pendientes | integración, pruebas de app, entrega y presentación |

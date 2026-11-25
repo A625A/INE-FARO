@@ -1,0 +1,104 @@
+{
+  "anios": [
+    {
+      "anio": 2023,
+      "controles": {
+        "total": 425464,
+        "con_movimiento": 220903,
+        "guatemala_total": 209804,
+        "guatemala_con_movimiento": 108182
+      },
+      "sin_movimiento": 204561,
+      "duplicados_codigo": 0,
+      "departamentos": 22,
+      "secciones": [
+        "Actividades artísticas, de entretenimiento y recreativas",
+        "Actividades de alojamiento y de servicio de comidas",
+        "Actividades de atención de la salud humana y de asistencia social",
+        "Actividades de los hogares como empleadores; actividades no diferenciadas de los hogares como productores de bienes y servicios para uso propio",
+        "Actividades de organizaciones y órganos extraterritoriales",
+        "Actividades de servicios administrativos y de apoyo",
+        "Actividades financieras y de seguros",
+        "Actividades inmobiliarias",
+        "Actividades profesionales, científicas y técnicas",
+        "Administración pública y defensa; planes de seguridad social de afiliación obligatoria",
+        "Agricultura, ganadería, silvicultura y pesca",
+        "Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas",
+        "Construcción",
+        "Enseñanza",
+        "Explotación de minas y canteras",
+        "Industrias manufactureras",
+        "Información y comunicaciones",
+        "Otras actividades de servicios",
+        "Suministro de agua; evacuación de aguas residuales, gestión de desechos y descontaminación",
+        "Suministro de electricidad, gas, vapor y aire acondicionado",
+        "Transporte y almacenamiento"
+      ],
+      "faltantes_no_criticos": {},
+      "filas_descartadas": 0,
+      "insumo": {
+        "path": "data/raw/dinese/dinese-2023.xlsx",
+        "url": "https://datos.ine.gob.gt/dataset/794d0a7e-6c2b-4c21-809f-f23b8936407c/resource/a2acb752-479b-4c1f-8786-d2d7ee7fd4a9/download/dinese-2023.xlsx",
+        "sha256": "26212518ee2e66cd1c73b608750371bf74fd4ee1b4bff868215030e57b8d54dc",
+        "bytes": 15639188,
+        "fecha_verificacion": "2026-11-24",
+        "catalogo": "https://datos.ine.gob.gt/dataset/directorio-nacional-estadistico-de-empresas-dinese",
+        "coincide_snapshot": true
+      },
+      "publicacion_control": "https://www.ine.gob.gt/wp-content/uploads/2024/12/Resumen-Base-de-datos-DINESE.pdf"
+    },
+    {
+      "anio": 2024,
+      "controles": {
+        "total": 645431,
+        "con_movimiento": 338415,
+        "guatemala_total": 235807,
+        "guatemala_con_movimiento": 120141
+      },
+      "sin_movimiento": 307016,
+      "duplicados_codigo": 0,
+      "departamentos": 22,
+      "secciones": [
+        "Actividades artísticas, de entretenimiento y recreativas",
+        "Actividades de alojamiento y de servicio de comidas",
+        "Actividades de atención de la salud humana y de asistencia social",
+        "Actividades de los hogares como empleadores; actividades no diferenciadas de los hogares como productores de bienes y servicios para uso propio",
+        "Actividades de organizaciones y órganos extraterritoriales",
+        "Actividades de servicios administrativos y de apoyo",
+        "Actividades financieras y de seguros",
+        "Actividades inmobiliarias",
+        "Actividades profesionales, científicas y técnicas",
+        "Administración pública y defensa; planes de seguridad social de afiliación obligatoria",
+        "Agricultura, ganadería, silvicultura y pesca",
+        "Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas",
+        "Construcción",
+        "Enseñanza",
+        "Explotación de minas y canteras",
+        "Industrias manufactureras",
+        "Información y comunicaciones",
+        "Otras actividades de servicios",
+        "Suministro de agua; evacuación de aguas residuales, gestión de desechos y descontaminación",
+        "Suministro de electricidad, gas, vapor y aire acondicionado",
+        "Transporte y almacenamiento"
+      ],
+      "faltantes_no_criticos": {},
+      "filas_descartadas": 0,
+      "insumo": {
+        "path": "data/raw/dinese/dinese-2024.xlsx",
+        "url": "https://datos.ine.gob.gt/dataset/794d0a7e-6c2b-4c21-809f-f23b8936407c/resource/d6836e3d-c7fe-457b-adbf-26ab462dfb56/download/dinese-2024.xlsx",
+        "sha256": "7da9cbee0e64004d5869215c73ac0b14e0e3758b2577d7294b8f2906d523a04f",
+        "bytes": 22072728,
+        "fecha_verificacion": "2026-11-24",
+        "catalogo": "https://datos.ine.gob.gt/dataset/directorio-nacional-estadistico-de-empresas-dinese",
+        "coincide_snapshot": true
+      },
+      "publicacion_control": "https://www.ine.gob.gt/wp-content/uploads/2026/03/RESUMEN-ESTADISTICO-FORMATO-DINESE.pdf"
+    }
+  ],
+  "controles_oficiales": "validados",
+  "viabilidad_transversal_2023": true,
+  "habilitar_crecimiento_radar": false,
+  "codigo_longitudinal_validado": false,
+  "comparabilidad_temporal": "no_acreditada",
+  "advertencia": "Variación de registros no demuestra creación de empresas ni formalización laboral."
+}

@@ -44,6 +44,9 @@
 
 - F3: procesado 2023 y validado; 836 observaciones departamentales, PIB por
   habitante y conciliación nacional separados. Ver `metadata_pib.md` y `evidencia/I-04.json`.
+- F4: auditados todos los registros 2023/2024. Conteos conciliados con publicaciones;
+  descripción transversal viable, crecimiento/altas/formalización excluidos.
+  Ver `viabilidad_dinese.md` y `evidencia/I-05.json`.
 - URLs exactas y SHA-256 de ambos grupos: `data/reference/fuentes_I04_I05.json`.
   Los cinco hashes coinciden con descargas oficiales independientes.
 - Esta actualización no implica integración, publicación ni cierre de I-02/I-03.
