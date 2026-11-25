@@ -1,0 +1,16 @@
+variable;tipo;descripcion;unidad;fuente_encovi;ponderador
+DEPTO;entero;Código del departamento (1-22);Departamental;ENCOVI 2023;FACTOR
+DOMINIO;entero;Dominio de observación (Nacional, Urbano, Rural);Nacional/Departamental;ENCOVI 2023;FACTOR
+AREA;texto;Área de residencia (Urbano/Rural);Urbano / Rural;ENCOVI 2023;FACTOR
+UPM;entero;Unidad primaria de muestreo;Identificador de cluster;ENCOVI 2023;FACTOR
+NO_HOGAR;entero;Identificador del hogar;Identificador único;ENCOVI 2023;FACTOR
+FACTOR;real;Factor de expansión principal;Peso para estimaciones a nivel de hogar;ENCOVI 2023;FACTOR
+Factor3;real;Factor de expansión alternativa;Peso para ciertos dominios o tablas;ENCOVI 2023;FACTOR
+pobreza;binario;Indicador de pobreza (1=pobre, 0=no pobre);Sí/No;ENCOVI 2023;FACTOR
+ingreso_hogar;real;Ingreso total del hogar del último mes;Quetzales (Q);ENCOVI 2023;FACTOR
+ingreso_per_capita;real;Ingreso per cápita del hogar;Quetzales por persona (Q);ENCOVI 2023;FACTOR
+informalidad;binario;Trabajador informal (1=sí, 0=no);Sí/No;ENCOVI 2023;FACTOR
+tipo_ocupacion;texto;Tipo de ocupación principal;Código CNO-2017;ENCOVI 2023;FACTOR
+sector_actividad;texto;Sector de actividad económica;Código ISIC;ENCOVI 2023;FACTOR
+consumo_total;real;Consumo total del hogar del último mes;Quetzales (Q);ENCOVI 2023;FACTOR
+n_hogar;entero;Peso del hogar (sin expandir);Número de personas en el hogar;ENCOVI 2023;FACTOR
