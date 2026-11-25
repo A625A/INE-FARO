@@ -1,0 +1,358 @@
+{
+  "anio": 2025,
+  "trimestre_en_base": 5,
+  "nacional": {
+    "volumenes": {
+      "personas": {
+        "n": 49338,
+        "personas_expandidas": 18168662
+      },
+      "pet": {
+        "n": 34354,
+        "personas_expandidas": 12656664
+      },
+      "pea": {
+        "n": 21763,
+        "personas_expandidas": 8132244
+      },
+      "ocupados": {
+        "n": 21233,
+        "personas_expandidas": 7944838
+      },
+      "desocupados": {
+        "n": 530,
+        "personas_expandidas": 187406
+      },
+      "subvisibles": {
+        "n": 2739,
+        "personas_expandidas": 1053721
+      },
+      "inactivos": {
+        "n": 12591,
+        "personas_expandidas": 4524420
+      },
+      "informal": {
+        "n": 13226,
+        "personas_expandidas": 5214094
+      },
+      "formal": {
+        "n": 8007,
+        "personas_expandidas": 2730744
+      },
+      "sin_clasificar": {
+        "n": 0,
+        "personas_expandidas": 0
+      }
+    },
+    "tasas_pct": {
+      "participacion": 64.25266563132276,
+      "ocupacion_especifica": 97.69551921954137,
+      "ocupacion_bruta": 62.77197530091658,
+      "desempleo": 2.3044807804586287,
+      "subempleo_visible": 13.262963952191347,
+      "informalidad": 65.62870130265715,
+      "formalidad": 34.37129869734285
+    },
+    "ingresos": {
+      "ocupados": {
+        "n_valido": 20239,
+        "n_no_valido": 994,
+        "n_ceros": 535,
+        "peso_ceros": 229831,
+        "peso_valido": 7490048,
+        "peso_no_valido": 454790,
+        "cobertura_ponderada_pct": 94.27565420465464,
+        "media_quetzales": 2841.584067017995,
+        "mediana_quetzales": 2400
+      },
+      "informal": {
+        "n_valido": 12232,
+        "n_no_valido": 994,
+        "n_ceros": 535,
+        "peso_ceros": 229831,
+        "peso_valido": 4759304,
+        "peso_no_valido": 454790,
+        "cobertura_ponderada_pct": 91.27767930535967,
+        "media_quetzales": 1977.3475144685021,
+        "mediana_quetzales": 1500
+      },
+      "formal": {
+        "n_valido": 8007,
+        "n_no_valido": 0,
+        "n_ceros": 0,
+        "peso_ceros": 0,
+        "peso_valido": 2730744,
+        "peso_no_valido": 0,
+        "cobertura_ponderada_pct": 100.0,
+        "media_quetzales": 4347.827230600891,
+        "mediana_quetzales": 3700
+      }
+    }
+  },
+  "dominios": {
+    "Urbano metropolitano": {
+      "volumenes": {
+        "personas": {
+          "n": 16351,
+          "personas_expandidas": 3424948
+        },
+        "pet": {
+          "n": 12318,
+          "personas_expandidas": 2649162
+        },
+        "pea": {
+          "n": 8002,
+          "personas_expandidas": 1767289
+        },
+        "ocupados": {
+          "n": 7704,
+          "personas_expandidas": 1694793
+        },
+        "desocupados": {
+          "n": 298,
+          "personas_expandidas": 72496
+        },
+        "subvisibles": {
+          "n": 932,
+          "personas_expandidas": 197193
+        },
+        "inactivos": {
+          "n": 4316,
+          "personas_expandidas": 881873
+        },
+        "informal": {
+          "n": 3562,
+          "personas_expandidas": 751055
+        },
+        "formal": {
+          "n": 4142,
+          "personas_expandidas": 943738
+        },
+        "sin_clasificar": {
+          "n": 0,
+          "personas_expandidas": 0
+        }
+      },
+      "tasas_pct": {
+        "participacion": 66.71124680181885,
+        "ocupacion_especifica": 95.89789785371832,
+        "ocupacion_bruta": 63.97468331495016,
+        "desempleo": 4.102102146281678,
+        "subempleo_visible": 11.635226248869332,
+        "informalidad": 44.31544147279343,
+        "formalidad": 55.68455852720657
+      },
+      "ingresos": {
+        "ocupados": {
+          "n_valido": 7516,
+          "n_no_valido": 188,
+          "n_ceros": 17,
+          "peso_ceros": 2338,
+          "peso_valido": 1657276,
+          "peso_no_valido": 37517,
+          "cobertura_ponderada_pct": 97.78633732851151,
+          "media_quetzales": 4081.4014056801643,
+          "mediana_quetzales": 3600
+        },
+        "informal": {
+          "n_valido": 3374,
+          "n_no_valido": 188,
+          "n_ceros": 17,
+          "peso_ceros": 2338,
+          "peso_valido": 713538,
+          "peso_no_valido": 37517,
+          "cobertura_ponderada_pct": 95.00475997097416,
+          "media_quetzales": 2785.05445400245,
+          "mediana_quetzales": 2400
+        },
+        "formal": {
+          "n_valido": 4142,
+          "n_no_valido": 0,
+          "n_ceros": 0,
+          "peso_ceros": 0,
+          "peso_valido": 943738,
+          "peso_no_valido": 0,
+          "cobertura_ponderada_pct": 100.0,
+          "media_quetzales": 5061.53870141925,
+          "mediana_quetzales": 3970
+        }
+      }
+    },
+    "Resto urbano": {
+      "volumenes": {
+        "personas": {
+          "n": 18930,
+          "personas_expandidas": 6376776
+        },
+        "pet": {
+          "n": 13224,
+          "personas_expandidas": 4616643
+        },
+        "pea": {
+          "n": 8499,
+          "personas_expandidas": 3055979
+        },
+        "ocupados": {
+          "n": 8342,
+          "personas_expandidas": 2992131
+        },
+        "desocupados": {
+          "n": 157,
+          "personas_expandidas": 63848
+        },
+        "subvisibles": {
+          "n": 1028,
+          "personas_expandidas": 363620
+        },
+        "inactivos": {
+          "n": 4725,
+          "personas_expandidas": 1560664
+        },
+        "informal": {
+          "n": 5600,
+          "personas_expandidas": 1945850
+        },
+        "formal": {
+          "n": 2742,
+          "personas_expandidas": 1046281
+        },
+        "sin_clasificar": {
+          "n": 0,
+          "personas_expandidas": 0
+        }
+      },
+      "tasas_pct": {
+        "participacion": 66.19483031284854,
+        "ocupacion_especifica": 97.9107186273204,
+        "ocupacion_bruta": 64.81183405344532,
+        "desempleo": 2.0892813726795896,
+        "subempleo_visible": 12.152542786395381,
+        "informalidad": 65.03224624857668,
+        "formalidad": 34.96775375142332
+      },
+      "ingresos": {
+        "ocupados": {
+          "n_valido": 7966,
+          "n_no_valido": 376,
+          "n_ceros": 201,
+          "peso_ceros": 54586,
+          "peso_valido": 2861360,
+          "peso_no_valido": 130771,
+          "cobertura_ponderada_pct": 95.62950285264917,
+          "media_quetzales": 2921.0196452036794,
+          "mediana_quetzales": 2400
+        },
+        "informal": {
+          "n_valido": 5224,
+          "n_no_valido": 376,
+          "n_ceros": 201,
+          "peso_ceros": 54586,
+          "peso_valido": 1815079,
+          "peso_no_valido": 130771,
+          "cobertura_ponderada_pct": 93.27949225274301,
+          "media_quetzales": 2119.0592877775566,
+          "mediana_quetzales": 1800
+        },
+        "formal": {
+          "n_valido": 2742,
+          "n_no_valido": 0,
+          "n_ceros": 0,
+          "peso_ceros": 0,
+          "peso_valido": 1046281,
+          "peso_no_valido": 0,
+          "cobertura_ponderada_pct": 100.0,
+          "media_quetzales": 4312.253361190732,
+          "mediana_quetzales": 3600
+        }
+      }
+    },
+    "Rural nacional": {
+      "volumenes": {
+        "personas": {
+          "n": 14057,
+          "personas_expandidas": 8366938
+        },
+        "pet": {
+          "n": 8812,
+          "personas_expandidas": 5390859
+        },
+        "pea": {
+          "n": 5262,
+          "personas_expandidas": 3308976
+        },
+        "ocupados": {
+          "n": 5187,
+          "personas_expandidas": 3257914
+        },
+        "desocupados": {
+          "n": 75,
+          "personas_expandidas": 51062
+        },
+        "subvisibles": {
+          "n": 779,
+          "personas_expandidas": 492908
+        },
+        "inactivos": {
+          "n": 3550,
+          "personas_expandidas": 2081883
+        },
+        "informal": {
+          "n": 4064,
+          "personas_expandidas": 2517189
+        },
+        "formal": {
+          "n": 1123,
+          "personas_expandidas": 740725
+        },
+        "sin_clasificar": {
+          "n": 0,
+          "personas_expandidas": 0
+        }
+      },
+      "tasas_pct": {
+        "participacion": 61.38123812921095,
+        "ocupacion_especifica": 98.45686399659593,
+        "ocupacion_bruta": 60.4340421443039,
+        "desempleo": 1.5431360034040742,
+        "subempleo_visible": 15.129558361577377,
+        "informalidad": 77.26382587140115,
+        "formalidad": 22.73617412859885
+      },
+      "ingresos": {
+        "ocupados": {
+          "n_valido": 4757,
+          "n_no_valido": 430,
+          "n_ceros": 317,
+          "peso_ceros": 172907,
+          "peso_valido": 2971412,
+          "peso_no_valido": 286502,
+          "cobertura_ponderada_pct": 91.20596799056084,
+          "media_quetzales": 2073.5945368733787,
+          "mediana_quetzales": 1600
+        },
+        "informal": {
+          "n_valido": 3634,
+          "n_no_valido": 430,
+          "n_ceros": 317,
+          "peso_ceros": 172907,
+          "peso_valido": 2230687,
+          "peso_no_valido": 286502,
+          "cobertura_ponderada_pct": 88.61817686315966,
+          "media_quetzales": 1603.6744451373052,
+          "mediana_quetzales": 1200
+        },
+        "formal": {
+          "n_valido": 1123,
+          "n_no_valido": 0,
+          "n_ceros": 0,
+          "peso_ceros": 0,
+          "peso_valido": 740725,
+          "peso_no_valido": 0,
+          "cobertura_ponderada_pct": 100.0,
+          "media_quetzales": 3488.7548725910424,
+          "mediana_quetzales": 3000
+        }
+      }
+    }
+  }
+}
