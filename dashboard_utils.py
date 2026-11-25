@@ -6,8 +6,14 @@ import pandas as pd
 INDICADORES = ('ocupacion_sector_informal', 'pobreza_total', 'pobreza_extrema')
 
 
-def cargar_tablero(procesados: Path) -> tuple[pd.DataFrame, bool]:
-    """Devuelve 22 departamentos. Sin M-01, muestra sólo el PIB real disponible."""
+COLUMNAS_ENCOVI = (
+    'depto_id', 'departamento', 'anio', 'indicador', 'valor', 'unidad', 'fuente',
+    'n', 'upm_n', 'ponderador', 'cv', 'ic95_inf', 'ic95_sup', 'precision', 'estado',
+)
+
+
+def cargar_pib(procesados: Path) -> pd.DataFrame:
+    """Carga el PIB por habitante de los 22 departamentos."""
     pib_path = procesados / 'pib_per_capita.csv'
     if not pib_path.exists():
         raise FileNotFoundError('Falta data/processed/pib_per_capita.csv (I-04).')
@@ -23,25 +29,27 @@ def cargar_tablero(procesados: Path) -> tuple[pd.DataFrame, bool]:
         raise ValueError('PIB per cápita tiene unidades inesperadas')
     if pib.pib_per_capita.isna().any() or not pib.pib_per_capita.gt(0).all():
         raise ValueError('PIB contiene valores faltantes o no positivos')
-    columnas = ['depto_id', 'departamento', 'pib_per_capita']
-    tabla = pib[columnas].copy()
-    encovi_path = procesados / 'indicadores_encovi_2023.csv'
-    if not encovi_path.exists():
-        return tabla.sort_values('depto_id').reset_index(drop=True), False
-    encovi = pd.read_csv(encovi_path, dtype={'depto_id': str})
-    requeridas = {'depto_id', 'anio', 'indicador', 'valor', 'unidad', 'estado', 'cv'}
-    if not requeridas.issubset(encovi):
-        raise ValueError(f'ENCOVI sin columnas: {sorted(requeridas - set(encovi))}')
-    encovi = encovi[encovi.anio.eq(2023) & encovi.indicador.isin(INDICADORES)].copy()
-    claves = set(zip(encovi.depto_id, encovi.indicador))
-    if len(encovi) != 66 or len(claves) != 66 or {x[0] for x in claves} != set(tabla.depto_id):
-        raise ValueError('ENCOVI debe tener 22 departamentos por tres indicadores únicos')
-    if not encovi.unidad.eq('porcentaje').all() or encovi.valor.isna().any() or not encovi.valor.between(0, 100).all():
-        raise ValueError('ENCOVI contiene unidades o tasas inválidas')
-    if not encovi.estado.eq('publicable_con_reserva').all():
-        raise ValueError('ENCOVI contiene indicadores no publicables; revisar la precisión')
-    valores = encovi.pivot(index='depto_id', columns='indicador', values='valor').reset_index()
-    tabla = tabla.merge(valores, on='depto_id', how='left', validate='one_to_one')
-    if tabla[list(INDICADORES)].isna().any().any():
-        raise ValueError('Faltan valores ENCOVI en algún departamento')
-    return tabla.sort_values('depto_id').reset_index(drop=True), True
+    return pib.sort_values('depto_id').reset_index(drop=True)
+
+
+def cargar_encovi(procesados: Path, pib: pd.DataFrame) -> pd.DataFrame | None:
+    """Devuelve solo estimaciones publicables, con sus metadatos de precisión."""
+    ruta = procesados / 'indicadores_encovi_2023.csv'
+    if not ruta.exists():
+        return None
+    encovi = pd.read_csv(ruta, dtype={'depto_id': str})
+    faltantes = set(COLUMNAS_ENCOVI) - set(encovi)
+    if faltantes:
+        raise ValueError(f'ENCOVI sin columnas: {sorted(faltantes)}')
+    claves = ['depto_id', 'indicador']
+    esperadas = {(depto, indicador) for depto in pib.depto_id for indicador in INDICADORES}
+    if (not encovi.anio.eq(2023).all() or encovi.duplicated(claves).any()
+            or set(encovi[claves].itertuples(index=False, name=None)) != esperadas):
+        raise ValueError('ENCOVI debe tener 22 departamentos por tres indicadores únicos de 2023')
+    if not encovi.estado.isin(['publicable_con_reserva', 'no_publicable']).all():
+        raise ValueError('ENCOVI contiene estados de publicación desconocidos')
+    publicables = encovi.loc[encovi.estado.eq('publicable_con_reserva'), list(COLUMNAS_ENCOVI)]
+    if (not publicables.unidad.eq('porcentaje').all()
+            or not pd.to_numeric(publicables.valor, errors='coerce').between(0, 100).all()):
+        raise ValueError('ENCOVI contiene unidades o tasas inválidas en filas publicables')
+    return publicables
