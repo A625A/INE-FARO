@@ -1,0 +1,9 @@
+id_fuente;nombre_fuente;institucion;enlace_descarga;archivo_local;anio;granularidad;variables_relevantes;formato;licencia;riesgos;descargado
+F1;ENCOVI 2023 - Microdatos;INE;https://www.ine.gob.gt/encovi-2023;data/raw/encovi_2023/;2023;Hogar / Persona;"pobreza, consumo, informalidad, empleo, ingresos";CSV / SAV;Pública;Tamaño de archivos;Sí
+F2;Guía ENCOVI 2023;INE;https://www.ine.gob.gt/encovi-2023-guia;docs/guia_encovi_2023.pdf;2023;Metodológica;"factores de expansión, ponderadores";PDF;Pública;Confusión entre FACTOR y Factor3;Pendiente
+F3;PIB por departamento y actividad;Banguat;https://www.banguat.gob.gt/pib-departamental;data/raw/banguat/;2013-2024;Departamental / Sectorial;"PIB, actividad económica, per cápita";XLSX;Pública;Normalización de departamentos;Sí
+F4;DINESE;INE;https://www.ine.gob.gt/dinese;data/raw/dinese/;2021-2024;Departamental / Sectorial;"empresas activas, ventas";XLSX;Pública;No comparable directamente con microdatos de hogares;Sí
+F5;ENEIC / ENEI;INE;https://www.ine.gob.gt/eneic;data/raw/eneic/;2021-2023;Nacional / Urbano / Rural;"ocupación, informalidad, desempleo";CSV / SAV / XLSX;Pública;No tiene representatividad departamental;Descartado
+F6;ENIGH;INE;https://www.ine.gob.gt/enigh;data/raw/enigh/;2023;Hogar;"ingresos, gastos, remesas";CSV / SAV;Pública;Complejidad de integración adicional;Descartado
+F7;Proyecciones Población;INE;https://www.ine.gob.gt/poblacion;data/raw/proyecciones_poblacion.csv;2023-2026;Municipal / Departamental;"población total por edad y sexo";CSV / XLSX;Pública;Ajustes poblacionales;Pendiente
+F8;Perfiles Departamentales INE;INE;https://www.ine.gob.gt/perfiles;docs/perfiles_ine.pdf;2023;Departamental;"indicadores pobreza e informalidad";PDF;Pública;Validación de agregados;Pendiente
