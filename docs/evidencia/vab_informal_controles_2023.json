@@ -1,0 +1,21 @@
+{
+  "celdas": {
+    "vab_informal": "12.1!O26",
+    "vab_total": "5.103!I126",
+    "comercio": "12.1!O14",
+    "composicion_publicada_comercio_pct": "12.1!O42"
+  },
+  "valores": {
+    "vab_informal": "172538.678503",
+    "vab_total": "762881.363889",
+    "participacion_informal_pct": "22.61671167629997971227056708",
+    "composicion_comercio_pct": "38.55355606183305346119537388"
+  },
+  "controles_redondeados": {
+    "vab_informal": "172538.68",
+    "vab_total": "762881.36",
+    "participacion_informal_pct": "22.62",
+    "composicion_comercio_pct": "38.55"
+  },
+  "errores": []
+}
