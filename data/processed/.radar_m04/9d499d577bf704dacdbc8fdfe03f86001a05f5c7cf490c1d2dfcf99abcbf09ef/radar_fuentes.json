@@ -1,0 +1,7 @@
+{
+  "algoritmo": "sha256",
+  "archivos_brutos": {
+    "matriz_departamental.csv": "2632738d633d96d2234cb8440067f0e5c024373316fc2d853a9f77041ae14673",
+    "indicadores_encovi_nacional_2023.csv": "1cd9358bcf94b2b356541f50b869d7b1a9572ea97749cb6075c988002baf2b96"
+  }
+}
