@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 data/raw/
 tmp/
+# Evidencia M-02 con estimaciones restringidas, solo para auditoría local.
+data/processed/auditoria_interna/

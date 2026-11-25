@@ -91,3 +91,38 @@ def test_cli_genera_contrato_y_claves_unicas(tmp_path):
     assert all(not f['depto_id'] for f in filas if f['ambito'] == 'nacional')
     assert len({(f['tabla'], f['ambito'], f['depto_id'], f['indicador'])
                 for f in filas}) == 207
+
+
+def test_media_dominio_conserva_upm_cero():
+    base = pd.DataFrame({'DEPTO': [1, 1, 1, 1], 'UPM': [1, 2, 3, 4],
+                         'FACTOR': [1, 1, 1, 1]})
+    # Totales linealizados -10, 10, 0, 0. Varianza = 4/3 * 200 / 2**2.
+    r = estimar_media(base, pd.Series([10., 30., None, None]), 'FACTOR')
+    assert r['valor'] == 20
+    assert r['n'] == 2
+    assert r['upm_n'] == 2
+    assert r['cv'] == pytest.approx(40.82483)
+
+
+def test_salida_publica_suprime_valores_restringidos(tmp_path):
+    subprocess.run([sys.executable, str(ROOT / 'scripts/procesar_hogares.py'),
+                    '--output-dir', str(tmp_path)], check=True)
+    publico = pd.read_csv(tmp_path / 'perfiles_hogares.csv')
+    interno = pd.read_csv(tmp_path / 'auditoria_interna/perfiles_hogares.csv')
+    restringidos = publico.estado.eq('no_publicable')
+    assert restringidos.any()
+    assert publico.loc[restringidos, ['valor', 'cv']].isna().all().all()
+    assert interno.loc[restringidos, 'valor'].notna().all()
+
+
+def test_discrepancia_negocios_conserva_montos_observados():
+    hogares = pd.DataFrame({'NO_HOGAR': [1], 'DEPTO': [1],
+                            'UPM': [10], 'FACTOR': [2]})
+    uno = pd.DataFrame({'NO_HOGAR': [1], 'P14A01': [1], 'P14A02A': [3]})
+    dos = pd.DataFrame({'NO_HOGAR': [1], 'ID_NEGOCIO': [1],
+                        'P14A13': [100], 'P14A16': [-10]})
+    resultado = preparar_negocios(hogares, uno, dos).iloc[0]
+    assert resultado.n_negocios == 3
+    assert resultado.n_detallados == 1
+    assert resultado.venta_mensual == 100
+    assert resultado.ganancia_mensual == -10

@@ -88,6 +88,7 @@ def preparar_negocios(hogares: pd.DataFrame, uno: pd.DataFrame,
     base['tiene_negocio'] = base.P14A01.eq(1)
     base['n_negocios'] = base.P14A02A.where(base.tiene_negocio).fillna(0)
     agregado = dos.groupby('NO_HOGAR', as_index=False).agg(
+        n_detallados=('ID_NEGOCIO', 'size'),
         venta_mensual=('P14A13', 'sum'), ganancia_mensual=('P14A16', 'sum'))
     if not agregado.NO_HOGAR.isin(base.NO_HOGAR).all():
         raise ValueError('Negocios.2 contiene NO_HOGAR huérfano')
@@ -124,17 +125,18 @@ def estimar_media(frame: pd.DataFrame, valores: pd.Series, peso: str) -> dict:
         raise ValueError(f'Faltan columnas: {sorted(necesarios - set(frame.columns))}')
     y = pd.to_numeric(valores.reindex(frame.index), errors='raise')
     valido = y.notna()
-    base = frame.loc[valido]
-    y = y.loc[valido]
-    if base.empty:
+    base = frame
+    y = y.fillna(0)
+    if not valido.any():
         raise ValueError('Muestra vacía para estimar media')
     w = pd.to_numeric(base[peso], errors='raise').to_numpy(dtype=float)
     if not np.isfinite(w).all() or not (w > 0).all():
         raise ValueError(f'Ponderador inválido: {peso}')
     if base[['DEPTO', 'UPM']].isna().any().any():
         raise ValueError('Identificadores de diseño incompletos')
-    media = float(np.sum(w * y.to_numpy(dtype=float)) / np.sum(w))
-    z = w * (y.to_numpy(dtype=float) - media)
+    denominador = float(np.sum(w * valido.to_numpy()))
+    media = float(np.sum(w * y.to_numpy(dtype=float)) / denominador)
+    z = w * valido.to_numpy() * (y.to_numpy(dtype=float) - media)
     disenio = pd.DataFrame({'DEPTO': base.DEPTO.to_numpy(),
                             'UPM': base.UPM.to_numpy(), 'z': z})
     psu = disenio.groupby(['DEPTO', 'UPM'], observed=True, sort=False)['z'].sum()
@@ -147,10 +149,10 @@ def estimar_media(frame: pd.DataFrame, valores: pd.Series, peso: str) -> dict:
             continue
         m = len(valores_grupo)
         var_numerador += m / (m - 1) * float(np.square(valores_grupo - valores_grupo.mean()).sum())
-    se = float(np.sqrt(var_numerador) / np.sum(w)) if suficiente else float('nan')
+    se = float(np.sqrt(var_numerador) / denominador) if suficiente else float('nan')
     cv = 100 * se / media if media > 0 and np.isfinite(se) else float('nan')
-    n = int(len(y))
-    upm_n = int(base[['DEPTO', 'UPM']].drop_duplicates().shape[0])
+    n = int(valido.sum())
+    upm_n = int(base.loc[valido, ['DEPTO', 'UPM']].drop_duplicates().shape[0])
     publicable = n >= 30 and np.isfinite(cv) and cv <= 30
     return {'valor': round(media, 6), 'n': n, 'upm_n': upm_n,
             'cv': round(cv, 5) if np.isfinite(cv) else '',
@@ -183,8 +185,6 @@ def generar(base: pd.DataFrame, estimador, meta: dict) -> list[dict]:
 
 def construir_filas(personas: pd.DataFrame, negocios: pd.DataFrame,
                     consumo: pd.DataFrame) -> list[dict]:
-    receptores = personas.loc[personas.recibio_remesas]
-    con_negocio = negocios.loc[negocios.tiene_negocio]
     especificaciones = [
         (personas,
          lambda b: estimar_tasa(b, b.recibio_remesas, 'FACTOR'),
@@ -193,8 +193,8 @@ def construir_filas(personas: pd.DataFrame, negocios: pd.DataFrame,
           'ponderador': 'FACTOR',
           'fuente': 'ENCOVI 2023 - personas P11C01',
           'limite': 'Universo observado con respuesta; no anualizado.'}),
-        (receptores,
-         lambda b: estimar_media(b, b.monto_mensual, 'FACTOR'),
+        (personas,
+         lambda b: estimar_media(b, b.monto_mensual.where(b.recibio_remesas), 'FACTOR'),
          {'tabla': 'remesas_personas',
           'indicador': 'monto_remesas_mensual_entre_receptores_q',
           'unidad': 'quetzales por persona al mes', 'horizonte': 'promedio_ultimos_3_meses',
@@ -215,21 +215,21 @@ def construir_filas(personas: pd.DataFrame, negocios: pd.DataFrame,
           'ponderador': 'FACTOR',
           'fuente': 'ENCOVI 2023 - hogares P14A01/P14A02A',
           'limite': 'P14A02A vacío se trata como 0 cuando P14A01=2.'}),
-        (con_negocio,
-         lambda b: estimar_media(b, b.venta_mensual, 'FACTOR'),
+        (negocios,
+         lambda b: estimar_media(b, b.venta_mensual.where(b.tiene_negocio), 'FACTOR'),
          {'tabla': 'negocios_hogares', 'indicador': 'venta_mensual_por_hogar_con_negocio_q',
           'unidad': 'quetzales por hogar al mes', 'horizonte': 'mensual',
           'ponderador': 'FACTOR',
           'fuente': 'ENCOVI 2023 - negocios P14A13',
-          'limite': 'Suma de negocios del hogar; no es PIB ni venta DINESE.'}),
-        (con_negocio,
-         lambda b: estimar_media(b, b.ganancia_mensual, 'FACTOR'),
+          'limite': 'Suma del detalle disponible; cobertura incompleta frente a P14A02A; ver hallazgos M-02.'}),
+        (negocios,
+         lambda b: estimar_media(b, b.ganancia_mensual.where(b.tiene_negocio), 'FACTOR'),
          {'tabla': 'negocios_hogares',
           'indicador': 'ganancia_neta_mensual_por_hogar_con_negocio_q',
           'unidad': 'quetzales por hogar al mes', 'horizonte': 'mensual',
           'ponderador': 'FACTOR',
           'fuente': 'ENCOVI 2023 - negocios P14A16',
-          'limite': 'Puede ser negativa; no se recorta ni se anualiza.'}),
+          'limite': 'Suma del detalle disponible con cobertura incompleta; admite negativos; ver hallazgos M-02.'}),
         (consumo,
          lambda b: estimar_media(b, b.agreg3, 'Factor3'),
          {'tabla': 'consumo_per_capita',
@@ -281,6 +281,26 @@ def main(raw: Path = RAW, out: Path = OUT) -> None:
                                              ('NO_HOGAR', 'DEPTO', 'Factor3',
                                               'agreg3', 'gasto3', 'ayuda3')))
     filas = construir_filas(personas, negocios, consumo)
+    interno = out / 'auditoria_interna'
+    # Frecuencia del evento y tamaño del denominador se conservan por separado.
+    casos = []
+    for base, evento, nombre in [(personas, personas.recibio_remesas, 'recibio_remesas_pct'),
+                                  (negocios, negocios.tiene_negocio, 'hogares_con_negocio_pct')]:
+        for ambito, codigo, mask in [('nacional', '', base.DEPTO.notna())] + [
+                ('departamental', f'{d:02}', base.DEPTO.eq(d)) for d in DEPARTAMENTOS]:
+            casos.append({'ambito': ambito, 'depto_id': codigo, 'indicador': nombre,
+                          'n_muestra': int(mask.sum()), 'n_evento': int((mask & evento).sum())})
+    escribir_csv(interno / 'casos_evento.csv', casos,
+                 ('ambito', 'depto_id', 'indicador', 'n_muestra', 'n_evento'))
+    for f in filas:
+        if f['n'] < 100:
+            f['limite'] += ' Muestra menor de 100 unidades; fiabilidad limitada según guía ENCOVI p. 9.'
+        caso = next((c for c in casos if all(c[k] == f[k] for k in
+                    ('ambito', 'depto_id', 'indicador'))), None)
+        if caso and caso['n_evento'] < 30:
+            f['estado'] = 'no_publicable'
+    escribir_csv(interno / 'perfiles_hogares.csv', filas, COLUMNAS)
+    filas = [dict(f, valor='', cv='') if f['estado'] == 'no_publicable' else f for f in filas]
     escribir_csv(out / 'perfiles_hogares.csv', filas, COLUMNAS)
     print('M-02: 3 tablas, 9 indicadores, 23 ambitos, 207 filas.')
     for fila_nacional in filas:
