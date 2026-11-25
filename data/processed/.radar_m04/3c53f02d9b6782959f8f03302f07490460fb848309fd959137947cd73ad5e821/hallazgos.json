@@ -1,0 +1,4069 @@
+{
+  "schema_version": "1.0",
+  "rules_version": "1.1",
+  "modo": "standard",
+  "hashes_filas_canonicas": {
+    "matriz_departamental.csv": "2632738d633d96d2234cb8440067f0e5c024373316fc2d853a9f77041ae14673",
+    "indicadores_encovi_nacional_2023.csv": "0f110bf4d187ec678ff5740924e2d3e2e08c364248e00bf5f5df8450d63ae075"
+  },
+  "parametros": {
+    "r1_i": 3,
+    "r1_p": 15,
+    "r1_y": 1.5
+  },
+  "filtros": {
+    "reglas": [
+      "R1"
+    ],
+    "departamentos": []
+  },
+  "cobertura": {
+    "encovi_departamental": {
+      "ocupacion_sector_informal": {
+        "elegibles": 22,
+        "total": 22,
+        "diagnosticos": {
+          "01": {
+            "estado": "publicable_con_reserva",
+            "n": 1523,
+            "upm_n": 124,
+            "cv": 3.91293,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "02": {
+            "estado": "publicable_con_reserva",
+            "n": 782,
+            "upm_n": 65,
+            "cv": 3.45437,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "03": {
+            "estado": "publicable_con_reserva",
+            "n": 1200,
+            "upm_n": 92,
+            "cv": 3.08912,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "04": {
+            "estado": "publicable_con_reserva",
+            "n": 896,
+            "upm_n": 69,
+            "cv": 3.01803,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "05": {
+            "estado": "publicable_con_reserva",
+            "n": 1137,
+            "upm_n": 85,
+            "cv": 3.60466,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "06": {
+            "estado": "publicable_con_reserva",
+            "n": 613,
+            "upm_n": 56,
+            "cv": 3.47886,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "07": {
+            "estado": "publicable_con_reserva",
+            "n": 711,
+            "upm_n": 50,
+            "cv": 2.14917,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "08": {
+            "estado": "publicable_con_reserva",
+            "n": 645,
+            "upm_n": 48,
+            "cv": 2.53234,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "09": {
+            "estado": "publicable_con_reserva",
+            "n": 794,
+            "upm_n": 74,
+            "cv": 3.21005,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "10": {
+            "estado": "publicable_con_reserva",
+            "n": 816,
+            "upm_n": 70,
+            "cv": 3.57782,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "11": {
+            "estado": "publicable_con_reserva",
+            "n": 614,
+            "upm_n": 52,
+            "cv": 2.72013,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "12": {
+            "estado": "publicable_con_reserva",
+            "n": 619,
+            "upm_n": 59,
+            "cv": 3.11577,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "13": {
+            "estado": "publicable_con_reserva",
+            "n": 626,
+            "upm_n": 55,
+            "cv": 3.34588,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "14": {
+            "estado": "publicable_con_reserva",
+            "n": 685,
+            "upm_n": 60,
+            "cv": 2.48626,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "15": {
+            "estado": "publicable_con_reserva",
+            "n": 730,
+            "upm_n": 53,
+            "cv": 3.68787,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "16": {
+            "estado": "publicable_con_reserva",
+            "n": 822,
+            "upm_n": 61,
+            "cv": 2.55683,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "17": {
+            "estado": "publicable_con_reserva",
+            "n": 724,
+            "upm_n": 64,
+            "cv": 3.1086,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "18": {
+            "estado": "publicable_con_reserva",
+            "n": 814,
+            "upm_n": 65,
+            "cv": 5.2352,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "19": {
+            "estado": "publicable_con_reserva",
+            "n": 770,
+            "upm_n": 61,
+            "cv": 3.38145,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "20": {
+            "estado": "publicable_con_reserva",
+            "n": 579,
+            "upm_n": 50,
+            "cv": 3.48888,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "21": {
+            "estado": "publicable_con_reserva",
+            "n": 656,
+            "upm_n": 58,
+            "cv": 3.40387,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "22": {
+            "estado": "publicable_con_reserva",
+            "n": 767,
+            "upm_n": 76,
+            "cv": 2.60652,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          }
+        }
+      },
+      "pobreza_total": {
+        "elegibles": 22,
+        "total": 22,
+        "diagnosticos": {
+          "01": {
+            "estado": "publicable_con_reserva",
+            "n": 887,
+            "upm_n": 124,
+            "cv": 9.95598,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "02": {
+            "estado": "publicable_con_reserva",
+            "n": 530,
+            "upm_n": 65,
+            "cv": 7.36686,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "03": {
+            "estado": "publicable_con_reserva",
+            "n": 656,
+            "upm_n": 92,
+            "cv": 7.80041,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "04": {
+            "estado": "publicable_con_reserva",
+            "n": 514,
+            "upm_n": 69,
+            "cv": 7.13775,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "05": {
+            "estado": "publicable_con_reserva",
+            "n": 679,
+            "upm_n": 85,
+            "cv": 7.73953,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "06": {
+            "estado": "publicable_con_reserva",
+            "n": 423,
+            "upm_n": 56,
+            "cv": 3.78068,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "07": {
+            "estado": "publicable_con_reserva",
+            "n": 382,
+            "upm_n": 50,
+            "cv": 6.3151,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "08": {
+            "estado": "publicable_con_reserva",
+            "n": 357,
+            "upm_n": 48,
+            "cv": 6.54414,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "09": {
+            "estado": "publicable_con_reserva",
+            "n": 505,
+            "upm_n": 74,
+            "cv": 7.15229,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "10": {
+            "estado": "publicable_con_reserva",
+            "n": 540,
+            "upm_n": 70,
+            "cv": 5.72327,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "11": {
+            "estado": "publicable_con_reserva",
+            "n": 403,
+            "upm_n": 52,
+            "cv": 6.14769,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "12": {
+            "estado": "publicable_con_reserva",
+            "n": 416,
+            "upm_n": 59,
+            "cv": 5.48787,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "13": {
+            "estado": "publicable_con_reserva",
+            "n": 409,
+            "upm_n": 55,
+            "cv": 3.36615,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "14": {
+            "estado": "publicable_con_reserva",
+            "n": 447,
+            "upm_n": 60,
+            "cv": 2.03175,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "15": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 53,
+            "cv": 4.20305,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "16": {
+            "estado": "publicable_con_reserva",
+            "n": 500,
+            "upm_n": 61,
+            "cv": 2.17264,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "17": {
+            "estado": "publicable_con_reserva",
+            "n": 484,
+            "upm_n": 64,
+            "cv": 7.26661,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "18": {
+            "estado": "publicable_con_reserva",
+            "n": 494,
+            "upm_n": 65,
+            "cv": 8.98474,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "19": {
+            "estado": "publicable_con_reserva",
+            "n": 483,
+            "upm_n": 61,
+            "cv": 8.60716,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "20": {
+            "estado": "publicable_con_reserva",
+            "n": 394,
+            "upm_n": 50,
+            "cv": 8.69939,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "21": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 58,
+            "cv": 3.53256,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "22": {
+            "estado": "publicable_con_reserva",
+            "n": 547,
+            "upm_n": 76,
+            "cv": 3.36196,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          }
+        }
+      },
+      "pobreza_extrema": {
+        "elegibles": 17,
+        "total": 22,
+        "diagnosticos": {
+          "01": {
+            "estado": "no_publicable",
+            "n": 887,
+            "upm_n": 124,
+            "cv": 38.60323,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": false
+          },
+          "02": {
+            "estado": "publicable_con_reserva",
+            "n": 530,
+            "upm_n": 65,
+            "cv": 27.61397,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "03": {
+            "estado": "no_publicable",
+            "n": 656,
+            "upm_n": 92,
+            "cv": 31.46913,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": false
+          },
+          "04": {
+            "estado": "publicable_con_reserva",
+            "n": 514,
+            "upm_n": 69,
+            "cv": 27.68698,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "05": {
+            "estado": "no_publicable",
+            "n": 679,
+            "upm_n": 85,
+            "cv": 31.78476,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": false
+          },
+          "06": {
+            "estado": "publicable_con_reserva",
+            "n": 423,
+            "upm_n": 56,
+            "cv": 16.93466,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "07": {
+            "estado": "publicable_con_reserva",
+            "n": 382,
+            "upm_n": 50,
+            "cv": 26.13377,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "08": {
+            "estado": "publicable_con_reserva",
+            "n": 357,
+            "upm_n": 48,
+            "cv": 27.11305,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "09": {
+            "estado": "no_publicable",
+            "n": 505,
+            "upm_n": 74,
+            "cv": 33.41783,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": false
+          },
+          "10": {
+            "estado": "publicable_con_reserva",
+            "n": 540,
+            "upm_n": 70,
+            "cv": 21.01168,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "11": {
+            "estado": "no_publicable",
+            "n": 403,
+            "upm_n": 52,
+            "cv": 35.84744,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": false
+          },
+          "12": {
+            "estado": "publicable_con_reserva",
+            "n": 416,
+            "upm_n": 59,
+            "cv": 21.91489,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "13": {
+            "estado": "publicable_con_reserva",
+            "n": 409,
+            "upm_n": 55,
+            "cv": 13.83922,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "14": {
+            "estado": "publicable_con_reserva",
+            "n": 447,
+            "upm_n": 60,
+            "cv": 8.60897,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "15": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 53,
+            "cv": 13.62653,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "16": {
+            "estado": "publicable_con_reserva",
+            "n": 500,
+            "upm_n": 61,
+            "cv": 5.91315,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "17": {
+            "estado": "publicable_con_reserva",
+            "n": 484,
+            "upm_n": 64,
+            "cv": 20.84659,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "18": {
+            "estado": "publicable_con_reserva",
+            "n": 494,
+            "upm_n": 65,
+            "cv": 21.1627,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "19": {
+            "estado": "publicable_con_reserva",
+            "n": 483,
+            "upm_n": 61,
+            "cv": 24.54066,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "20": {
+            "estado": "publicable_con_reserva",
+            "n": 394,
+            "upm_n": 50,
+            "cv": 21.13552,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "21": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 58,
+            "cv": 11.8025,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          },
+          "22": {
+            "estado": "publicable_con_reserva",
+            "n": 547,
+            "upm_n": 76,
+            "cv": 17.51564,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true
+          }
+        }
+      }
+    },
+    "encovi_nacional": {
+      "estado": "publicable_con_reserva",
+      "n": 17523,
+      "upm_n": 1447,
+      "cv": 0.97213,
+      "ponderador": "FACTOR",
+      "precision": "aproximada_depto_upm_sin_estratos_originales",
+      "elegible": true
+    },
+    "pib_por_habitante": {
+      "elegibles": 22,
+      "total": 22
+    },
+    "medianas": {
+      "ocupacion_sector_informal": 77.9530445,
+      "pobreza_total": 53.7034785,
+      "pib_por_habitante": 33062.518856997194
+    },
+    "parejas": 231
+  },
+  "conteos": {
+    "R1": 26
+  },
+  "sensibilidad": [
+    {
+      "regla": "R1",
+      "parametro": null,
+      "valor": null,
+      "conteo": 26,
+      "aparecen": [],
+      "desaparecen": []
+    },
+    {
+      "regla": "R1",
+      "parametro": "r1_i",
+      "valor": 2,
+      "conteo": 16,
+      "aparecen": [],
+      "desaparecen": [
+        "R1:2023:03-05",
+        "R1:2023:04-15",
+        "R1:2023:06-11",
+        "R1:2023:07-14",
+        "R1:2023:07-21",
+        "R1:2023:10-18",
+        "R1:2023:12-13",
+        "R1:2023:12-22",
+        "R1:2023:13-20",
+        "R1:2023:16-22"
+      ]
+    },
+    {
+      "regla": "R1",
+      "parametro": "r1_i",
+      "valor": 5,
+      "conteo": 44,
+      "aparecen": [
+        "R1:2023:02-05",
+        "R1:2023:04-13",
+        "R1:2023:05-18",
+        "R1:2023:06-19",
+        "R1:2023:07-16",
+        "R1:2023:08-16",
+        "R1:2023:08-21",
+        "R1:2023:09-12",
+        "R1:2023:09-16",
+        "R1:2023:09-20",
+        "R1:2023:09-21",
+        "R1:2023:12-14",
+        "R1:2023:12-15",
+        "R1:2023:12-17",
+        "R1:2023:14-20",
+        "R1:2023:15-20",
+        "R1:2023:16-17",
+        "R1:2023:17-21"
+      ],
+      "desaparecen": []
+    },
+    {
+      "regla": "R1",
+      "parametro": "r1_p",
+      "valor": 10,
+      "conteo": 30,
+      "aparecen": [
+        "R1:2023:03-18",
+        "R1:2023:04-20",
+        "R1:2023:16-21",
+        "R1:2023:20-22"
+      ],
+      "desaparecen": []
+    },
+    {
+      "regla": "R1",
+      "parametro": "r1_p",
+      "valor": 20,
+      "conteo": 22,
+      "aparecen": [],
+      "desaparecen": [
+        "R1:2023:07-13",
+        "R1:2023:07-21",
+        "R1:2023:08-13",
+        "R1:2023:16-22"
+      ]
+    },
+    {
+      "regla": "R1",
+      "parametro": "r1_y",
+      "valor": 1.25,
+      "conteo": 29,
+      "aparecen": [
+        "R1:2023:02-03",
+        "R1:2023:04-12",
+        "R1:2023:11-19"
+      ],
+      "desaparecen": []
+    },
+    {
+      "regla": "R1",
+      "parametro": "r1_y",
+      "valor": 2,
+      "conteo": 22,
+      "aparecen": [],
+      "desaparecen": [
+        "R1:2023:02-10",
+        "R1:2023:03-05",
+        "R1:2023:10-18",
+        "R1:2023:10-19"
+      ]
+    }
+  ],
+  "hallazgos": [
+    {
+      "id": "R1:2023:04-16",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "04",
+        "16"
+      ],
+      "grupo": null,
+      "motivo": "ambos",
+      "magnitudes": {
+        "brecha_informalidad_pp": 0.979443,
+        "brecha_pobreza_pp": 42.546889,
+        "razon_pib_por_habitante": 1.5006316310040284
+      },
+      "evidencias": [
+        {
+          "territorio": "04",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 80.08103,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 896,
+            "upm_n": 69,
+            "cv": 3.01803,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 75.343967,
+            "ic95_sup": 84.818093
+          }
+        },
+        {
+          "territorio": "04",
+          "indicador": "pobreza_total",
+          "valor": 47.750718,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 514,
+            "upm_n": 69,
+            "cv": 7.13775,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 41.070399,
+            "ic95_sup": 54.431038
+          }
+        },
+        {
+          "territorio": "04",
+          "indicador": "pib_por_habitante",
+          "valor": 31743.113361539046,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.060473,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 822,
+            "upm_n": 61,
+            "cv": 2.55683,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.998214,
+            "ic95_sup": 85.122731
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "pobreza_total",
+          "valor": 90.297607,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 500,
+            "upm_n": 61,
+            "cv": 2.17264,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 86.452404,
+            "ic95_sup": 94.14281
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "pib_por_habitante",
+          "valor": 21153.16824309552,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Chimaltenango y Alta Verapaz difieren en 0.98 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total y el PIB por habitante.",
+      "pregunta": "¿Cómo varía la pobreza total y el PIB por habitante entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:09-15",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "09",
+        "15"
+      ],
+      "grupo": null,
+      "motivo": "ambos",
+      "magnitudes": {
+        "brecha_informalidad_pp": 0.012041,
+        "brecha_pobreza_pp": 36.018501,
+        "razon_pib_por_habitante": 1.5139004587577007
+      },
+      "evidencias": [
+        {
+          "territorio": "09",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 77.947024,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 794,
+            "upm_n": 74,
+            "cv": 3.21005,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 73.042829,
+            "ic95_sup": 82.851219
+          }
+        },
+        {
+          "territorio": "09",
+          "indicador": "pobreza_total",
+          "valor": 44.120882,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 505,
+            "upm_n": 74,
+            "cv": 7.15229,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 37.935801,
+            "ic95_sup": 50.305963
+          }
+        },
+        {
+          "territorio": "09",
+          "indicador": "pib_por_habitante",
+          "valor": 37751.03549821934,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "15",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 77.959065,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 730,
+            "upm_n": 53,
+            "cv": 3.68787,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 72.324015,
+            "ic95_sup": 83.594115
+          }
+        },
+        {
+          "territorio": "15",
+          "indicador": "pobreza_total",
+          "valor": 80.139383,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 53,
+            "cv": 4.20305,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 73.537519,
+            "ic95_sup": 86.741248
+          }
+        },
+        {
+          "territorio": "15",
+          "indicador": "pib_por_habitante",
+          "valor": 24936.273240314396,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Quetzaltenango y Baja Verapaz difieren en 0.01 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total y el PIB por habitante.",
+      "pregunta": "¿Cómo varía la pobreza total y el PIB por habitante entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:15-17",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "15",
+        "17"
+      ],
+      "grupo": null,
+      "motivo": "ambos",
+      "magnitudes": {
+        "brecha_informalidad_pp": 1.320503,
+        "brecha_pobreza_pp": 29.583444,
+        "razon_pib_por_habitante": 1.5493829431289696
+      },
+      "evidencias": [
+        {
+          "territorio": "15",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 77.959065,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 730,
+            "upm_n": 53,
+            "cv": 3.68787,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 72.324015,
+            "ic95_sup": 83.594115
+          }
+        },
+        {
+          "territorio": "15",
+          "indicador": "pobreza_total",
+          "valor": 80.139383,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 53,
+            "cv": 4.20305,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 73.537519,
+            "ic95_sup": 86.741248
+          }
+        },
+        {
+          "territorio": "15",
+          "indicador": "pib_por_habitante",
+          "valor": 24936.273240314396,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "17",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 76.638562,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 724,
+            "upm_n": 64,
+            "cv": 3.1086,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 71.96908,
+            "ic95_sup": 81.308044
+          }
+        },
+        {
+          "territorio": "17",
+          "indicador": "pobreza_total",
+          "valor": 50.555939,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 484,
+            "upm_n": 64,
+            "cv": 7.26661,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 43.355478,
+            "ic95_sup": 57.756399
+          }
+        },
+        {
+          "territorio": "17",
+          "indicador": "pib_por_habitante",
+          "valor": 38635.836423746485,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Baja Verapaz y Petén difieren en 1.32 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total y el PIB por habitante.",
+      "pregunta": "¿Cómo varía la pobreza total y el PIB por habitante entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:12-16",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "12",
+        "16"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 0.533968,
+        "brecha_pobreza_pp": 36.551521,
+        "razon_pib_por_habitante": 1.0584257237292414
+      },
+      "evidencias": [
+        {
+          "territorio": "12",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.594441,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 619,
+            "upm_n": 59,
+            "cv": 3.11577,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.611535,
+            "ic95_sup": 86.577346
+          }
+        },
+        {
+          "territorio": "12",
+          "indicador": "pobreza_total",
+          "valor": 53.746086,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 416,
+            "upm_n": 59,
+            "cv": 5.48787,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 47.965038,
+            "ic95_sup": 59.527134
+          }
+        },
+        {
+          "territorio": "12",
+          "indicador": "pib_por_habitante",
+          "valor": 22389.05740686478,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.060473,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 822,
+            "upm_n": 61,
+            "cv": 2.55683,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.998214,
+            "ic95_sup": 85.122731
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "pobreza_total",
+          "valor": 90.297607,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 500,
+            "upm_n": 61,
+            "cv": 2.17264,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 86.452404,
+            "ic95_sup": 94.14281
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "pib_por_habitante",
+          "valor": 21153.16824309552,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "San Marcos y Alta Verapaz difieren en 0.53 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:04-15",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "04",
+        "15"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.121965,
+        "brecha_pobreza_pp": 32.388665,
+        "razon_pib_por_habitante": 1.272969423122139
+      },
+      "evidencias": [
+        {
+          "territorio": "04",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 80.08103,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 896,
+            "upm_n": 69,
+            "cv": 3.01803,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 75.343967,
+            "ic95_sup": 84.818093
+          }
+        },
+        {
+          "territorio": "04",
+          "indicador": "pobreza_total",
+          "valor": 47.750718,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 514,
+            "upm_n": 69,
+            "cv": 7.13775,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 41.070399,
+            "ic95_sup": 54.431038
+          }
+        },
+        {
+          "territorio": "04",
+          "indicador": "pib_por_habitante",
+          "valor": 31743.113361539046,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "15",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 77.959065,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 730,
+            "upm_n": 53,
+            "cv": 3.68787,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 72.324015,
+            "ic95_sup": 83.594115
+          }
+        },
+        {
+          "territorio": "15",
+          "indicador": "pobreza_total",
+          "valor": 80.139383,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 53,
+            "cv": 4.20305,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 73.537519,
+            "ic95_sup": 86.741248
+          }
+        },
+        {
+          "territorio": "15",
+          "indicador": "pib_por_habitante",
+          "valor": 24936.273240314396,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Chimaltenango y Baja Verapaz difieren en 2.12 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:04-21",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "04",
+        "21"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 1.486436,
+        "brecha_pobreza_pp": 32.193488,
+        "razon_pib_por_habitante": 1.246532201262427
+      },
+      "evidencias": [
+        {
+          "territorio": "04",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 80.08103,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 896,
+            "upm_n": 69,
+            "cv": 3.01803,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 75.343967,
+            "ic95_sup": 84.818093
+          }
+        },
+        {
+          "territorio": "04",
+          "indicador": "pobreza_total",
+          "valor": 47.750718,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 514,
+            "upm_n": 69,
+            "cv": 7.13775,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 41.070399,
+            "ic95_sup": 54.431038
+          }
+        },
+        {
+          "territorio": "04",
+          "indicador": "pib_por_habitante",
+          "valor": 31743.113361539046,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.567466,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 656,
+            "upm_n": 58,
+            "cv": 3.40387,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.125631,
+            "ic95_sup": 87.009301
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "pobreza_total",
+          "valor": 79.944206,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 58,
+            "cv": 3.53256,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 74.40902,
+            "ic95_sup": 85.479392
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "pib_por_habitante",
+          "valor": 25465.137065365154,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Chimaltenango y Jalapa difieren en 1.49 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:16-20",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "16",
+        "20"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 0.56209,
+        "brecha_pobreza_pp": 30.738028,
+        "razon_pib_por_habitante": 1.2965094967103603
+      },
+      "evidencias": [
+        {
+          "territorio": "16",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.060473,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 822,
+            "upm_n": 61,
+            "cv": 2.55683,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.998214,
+            "ic95_sup": 85.122731
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "pobreza_total",
+          "valor": 90.297607,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 500,
+            "upm_n": 61,
+            "cv": 2.17264,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 86.452404,
+            "ic95_sup": 94.14281
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "pib_por_habitante",
+          "valor": 21153.16824309552,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "20",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.622563,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 579,
+            "upm_n": 50,
+            "cv": 3.48888,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.041039,
+            "ic95_sup": 87.204087
+          }
+        },
+        {
+          "territorio": "20",
+          "indicador": "pobreza_total",
+          "valor": 59.559579,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 394,
+            "upm_n": 50,
+            "cv": 8.69939,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 49.404191,
+            "ic95_sup": 69.714967
+          }
+        },
+        {
+          "territorio": "20",
+          "indicador": "pib_por_habitante",
+          "valor": 27425.28351268535,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Alta Verapaz y Chiquimula difieren en 0.56 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:09-22",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "09",
+        "22"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 0.684713,
+        "brecha_pobreza_pp": 29.845941,
+        "razon_pib_por_habitante": 1.2517955935029663
+      },
+      "evidencias": [
+        {
+          "territorio": "09",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 77.947024,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 794,
+            "upm_n": 74,
+            "cv": 3.21005,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 73.042829,
+            "ic95_sup": 82.851219
+          }
+        },
+        {
+          "territorio": "09",
+          "indicador": "pobreza_total",
+          "valor": 44.120882,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 505,
+            "upm_n": 74,
+            "cv": 7.15229,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 37.935801,
+            "ic95_sup": 50.305963
+          }
+        },
+        {
+          "territorio": "09",
+          "indicador": "pib_por_habitante",
+          "valor": 37751.03549821934,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 78.631737,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 767,
+            "upm_n": 76,
+            "cv": 2.60652,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 74.614619,
+            "ic95_sup": 82.648854
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pobreza_total",
+          "valor": 73.966823,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 547,
+            "upm_n": 76,
+            "cv": 3.36196,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 69.092823,
+            "ic95_sup": 78.840823
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pib_por_habitante",
+          "valor": 30157.507898377087,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Quetzaltenango y Jutiapa difieren en 0.68 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:12-13",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "12",
+        "13"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.948325,
+        "brecha_pobreza_pp": 27.524986,
+        "razon_pib_por_habitante": 1.0967575187725538
+      },
+      "evidencias": [
+        {
+          "territorio": "12",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.594441,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 619,
+            "upm_n": 59,
+            "cv": 3.11577,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.611535,
+            "ic95_sup": 86.577346
+          }
+        },
+        {
+          "territorio": "12",
+          "indicador": "pobreza_total",
+          "valor": 53.746086,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 416,
+            "upm_n": 59,
+            "cv": 5.48787,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 47.965038,
+            "ic95_sup": 59.527134
+          }
+        },
+        {
+          "territorio": "12",
+          "indicador": "pib_por_habitante",
+          "valor": 22389.05740686478,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 84.542766,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 626,
+            "upm_n": 55,
+            "cv": 3.34588,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 78.998522,
+            "ic95_sup": 90.087011
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "pobreza_total",
+          "valor": 81.271072,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 409,
+            "upm_n": 55,
+            "cv": 3.36615,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 75.90909,
+            "ic95_sup": 86.633054
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "pib_por_habitante",
+          "valor": 20413.862703144903,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "San Marcos y Huehuetenango difieren en 2.95 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:04-22",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "04",
+        "22"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 1.449293,
+        "brecha_pobreza_pp": 26.216105,
+        "razon_pib_por_habitante": 1.0525774698793096
+      },
+      "evidencias": [
+        {
+          "territorio": "04",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 80.08103,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 896,
+            "upm_n": 69,
+            "cv": 3.01803,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 75.343967,
+            "ic95_sup": 84.818093
+          }
+        },
+        {
+          "territorio": "04",
+          "indicador": "pobreza_total",
+          "valor": 47.750718,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 514,
+            "upm_n": 69,
+            "cv": 7.13775,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 41.070399,
+            "ic95_sup": 54.431038
+          }
+        },
+        {
+          "territorio": "04",
+          "indicador": "pib_por_habitante",
+          "valor": 31743.113361539046,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 78.631737,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 767,
+            "upm_n": 76,
+            "cv": 2.60652,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 74.614619,
+            "ic95_sup": 82.648854
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pobreza_total",
+          "valor": 73.966823,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 547,
+            "upm_n": 76,
+            "cv": 3.36196,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 69.092823,
+            "ic95_sup": 78.840823
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pib_por_habitante",
+          "valor": 30157.507898377087,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Chimaltenango y Jutiapa difieren en 1.45 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:12-21",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "12",
+        "21"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 0.026975,
+        "brecha_pobreza_pp": 26.19812,
+        "razon_pib_por_habitante": 1.1373921019809081
+      },
+      "evidencias": [
+        {
+          "territorio": "12",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.594441,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 619,
+            "upm_n": 59,
+            "cv": 3.11577,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.611535,
+            "ic95_sup": 86.577346
+          }
+        },
+        {
+          "territorio": "12",
+          "indicador": "pobreza_total",
+          "valor": 53.746086,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 416,
+            "upm_n": 59,
+            "cv": 5.48787,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 47.965038,
+            "ic95_sup": 59.527134
+          }
+        },
+        {
+          "territorio": "12",
+          "indicador": "pib_por_habitante",
+          "valor": 22389.05740686478,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.567466,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 656,
+            "upm_n": 58,
+            "cv": 3.40387,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.125631,
+            "ic95_sup": 87.009301
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "pobreza_total",
+          "valor": 79.944206,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 58,
+            "cv": 3.53256,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 74.40902,
+            "ic95_sup": 85.479392
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "pib_por_habitante",
+          "valor": 25465.137065365154,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "San Marcos y Jalapa difieren en 0.03 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:07-14",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "07",
+        "14"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.121148,
+        "brecha_pobreza_pp": 24.462708,
+        "razon_pib_por_habitante": 1.143026858361002
+      },
+      "evidencias": [
+        {
+          "territorio": "07",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 84.338438,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 711,
+            "upm_n": 50,
+            "cv": 2.14917,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 80.785792,
+            "ic95_sup": 87.891085
+          }
+        },
+        {
+          "territorio": "07",
+          "indicador": "pobreza_total",
+          "valor": 61.937357,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 382,
+            "upm_n": 50,
+            "cv": 6.3151,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 54.270996,
+            "ic95_sup": 69.603718
+          }
+        },
+        {
+          "territorio": "07",
+          "indicador": "pib_por_habitante",
+          "valor": 24010.994653396232,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "14",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 86.459586,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 685,
+            "upm_n": 60,
+            "cv": 2.48626,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 82.246349,
+            "ic95_sup": 90.672823
+          }
+        },
+        {
+          "territorio": "14",
+          "indicador": "pobreza_total",
+          "valor": 86.400065,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 447,
+            "upm_n": 60,
+            "cv": 2.03175,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 82.959416,
+            "ic95_sup": 89.840715
+          }
+        },
+        {
+          "territorio": "14",
+          "indicador": "pib_por_habitante",
+          "valor": 21006.50083395752,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Sololá y Quiché difieren en 2.12 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:08-14",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "08",
+        "14"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 0.587998,
+        "brecha_pobreza_pp": 24.282347,
+        "razon_pib_por_habitante": 1.0423472987625009
+      },
+      "evidencias": [
+        {
+          "territorio": "08",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 85.871588,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 645,
+            "upm_n": 48,
+            "cv": 2.53234,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 81.609449,
+            "ic95_sup": 90.133726
+          }
+        },
+        {
+          "territorio": "08",
+          "indicador": "pobreza_total",
+          "valor": 62.117718,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 357,
+            "upm_n": 48,
+            "cv": 6.54414,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 54.150178,
+            "ic95_sup": 70.085258
+          }
+        },
+        {
+          "territorio": "08",
+          "indicador": "pib_por_habitante",
+          "valor": 20153.072645649805,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "14",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 86.459586,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 685,
+            "upm_n": 60,
+            "cv": 2.48626,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 82.246349,
+            "ic95_sup": 90.672823
+          }
+        },
+        {
+          "territorio": "14",
+          "indicador": "pobreza_total",
+          "valor": 86.400065,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 447,
+            "upm_n": 60,
+            "cv": 2.03175,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 82.959416,
+            "ic95_sup": 89.840715
+          }
+        },
+        {
+          "territorio": "14",
+          "indicador": "pib_por_habitante",
+          "valor": 21006.50083395752,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Totonicapán y Quiché difieren en 0.59 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:17-22",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "17",
+        "22"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 1.993175,
+        "brecha_pobreza_pp": 23.410884,
+        "razon_pib_por_habitante": 1.2811349185065009
+      },
+      "evidencias": [
+        {
+          "territorio": "17",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 76.638562,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 724,
+            "upm_n": 64,
+            "cv": 3.1086,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 71.96908,
+            "ic95_sup": 81.308044
+          }
+        },
+        {
+          "territorio": "17",
+          "indicador": "pobreza_total",
+          "valor": 50.555939,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 484,
+            "upm_n": 64,
+            "cv": 7.26661,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 43.355478,
+            "ic95_sup": 57.756399
+          }
+        },
+        {
+          "territorio": "17",
+          "indicador": "pib_por_habitante",
+          "valor": 38635.836423746485,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 78.631737,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 767,
+            "upm_n": 76,
+            "cv": 2.60652,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 74.614619,
+            "ic95_sup": 82.648854
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pobreza_total",
+          "valor": 73.966823,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 547,
+            "upm_n": 76,
+            "cv": 3.36196,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 69.092823,
+            "ic95_sup": 78.840823
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pib_por_habitante",
+          "valor": 30157.507898377087,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Petén y Jutiapa difieren en 1.99 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:06-11",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "06",
+        "11"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.871191,
+        "brecha_pobreza_pp": 23.118943,
+        "razon_pib_por_habitante": 1.1696483725387508
+      },
+      "evidencias": [
+        {
+          "territorio": "06",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 71.633857,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 613,
+            "upm_n": 56,
+            "cv": 3.47886,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 66.749455,
+            "ic95_sup": 76.518258
+          }
+        },
+        {
+          "territorio": "06",
+          "indicador": "pobreza_total",
+          "valor": 73.984721,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 423,
+            "upm_n": 56,
+            "cv": 3.78068,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 68.50235,
+            "ic95_sup": 79.467092
+          }
+        },
+        {
+          "territorio": "06",
+          "indicador": "pib_por_habitante",
+          "valor": 35736.77224295062,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "11",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 68.762666,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 614,
+            "upm_n": 52,
+            "cv": 2.72013,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 65.096612,
+            "ic95_sup": 72.42872
+          }
+        },
+        {
+          "territorio": "11",
+          "indicador": "pobreza_total",
+          "valor": 50.865778,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 403,
+            "upm_n": 52,
+            "cv": 6.14769,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 44.736716,
+            "ic95_sup": 56.994841
+          }
+        },
+        {
+          "territorio": "11",
+          "indicador": "pib_por_habitante",
+          "valor": 41799.457493755195,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Santa Rosa y Retalhuleu difieren en 2.87 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:13-20",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "13",
+        "20"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.920203,
+        "brecha_pobreza_pp": 21.711493,
+        "razon_pib_por_habitante": 1.3434636997171676
+      },
+      "evidencias": [
+        {
+          "territorio": "13",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 84.542766,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 626,
+            "upm_n": 55,
+            "cv": 3.34588,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 78.998522,
+            "ic95_sup": 90.087011
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "pobreza_total",
+          "valor": 81.271072,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 409,
+            "upm_n": 55,
+            "cv": 3.36615,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 75.90909,
+            "ic95_sup": 86.633054
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "pib_por_habitante",
+          "valor": 20413.862703144903,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "20",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.622563,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 579,
+            "upm_n": 50,
+            "cv": 3.48888,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.041039,
+            "ic95_sup": 87.204087
+          }
+        },
+        {
+          "territorio": "20",
+          "indicador": "pobreza_total",
+          "valor": 59.559579,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 394,
+            "upm_n": 50,
+            "cv": 8.69939,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 49.404191,
+            "ic95_sup": 69.714967
+          }
+        },
+        {
+          "territorio": "20",
+          "indicador": "pib_por_habitante",
+          "valor": 27425.28351268535,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Huehuetenango y Chiquimula difieren en 2.92 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:20-21",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "20",
+        "21"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 0.055097,
+        "brecha_pobreza_pp": 20.384627,
+        "razon_pib_por_habitante": 1.076973724598018
+      },
+      "evidencias": [
+        {
+          "territorio": "20",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.622563,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 579,
+            "upm_n": 50,
+            "cv": 3.48888,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.041039,
+            "ic95_sup": 87.204087
+          }
+        },
+        {
+          "territorio": "20",
+          "indicador": "pobreza_total",
+          "valor": 59.559579,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 394,
+            "upm_n": 50,
+            "cv": 8.69939,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 49.404191,
+            "ic95_sup": 69.714967
+          }
+        },
+        {
+          "territorio": "20",
+          "indicador": "pib_por_habitante",
+          "valor": 27425.28351268535,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.567466,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 656,
+            "upm_n": 58,
+            "cv": 3.40387,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.125631,
+            "ic95_sup": 87.009301
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "pobreza_total",
+          "valor": 79.944206,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 58,
+            "cv": 3.53256,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 74.40902,
+            "ic95_sup": 85.479392
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "pib_por_habitante",
+          "valor": 25465.137065365154,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Chiquimula y Jalapa difieren en 0.06 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 7,
+        "escenarios": 7,
+        "proporcion": 1.0
+      }
+    },
+    {
+      "id": "R1:2023:12-22",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "12",
+        "22"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.962704,
+        "brecha_pobreza_pp": 20.220737,
+        "razon_pib_por_habitante": 1.3469753259523287
+      },
+      "evidencias": [
+        {
+          "territorio": "12",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.594441,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 619,
+            "upm_n": 59,
+            "cv": 3.11577,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.611535,
+            "ic95_sup": 86.577346
+          }
+        },
+        {
+          "territorio": "12",
+          "indicador": "pobreza_total",
+          "valor": 53.746086,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 416,
+            "upm_n": 59,
+            "cv": 5.48787,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 47.965038,
+            "ic95_sup": 59.527134
+          }
+        },
+        {
+          "territorio": "12",
+          "indicador": "pib_por_habitante",
+          "valor": 22389.05740686478,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 78.631737,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 767,
+            "upm_n": 76,
+            "cv": 2.60652,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 74.614619,
+            "ic95_sup": 82.648854
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pobreza_total",
+          "valor": 73.966823,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 547,
+            "upm_n": 76,
+            "cv": 3.36196,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 69.092823,
+            "ic95_sup": 78.840823
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pib_por_habitante",
+          "valor": 30157.507898377087,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "San Marcos y Jutiapa difieren en 2.96 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:07-13",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "07",
+        "13"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 0.204328,
+        "brecha_pobreza_pp": 19.333715,
+        "razon_pib_por_habitante": 1.1762102548919937
+      },
+      "evidencias": [
+        {
+          "territorio": "07",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 84.338438,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 711,
+            "upm_n": 50,
+            "cv": 2.14917,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 80.785792,
+            "ic95_sup": 87.891085
+          }
+        },
+        {
+          "territorio": "07",
+          "indicador": "pobreza_total",
+          "valor": 61.937357,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 382,
+            "upm_n": 50,
+            "cv": 6.3151,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 54.270996,
+            "ic95_sup": 69.603718
+          }
+        },
+        {
+          "territorio": "07",
+          "indicador": "pib_por_habitante",
+          "valor": 24010.994653396232,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 84.542766,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 626,
+            "upm_n": 55,
+            "cv": 3.34588,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 78.998522,
+            "ic95_sup": 90.087011
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "pobreza_total",
+          "valor": 81.271072,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 409,
+            "upm_n": 55,
+            "cv": 3.36615,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 75.90909,
+            "ic95_sup": 86.633054
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "pib_por_habitante",
+          "valor": 20413.862703144903,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Sololá y Huehuetenango difieren en 0.20 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:08-13",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "08",
+        "13"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 1.328822,
+        "brecha_pobreza_pp": 19.153354,
+        "razon_pib_por_habitante": 1.012940461342077
+      },
+      "evidencias": [
+        {
+          "territorio": "08",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 85.871588,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 645,
+            "upm_n": 48,
+            "cv": 2.53234,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 81.609449,
+            "ic95_sup": 90.133726
+          }
+        },
+        {
+          "territorio": "08",
+          "indicador": "pobreza_total",
+          "valor": 62.117718,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 357,
+            "upm_n": 48,
+            "cv": 6.54414,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 54.150178,
+            "ic95_sup": 70.085258
+          }
+        },
+        {
+          "territorio": "08",
+          "indicador": "pib_por_habitante",
+          "valor": 20153.072645649805,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 84.542766,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 626,
+            "upm_n": 55,
+            "cv": 3.34588,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 78.998522,
+            "ic95_sup": 90.087011
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "pobreza_total",
+          "valor": 81.271072,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 409,
+            "upm_n": 55,
+            "cv": 3.36615,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 75.90909,
+            "ic95_sup": 86.633054
+          }
+        },
+        {
+          "territorio": "13",
+          "indicador": "pib_por_habitante",
+          "valor": 20413.862703144903,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Totonicapán y Huehuetenango difieren en 1.33 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:07-21",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "07",
+        "21"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.770972,
+        "brecha_pobreza_pp": 18.006849,
+        "razon_pib_por_habitante": 1.0605615232921324
+      },
+      "evidencias": [
+        {
+          "territorio": "07",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 84.338438,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 711,
+            "upm_n": 50,
+            "cv": 2.14917,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 80.785792,
+            "ic95_sup": 87.891085
+          }
+        },
+        {
+          "territorio": "07",
+          "indicador": "pobreza_total",
+          "valor": 61.937357,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 382,
+            "upm_n": 50,
+            "cv": 6.3151,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 54.270996,
+            "ic95_sup": 69.603718
+          }
+        },
+        {
+          "territorio": "07",
+          "indicador": "pib_por_habitante",
+          "valor": 24010.994653396232,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.567466,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 656,
+            "upm_n": 58,
+            "cv": 3.40387,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.125631,
+            "ic95_sup": 87.009301
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "pobreza_total",
+          "valor": 79.944206,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 440,
+            "upm_n": 58,
+            "cv": 3.53256,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 74.40902,
+            "ic95_sup": 85.479392
+          }
+        },
+        {
+          "territorio": "21",
+          "indicador": "pib_por_habitante",
+          "valor": 25465.137065365154,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Sololá y Jalapa difieren en 2.77 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 5,
+        "escenarios": 7,
+        "proporcion": 0.7142857142857143
+      }
+    },
+    {
+      "id": "R1:2023:16-22",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "16",
+        "22"
+      ],
+      "grupo": null,
+      "motivo": "solo_pobreza",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.428736,
+        "brecha_pobreza_pp": 16.330784,
+        "razon_pib_por_habitante": 1.4256733342165242
+      },
+      "evidencias": [
+        {
+          "territorio": "16",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 81.060473,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 822,
+            "upm_n": 61,
+            "cv": 2.55683,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 76.998214,
+            "ic95_sup": 85.122731
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "pobreza_total",
+          "valor": 90.297607,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 500,
+            "upm_n": 61,
+            "cv": 2.17264,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 86.452404,
+            "ic95_sup": 94.14281
+          }
+        },
+        {
+          "territorio": "16",
+          "indicador": "pib_por_habitante",
+          "valor": 21153.16824309552,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 78.631737,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 767,
+            "upm_n": 76,
+            "cv": 2.60652,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 74.614619,
+            "ic95_sup": 82.648854
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pobreza_total",
+          "valor": 73.966823,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 547,
+            "upm_n": 76,
+            "cv": 3.36196,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 69.092823,
+            "ic95_sup": 78.840823
+          }
+        },
+        {
+          "territorio": "22",
+          "indicador": "pib_por_habitante",
+          "valor": 30157.507898377087,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Alta Verapaz y Jutiapa difieren en 2.43 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para la pobreza total.",
+      "pregunta": "¿Cómo varía la pobreza total entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 5,
+        "escenarios": 7,
+        "proporcion": 0.7142857142857143
+      }
+    },
+    {
+      "id": "R1:2023:02-10",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "02",
+        "10"
+      ],
+      "grupo": null,
+      "motivo": "solo_pib",
+      "magnitudes": {
+        "brecha_informalidad_pp": 1.874703,
+        "brecha_pobreza_pp": 7.260632,
+        "razon_pib_por_habitante": 1.6668342426562803
+      },
+      "evidencias": [
+        {
+          "territorio": "02",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 64.752118,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 782,
+            "upm_n": 65,
+            "cv": 3.45437,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 60.368032,
+            "ic95_sup": 69.136203
+          }
+        },
+        {
+          "territorio": "02",
+          "indicador": "pobreza_total",
+          "valor": 46.400239,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 530,
+            "upm_n": 65,
+            "cv": 7.36686,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 39.700487,
+            "ic95_sup": 53.099991
+          }
+        },
+        {
+          "territorio": "02",
+          "indicador": "pib_por_habitante",
+          "valor": 57308.96883909043,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "10",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 66.626821,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 816,
+            "upm_n": 70,
+            "cv": 3.57782,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 61.954601,
+            "ic95_sup": 71.299041
+          }
+        },
+        {
+          "territorio": "10",
+          "indicador": "pobreza_total",
+          "valor": 53.660871,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 540,
+            "upm_n": 70,
+            "cv": 5.72327,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 47.641407,
+            "ic95_sup": 59.680336
+          }
+        },
+        {
+          "territorio": "10",
+          "indicador": "pib_por_habitante",
+          "valor": 34381.924352455346,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "El Progreso y Suchitepéquez difieren en 1.87 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para el PIB por habitante.",
+      "pregunta": "¿Cómo varía el PIB por habitante entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:10-18",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "10",
+        "18"
+      ],
+      "grupo": null,
+      "motivo": "solo_pib",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.625258,
+        "brecha_pobreza_pp": 3.116752,
+        "razon_pib_por_habitante": 1.5251779513372912
+      },
+      "evidencias": [
+        {
+          "territorio": "10",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 66.626821,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 816,
+            "upm_n": 70,
+            "cv": 3.57782,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 61.954601,
+            "ic95_sup": 71.299041
+          }
+        },
+        {
+          "territorio": "10",
+          "indicador": "pobreza_total",
+          "valor": 53.660871,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 540,
+            "upm_n": 70,
+            "cv": 5.72327,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 47.641407,
+            "ic95_sup": 59.680336
+          }
+        },
+        {
+          "territorio": "10",
+          "indicador": "pib_por_habitante",
+          "valor": 34381.924352455346,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "18",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 64.001563,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 814,
+            "upm_n": 65,
+            "cv": 5.2352,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 57.434368,
+            "ic95_sup": 70.568758
+          }
+        },
+        {
+          "territorio": "18",
+          "indicador": "pobreza_total",
+          "valor": 50.544119,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 494,
+            "upm_n": 65,
+            "cv": 8.98474,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 41.643254,
+            "ic95_sup": 59.444983
+          }
+        },
+        {
+          "territorio": "18",
+          "indicador": "pib_por_habitante",
+          "valor": 52438.552946911565,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Suchitepéquez y Izabal difieren en 2.63 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para el PIB por habitante.",
+      "pregunta": "¿Cómo varía el PIB por habitante entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 5,
+        "escenarios": 7,
+        "proporcion": 0.7142857142857143
+      }
+    },
+    {
+      "id": "R1:2023:10-19",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "10",
+        "19"
+      ],
+      "grupo": null,
+      "motivo": "solo_pib",
+      "magnitudes": {
+        "brecha_informalidad_pp": 1.921532,
+        "brecha_pobreza_pp": 1.099929,
+        "razon_pib_por_habitante": 1.572960758081152
+      },
+      "evidencias": [
+        {
+          "territorio": "10",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 66.626821,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 816,
+            "upm_n": 70,
+            "cv": 3.57782,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 61.954601,
+            "ic95_sup": 71.299041
+          }
+        },
+        {
+          "territorio": "10",
+          "indicador": "pobreza_total",
+          "valor": 53.660871,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 540,
+            "upm_n": 70,
+            "cv": 5.72327,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 47.641407,
+            "ic95_sup": 59.680336
+          }
+        },
+        {
+          "territorio": "10",
+          "indicador": "pib_por_habitante",
+          "valor": 34381.924352455346,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "19",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 68.548353,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 770,
+            "upm_n": 61,
+            "cv": 3.38145,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 64.005219,
+            "ic95_sup": 73.091487
+          }
+        },
+        {
+          "territorio": "19",
+          "indicador": "pobreza_total",
+          "valor": 52.560942,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 483,
+            "upm_n": 61,
+            "cv": 8.60716,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 43.693889,
+            "ic95_sup": 61.427994
+          }
+        },
+        {
+          "territorio": "19",
+          "indicador": "pib_por_habitante",
+          "valor": 54081.417793726985,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Suchitepéquez y Zacapa difieren en 1.92 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para el PIB por habitante.",
+      "pregunta": "¿Cómo varía el PIB por habitante entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 6,
+        "escenarios": 7,
+        "proporcion": 0.8571428571428571
+      }
+    },
+    {
+      "id": "R1:2023:03-05",
+      "regla": "R1",
+      "anio": 2023,
+      "territorios": [
+        "03",
+        "05"
+      ],
+      "grupo": null,
+      "motivo": "solo_pib",
+      "magnitudes": {
+        "brecha_informalidad_pp": 2.689612,
+        "brecha_pobreza_pp": 0.434738,
+        "razon_pib_por_habitante": 1.984129130487983
+      },
+      "evidencias": [
+        {
+          "territorio": "03",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 62.732566,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 1200,
+            "upm_n": 92,
+            "cv": 3.08912,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 58.934308,
+            "ic95_sup": 66.530825
+          }
+        },
+        {
+          "territorio": "03",
+          "indicador": "pobreza_total",
+          "valor": 38.748647,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 656,
+            "upm_n": 92,
+            "cv": 7.80041,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 32.824442,
+            "ic95_sup": 44.672851
+          }
+        },
+        {
+          "territorio": "03",
+          "indicador": "pib_por_habitante",
+          "valor": 45356.17364440115,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        },
+        {
+          "territorio": "05",
+          "indicador": "ocupacion_sector_informal",
+          "valor": 60.042954,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas ocupadas de 15 años o más",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 1137,
+            "upm_n": 85,
+            "cv": 3.60466,
+            "ponderador": "FACTOR",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 55.800834,
+            "ic95_sup": 64.285074
+          }
+        },
+        {
+          "territorio": "05",
+          "indicador": "pobreza_total",
+          "valor": 39.183385,
+          "unidad": "%",
+          "fuente": "INE, ENCOVI 2023",
+          "universo": "Personas representadas por hogares con clasificación de consumo válida",
+          "diagnostico": {
+            "estado": "publicable_con_reserva",
+            "n": 679,
+            "upm_n": 85,
+            "cv": 7.73953,
+            "ponderador": "Factor3",
+            "precision": "aproximada_depto_upm_sin_estratos_originales",
+            "elegible": true,
+            "ic95_inf": 33.239471,
+            "ic95_sup": 45.127298
+          }
+        },
+        {
+          "territorio": "05",
+          "indicador": "pib_por_habitante",
+          "valor": 89992.50537532762,
+          "unidad": "Q corrientes por habitante",
+          "fuente": "Banguat, cuadro 8, 2023",
+          "universo": "Población departamental proyectada",
+          "diagnostico": {
+            "elegible": true,
+            "revision": "preliminar"
+          }
+        }
+      ],
+      "explicacion": "Sacatepéquez y Escuintla difieren en 2.69 pp de ocupación en el sector informal. El contraste supera o iguala el umbral para el PIB por habitante.",
+      "pregunta": "¿Cómo varía el PIB por habitante entre territorios con estimaciones puntuales próximas de ocupación en el sector informal?",
+      "evidencia_requerida": "Desagregaciones comparables por área y composición de los hogares, junto con errores de muestreo del diseño completo.",
+      "limitacion": "Comparación descriptiva departamental. La cercanía de las estimaciones puntuales no establece equivalencia estadística. Los IC95 y CV de ENCOVI son aproximados (DEPTO/UPM sin estratos originales). El PIB por habitante mide producción por persona.",
+      "robustez": {
+        "presentes": 5,
+        "escenarios": 7,
+        "proporcion": 0.7142857142857143
+      }
+    }
+  ]
+}
