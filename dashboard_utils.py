@@ -33,7 +33,7 @@ def cargar_pib(procesados: Path) -> pd.DataFrame:
 
 
 def cargar_encovi(procesados: Path, pib: pd.DataFrame) -> pd.DataFrame | None:
-    """Devuelve solo estimaciones publicables, con sus metadatos de precisión."""
+    """Conserva el CV y oculta las estimaciones no publicables y sus intervalos."""
     ruta = procesados / 'indicadores_encovi_2023.csv'
     if not ruta.exists():
         return None
@@ -48,8 +48,10 @@ def cargar_encovi(procesados: Path, pib: pd.DataFrame) -> pd.DataFrame | None:
         raise ValueError('ENCOVI debe tener 22 departamentos por tres indicadores únicos de 2023')
     if not encovi.estado.isin(['publicable_con_reserva', 'no_publicable']).all():
         raise ValueError('ENCOVI contiene estados de publicación desconocidos')
-    publicables = encovi.loc[encovi.estado.eq('publicable_con_reserva'), list(COLUMNAS_ENCOVI)]
+    encovi = encovi[list(COLUMNAS_ENCOVI)].copy()
+    publicables = encovi.loc[encovi.estado.eq('publicable_con_reserva')]
     if (not publicables.unidad.eq('porcentaje').all()
             or not pd.to_numeric(publicables.valor, errors='coerce').between(0, 100).all()):
         raise ValueError('ENCOVI contiene unidades o tasas inválidas en filas publicables')
-    return publicables
+    encovi.loc[encovi.estado.eq('no_publicable'), ['valor', 'ic95_inf', 'ic95_sup']] = pd.NA
+    return encovi

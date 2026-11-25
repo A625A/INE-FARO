@@ -57,15 +57,19 @@ def test_rechaza_depto_duplicado_pib(tmp_path, pib):
         cargar_pib(tmp_path)
 
 
-def test_filtra_solo_la_fila_no_publicable(tmp_path, pib):
+def test_conserva_cinco_filas_sin_publicar_sus_estimaciones(tmp_path, pib):
     ruta = escribir_encovi(tmp_path, pib)
     df = pd.read_csv(ruta, dtype={'depto_id': str})
-    df.loc[0, ['estado', 'valor', 'cv']] = ['no_publicable', None, None]
+    restringidas = df.depto_id.isin(['01', '03', '05', '09', '11']) & df.indicador.eq('pobreza_extrema')
+    df.loc[restringidas, ['estado', 'valor', 'cv']] = ['no_publicable', 99.9, 35]
     df.to_csv(ruta, index=False)
     detalle = cargar_encovi(tmp_path, pib)
-    assert len(detalle) == 65
-    assert set(detalle.loc[detalle.depto_id.eq('01'), 'indicador']) == {'pobreza_total', 'pobreza_extrema'}
-    assert detalle.estado.eq('publicable_con_reserva').all()
+    assert len(detalle) == 66 and detalle.depto_id.nunique() == 22
+    assert detalle.valor.notna().sum() == 61
+    no_publicables = detalle.loc[detalle.estado.eq('no_publicable')]
+    assert len(no_publicables) == 5
+    assert no_publicables[['valor', 'ic95_inf', 'ic95_sup']].isna().all().all()
+    assert no_publicables.cv.eq(35).all()
 
 
 def test_app_local_y_cobertura_del_mapa(tmp_path, pib):
@@ -95,7 +99,12 @@ def test_app_local_y_cobertura_del_mapa(tmp_path, pib):
     filas.to_csv(ruta, index=False)
     vista.selectbox[0].select('Guatemala').run()
     assert not vista.exception and not vista.warning
-    assert [m.value for m in vista.metric[1:]] == ['—', '50.0 %', '50.0 %']
-    assert vista.dataframe[0].value['Valor (%)'].tolist() == [50.0, 50.0]
+    assert [m.value for m in vista.metric[1:]] == ['50.0 %', '50.0 %']
+    assert any('N/D — precisión insuficiente' in m.value for m in vista.markdown)
+    detalle = vista.dataframe[0].value.set_index('Indicador')
+    fila = detalle.loc['Ocupación en el sector informal']
+    assert pd.isna(fila['Valor (%)']) and fila['CV (%)'] == 5.0
+    assert fila['Estado'] == 'N/D — precisión insuficiente'
+    assert detalle['Valor (%)'].count() == 2
     resumen = vista.dataframe[1].value.set_index('Departamento')
     assert pd.isna(resumen.at['Guatemala', 'Ocupación en el sector informal (%)'])

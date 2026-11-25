@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent
 PROCESADOS = ROOT / 'data/processed'
 PIB = 'PIB por habitante'
 UNIDAD_PIB = 'Quetzales por habitante'
+NO_DISPONIBLE = 'N/D — precisión insuficiente'
 NOMBRES_ENCOVI = dict(zip(INDICADORES, (
     'Ocupación en el sector informal', 'Pobreza total', 'Pobreza extrema',
 )))
@@ -67,8 +68,6 @@ try:
     encovi = cargar_encovi(PROCESADOS, tabla)
     if encovi is None:
         st.warning('El archivo de ENCOVI 2023 aún no está disponible. Se muestra únicamente el PIB.')
-    elif encovi.empty:
-        st.warning('ENCOVI 2023 no contiene estimaciones publicables. Se muestra únicamente el PIB.')
 except ERROR_CSV as exc:
     encovi = None
     st.warning(f'Se muestra únicamente el PIB. Revisá el archivo de ENCOVI 2023: {exc}')
@@ -80,28 +79,31 @@ with territorio:
     seleccionado = st.selectbox('Departamento', departamentos)
     fila = tabla.loc[tabla.departamento.eq(seleccionado)].iloc[0]
     st.header(seleccionado)
-    ficha = st.columns(4) if encovi is not None and not encovi.empty else [st.container()]
+    ficha = st.columns(4) if encovi is not None else [st.container()]
     ficha[0].metric(f'{PIB} · 2023', f'Q {fila.pib_per_capita:,.0f}')
 
     if len(ficha) > 1:
         detalle = encovi.loc[encovi.depto_id.eq(fila.depto_id)].set_index('indicador')
         for tarjeta, (clave, nombre) in zip(ficha[1:], NOMBRES_ENCOVI.items()):
-            tarjeta.metric(nombre, f'{detalle.at[clave, "valor"]:.1f} %' if clave in detalle.index else '—')
-        if len(detalle) < len(INDICADORES):
-            st.caption('— indica una estimación no publicable.')
-        if not detalle.empty:
-            with st.expander('Fuente y precisión de ENCOVI'):
-                campos = {
-                    'indicador': 'Indicador', 'valor': 'Valor (%)', 'fuente': 'Fuente', 'anio': 'Año',
-                    'n': 'Observaciones', 'cv': 'CV (%)', 'ic95_inf': 'IC 95 % inferior',
-                    'ic95_sup': 'IC 95 % superior', 'estado': 'Estado',
-                }
-                detalle = detalle.reset_index()
-                detalle['indicador'] = detalle.indicador.map(NOMBRES_ENCOVI)
-                detalle['estado'] = 'Publicable con reserva'
-                st.dataframe(detalle[list(campos)].rename(columns=campos), hide_index=True)
-                st.caption('Precisión aproximada por departamento y UPM, sin los estratos originales. '
-                           'Los CV e intervalos no son errores muestrales oficiales del INE.')
+            valor = detalle.at[clave, 'valor']
+            if pd.isna(valor):
+                tarjeta.markdown(f'**{nombre}**  \n{NO_DISPONIBLE}')
+            else:
+                tarjeta.metric(nombre, f'{valor:.1f} %')
+        with st.expander('Fuente y precisión de ENCOVI'):
+            campos = {
+                'indicador': 'Indicador', 'valor': 'Valor (%)', 'fuente': 'Fuente', 'anio': 'Año',
+                'n': 'Observaciones', 'cv': 'CV (%)', 'ic95_inf': 'IC 95 % inferior',
+                'ic95_sup': 'IC 95 % superior', 'estado': 'Estado',
+            }
+            detalle = detalle.reset_index()
+            detalle['indicador'] = detalle.indicador.map(NOMBRES_ENCOVI)
+            detalle['estado'] = detalle.estado.map({
+                'publicable_con_reserva': 'Publicable con reserva', 'no_publicable': NO_DISPONIBLE,
+            })
+            st.dataframe(detalle[list(campos)].rename(columns=campos), hide_index=True)
+            st.caption('Precisión aproximada por departamento y UPM, sin los estratos originales. '
+                       'Los CV e intervalos no son errores muestrales oficiales del INE.')
 
     st.caption('Fuente del PIB: Banco de Guatemala · 2023 · Precios corrientes · Quetzales por habitante. '
                'Cifras preliminares y revisables. Mide producción por persona, no ingreso familiar.')
@@ -124,7 +126,7 @@ with comparacion:
         elegidos = tabla.loc[tabla.departamento.isin(seleccion)]
         st.altair_chart(grafica_pib(elegidos, seleccionado))
         resumen = elegidos.set_index('depto_id')[['departamento', 'pib_per_capita']]
-        if encovi is not None and not encovi.empty:
+        if encovi is not None:
             valores = encovi.pivot(index='depto_id', columns='indicador', values='valor')
             resumen = resumen.join(valores)
         etiquetas = {'pib_per_capita': 'PIB por habitante (Q)', 'departamento': 'Departamento'}
@@ -133,7 +135,7 @@ with comparacion:
         st.caption('PIB: Banco de Guatemala, 2023, precios corrientes. Cifras preliminares y revisables.')
         if len(resumen.columns) > 2:
             st.caption('Tasas: INE, ENCOVI 2023. Estimaciones de precisión aproximada, publicables con reserva. '
-                       'Las celdas vacías indican estimaciones no publicables.')
+                       f'Las celdas vacías indican «{NO_DISPONIBLE}».')
         if INDICADORES[0] in resumen:
             puntos = resumen.dropna(subset=[INDICADORES[0]])
             if len(puntos) >= 2:

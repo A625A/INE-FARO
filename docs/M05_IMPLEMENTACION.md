@@ -10,8 +10,9 @@ precios corrientes) para 22 departamentos, con ficha, comparación, gráficas y 
 
 Cuando M-01 entregue `data/processed/indicadores_encovi_2023.csv`, se mostrarán
 informalidad y pobreza con fuente, año, unidad, CV e IC de precisión aproximada.
-Las filas `no_publicable` se excluyen de todas las vistas de ENCOVI. Si el
-archivo falta o no cumple el contrato, el tablero conserva el PIB y muestra un aviso.
+Las filas `no_publicable` muestran «N/D — precisión insuficiente» y conservan
+su CV. El valor y el intervalo se ocultan, y las gráficas y comparaciones omiten
+la estimación. Si falta el CSV o no cumple el contrato, se muestra el PIB con un aviso.
 
 La pestaña de radar espera `data/processed/hallazgos.csv` de M-04. La presentación
 final se verificará con sus reglas, evidencia y limitaciones cuando se entregue.
