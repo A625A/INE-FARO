@@ -1,0 +1,53 @@
+{
+  "base_m03": "f731d26",
+  "parejas": 231,
+  "celdas": 374,
+  "conteos": {
+    "R1": 26,
+    "R2a": 0,
+    "R2b": 1,
+    "R3": 7,
+    "R4": 10
+  },
+  "total": 44,
+  "escenarios": 21,
+  "estimaciones_restringidas": 5,
+  "referencias": {
+    "distancia_p25": 12.243148853681461,
+    "i_nacional": 70.304975,
+    "mediana_i": 77.9530445,
+    "mediana_p": 53.7034785,
+    "mediana_y": 33062.518856997194
+  },
+  "casos": {
+    "R1:2023:04-16": {
+      "brecha_pobreza_pp": 42.546889
+    },
+    "R2b:2023:06": {
+      "exceso_p_pp": 20.28124249999999,
+      "exceso_y_q": 2674.2533859534233
+    },
+    "R3:2023:04-18": {
+      "distancia_pp": 9.85181676156585,
+      "brecha_informalidad_pp": 16.079466999999994
+    },
+    "R4:2023:16:A": {
+      "lq": 1.9703196265963727,
+      "participacion_local_pct": 20.305584416278087
+    }
+  },
+  "r1_pobreza": {
+    "2": 14,
+    "3": 22,
+    "5": 36
+  },
+  "r1_union": {
+    "2": 16,
+    "3": 26,
+    "5": 44
+  },
+  "sha256": {
+    "hallazgos.json": "85839f251a8de7a2c441452dee9a0e9e39b6abfec0a7103a17ddb1899bf2e4c6",
+    "hallazgos.csv": "08bd63c21af6cb5f0e8cc412726c41559ae8e408916d33699697eee7bc034cdc"
+  }
+}
