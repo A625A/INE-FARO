@@ -7,10 +7,6 @@
 > [!NOTE]
 > **Para el jurado:** comenzar por la [demo principal en Streamlit](https://ine-faro.streamlit.app/). Si no responde, intentar el [respaldo en Render](https://ine-faro.onrender.com/) o descargar el [ZIP autónomo del corte validado](https://raw.githubusercontent.com/A625A/INE-FARO/63af665b30b567c662b8098946595e2df4ab0c9e/docs/evidencia/entrega/INE-FARO-Dataton.zip). Los servicios alojados pueden requerir tiempo de arranque. El ZIP funciona sin internet después de instalar dependencias. El [guion](docs/guion_demo.md), la [presentación](presentacion.pdf) y la [guía local](docs/entrega/reproduccion.md) permiten seguir el caso incluso sin acceso a los servicios web.
 
-## Contenido
-
-[El problema](#el-problema) · [Caso de uso](#caso-de-uso) · [Funcionalidades](#funcionalidades) · [Arquitectura](#arquitectura) · [Validación](#validación) · [Ejecutar localmente](#ejecutar-la-demostración) · [Reproducir datos](#reproducir-el-corte-completo) · [Limitaciones](#cautelas-científicas) · [Entrega](#entrega-y-documentación)
-
 ## El problema
 
 Guatemala cuenta con fuentes oficiales que describen la ocupación, las condiciones de vida y la producción. Sin embargo, comparar sus resultados requiere respetar períodos, universos, ponderadores, denominadores y precisión estadística. Una tasa aislada no necesariamente permite entender los contrastes entre territorios.
@@ -19,7 +15,7 @@ INE FARO reúne estos indicadores y propone preguntas de investigación mediante
 
 ## Caso de uso
 
-**¿Por qué dos departamentos con tasas cercanas de ocupación en el sector informal presentan brechas tan diferentes de pobreza?**
+**¿Qué podemos investigar cuando dos departamentos tienen tasas cercanas de ocupación en el sector informal, pero niveles de pobreza muy distintos?**
 
 | ENCOVI 2023 | Chimaltenango | Alta Verapaz | Brecha absoluta |
 |---|---:|---:|---:|
@@ -70,7 +66,7 @@ El contraste aparece en los siete escenarios R1 evaluados. Esta persistencia se 
 <p align="center"><img src="docs/evidencia/M-05/final/06-movil.png" alt="INE FARO en un navegador móvil emulado" width="300"></p>
 </details>
 
-Capturas del recorrido de validación del corte v1.1; no son interfaces simuladas. [Evidencia visual](docs/evidencia/M-05/final/) · [Implementación](docs/M05_IMPLEMENTACION.md).
+Capturas del prototipo v1.1. [Evidencia visual](docs/evidencia/M-05/final/) · [Implementación](docs/M05_IMPLEMENTACION.md).
 
 ## Arquitectura
 
@@ -100,7 +96,7 @@ flowchart LR
 | ENCOVI 2023 | Ocupación en el sector informal, pobreza, precisión y perfiles de hogares. |
 | ENEIC IV-2025 | Indicadores laborales nacionales y por dominio; 21 celdas públicas. |
 | Banguat | PIB departamental 2023 y VAB informal nacional 2013–2019, 2021–2024. |
-| DINESE 2023–2024 | Auditoría descriptiva de registros empresariales, fuera de las reglas de crecimiento del radar. |
+| DINESE 2023–2024 | Auditoría descriptiva de registros empresariales; no alimenta el radar. |
 
 **Stack:** Python, Pandas, NumPy, Streamlit, Altair, CSV, JSON, GeoJSON, Pytest y Playwright. No requiere credenciales ni servicios externos para la demo local. [Arquitectura y contratos](docs/entrega/arquitectura.md) · [Inventario de fuentes](docs/fuentes.csv) · [Contratos de datos](docs/CONTRATOS_DE_DATOS.md).
 
@@ -122,7 +118,7 @@ Se suprimen los valores e intervalos de las estimaciones restringidas en las vis
 
 ## Ejecutar la demostración
 
-**Requisitos:** Git si se usa el repositorio; Python 3.12 o posterior según el README original (el corte se verificó con Python 3.14.3; se recomienda 3.14). Internet para descargar el paquete e instalar dependencias la primera vez. No se necesita descargar los microdatos originales para abrir el ZIP.
+**Requisitos:** Python 3.14 (corte verificado con 3.14.3), Git si se clona el repositorio e internet para instalar dependencias por primera vez. No se necesitan los microdatos originales para abrir la demo.
 
 ### Opción A · ZIP autónomo (recomendada para el jurado)
 
@@ -162,60 +158,26 @@ Abrir [http://localhost:8501](http://localhost:8501). La aplicación inicia en *
 
 Si el puerto está ocupado, añadir `--server.port 8516` y abrir el nuevo puerto. Si la aplicación falla, comprobar que la terminal esté en la carpeta de `app.py` y que `pip check` termine sin errores. Consultar la [guía de reproducción y solución de problemas](docs/entrega/reproduccion.md).
 
-## Reproducir el corte completo
+## Reproducir los resultados
 
-La demostración consume agregados. Para recalcularlos y repetir la suite completa, trabajar en un checkout del repositorio con el entorno anterior y los insumos del corte.
+La demo utiliza agregados ya preparados. Para recalcularlos, se necesitan los microdatos ENCOVI, los cuadros de PIB departamental y los registros DINESE versionados, además de los seis insumos originales de ENEIC y VAB nacional.
 
-- Los SAV de ENCOVI, XLSX departamentales y DINESE versionados se complementan con los seis archivos originales de ENEIC y VAB nacional indicados en la [guía de reproducción](docs/entrega/reproduccion.md#2-reconstruir-y-comprobar-los-datos).
-- Para ENEIC, `python scripts/procesar_eneic.py --download` recupera los insumos autorizados y valida sus huellas. Para VAB, obtener los tres XLSX nacionales siguiendo el [contrato VAB](docs/VAB_CONTRATO_M05.md).
-- Verificar nombres, rutas y SHA-256 antes de recalcular. Una descarga revisada requiere una actualización independiente del manifiesto.
+La [guía de reproducción](docs/entrega/reproduccion.md) contiene las rutas, huellas SHA-256, instrucciones de descarga, secuencia completa del pipeline, reconstrucción del ZIP y prueba de navegador. Para ENEIC, el comando `python scripts/procesar_eneic.py --download` recupera y valida los insumos; para VAB nacional, seguir el [contrato de fuentes](docs/VAB_CONTRATO_M05.md).
 
-Con todos los insumos disponibles, ejecutar desde la raíz (macOS/Linux):
+Una vez reconstruidos los datos según la guía, desde la raíz del repositorio y con el entorno activo:
 
 ```sh
-(
-  set -e
-  python scripts/calcular_indicadores_encovi.py
-  python scripts/procesar_hogares.py
-  python scripts/procesar_pib.py
-  python scripts/auditar_dinese.py
-  python scripts/procesar_eneic.py
-  python scripts/procesar_vab_informal.py
-  python scripts/verificar_vab_2023.py
-  python scripts/build_matriz.py
-  python scripts/radar.py --mode standard --output-dir data/processed
-  python scripts/evaluar_radar.py
-  python docs/evaluation/m05_final/validar_consumo.py
-  python -m pytest -p no:cacheprovider -q
-)
+python docs/evaluation/m05_final/validar_consumo.py
+python -m pytest -p no:cacheprovider -q
 ```
 
-El recálculo solo es válido si todos los comandos terminan correctamente. Para verificar el ZIP y PDF versionados, desde la raíz:
+Para comprobar la integridad del paquete y la presentación en macOS/Linux:
 
 ```sh
 shasum -a 256 -c docs/evidencia/entrega/SHA256SUMS
-unzip -tq docs/evidencia/entrega/INE-FARO-Dataton.zip
 ```
 
-En PowerShell, usar `Get-FileHash -Algorithm SHA256` para cada archivo y comparar con [SHA256SUMS](docs/evidencia/entrega/SHA256SUMS).
-
-Para reconstruir el ZIP, utilizar el checkout del corte de referencia y un destino nuevo:
-
-```sh
-python -m scripts.empacar_m05 --output ../faro-recalculado.zip
-cmp docs/evidencia/entrega/INE-FARO-Dataton.zip ../faro-recalculado.zip
-```
-
-La igualdad binaria fue comprobada en el entorno de referencia (Python 3.14.3, zlib 1.2.12). Si cambia la versión de compresión, comparar el contenido extraído. La [guía completa](docs/entrega/reproduccion.md) incluye la prueba de navegador, los requisitos del publicador del radar y la recuperación de insumos.
-
-### Reproducir I-04 e I-05
-
-```sh
-python scripts/procesar_pib.py
-python scripts/auditar_dinese.py
-```
-
-Sin `--download` funcionan con los XLSX originales en `data/raw/banguat/` y `data/raw/dinese/`. Si faltan, añadir `--download`; se utilizan las URL y huellas fijadas en [el manifiesto](data/reference/fuentes_I04_I05.json). Los comandos admiten `--input-dir`, `--output-dir` y `--evidence-dir`; el SHA-256 también se exige sin descarga. PIB admite `--year` entre 2013 y 2024 (por defecto 2023); para otros años usar un directorio de salida distinto. [Metadatos PIB](docs/metadata_pib.md) · [Dictamen DINESE](docs/viabilidad_dinese.md) · [Especificación](docs/specs/I-04-I-05.md).
+En Windows, usar `Get-FileHash -Algorithm SHA256` y comparar con el [registro de huellas](docs/evidencia/entrega/SHA256SUMS).
 
 ## Cautelas científicas
 
@@ -224,28 +186,21 @@ Sin `--download` funcionan con los XLSX originales en `data/raw/banguat/` y `dat
 - Los volúmenes encadenados no son necesariamente aditivos. La serie nacional de VAB informal conserva la ausencia de 2020.
 - Los intervalos ENCOVI son aproximados por las limitaciones del diseño muestral disponible. Los valores restringidos no deben interpretarse como cero.
 - El radar formula preguntas descriptivas; su sensibilidad no implica causalidad, significancia estadística ni equivalencia entre territorios.
-- DINESE describe registros de empresas; no permite concluir creación empresarial o formalización laboral. No se implementan tasas municipales ni el cruce de pobreza por condición laboral del hogar.
+- DINESE describe registros de empresas; no permite concluir creación empresarial o formalización laboral.
 
-[Metodología](docs/metodologia.md) · [Diagnósticos y precisión](docs/M01_IMPLEMENTACION.md) · [Alcance y trabajo posterior](docs/entrega/README.md).
+[Metodología](docs/metodologia.md) · [Diagnósticos y precisión](docs/M01_IMPLEMENTACION.md).
 
 ## Entrega y documentación
 
 | Recurso | Enlace |
 |---|---|
-| Demo principal | [Streamlit](https://ine-faro.streamlit.app/) |
-| Demo de respaldo | [Render](https://ine-faro.onrender.com/) |
 | Paquete local | [ZIP validado](docs/evidencia/entrega/INE-FARO-Dataton.zip) |
 | Presentación | [PDF de cinco diapositivas](presentacion.pdf) |
-| Guion | [Guion de demostración y respuestas](docs/guion_demo.md) |
 | Dossier | [Expediente técnico](docs/entrega/README.md) |
-| Arquitectura | [Datos, reglas y contratos](docs/entrega/arquitectura.md) |
 | Reproducción | [Instalación y pruebas](docs/entrega/reproduccion.md) |
-| Auditoría de cierre | [Verificación de entrega](docs/entrega/auditoria_entrega.md) |
-| Checklist | [Controles y recepción](docs/checklist_entrega.md) |
-| Huellas | [SHA-256](docs/evidencia/entrega/SHA256SUMS) |
 
 ### Fuentes y condiciones de uso
 
 [INE](https://www.ine.gob.gt/) · [Banco de Guatemala: cuadros departamentales](https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024) · [DINESE](https://datos.ine.gob.gt/dataset/directorio-nacional-estadistico-de-empresas-dinese).
 
-Se emplean tecnologías de código abierto. El código del prototipo está disponible públicamente; este repositorio no declara una licencia general en el corte revisado. Las licencias y condiciones de los datos y recursos pertenecen a cada fuente; DINESE declara Creative Commons Attribution. Consultar el [inventario](docs/fuentes.csv) y las atribuciones antes de redistribuir materiales. No se presume una licencia común.
+El prototipo utiliza tecnologías de código abierto y su código está disponible públicamente. El repositorio no declara una licencia general. Los datos y recursos conservan las condiciones de sus fuentes; consultar el [inventario de fuentes](docs/fuentes.csv).
