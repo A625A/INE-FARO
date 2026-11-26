@@ -249,7 +249,3 @@ Sin `--download` funcionan con los XLSX originales en `data/raw/banguat/` y `dat
 [INE](https://www.ine.gob.gt/) · [Banco de Guatemala: cuadros departamentales](https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024) · [DINESE](https://datos.ine.gob.gt/dataset/directorio-nacional-estadistico-de-empresas-dinese).
 
 Se emplean tecnologías de código abierto. El código del prototipo está disponible públicamente; este repositorio no declara una licencia general en el corte revisado. Las licencias y condiciones de los datos y recursos pertenecen a cada fuente; DINESE declara Creative Commons Attribution. Consultar el [inventario](docs/fuentes.csv) y las atribuciones antes de redistribuir materiales. No se presume una licencia común.
-
-### Contribución
-
-Seguir [la guía de colaboración](CONTRIBUTING_AGENTS.md): cambios acotados en ramas dedicadas, commits descriptivos y revisión antes de integrar. No hacer push, PR, merges ni cambiar la rama predeterminada sin autorización. El estado de desarrollo y las evidencias se conservan en [docs](docs/).
