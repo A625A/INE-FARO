@@ -4,8 +4,6 @@
 
 > ¿Qué no sabemos todavía sobre Guatemala? Los datos ya están ahí. Solo falta hacerles las preguntas correctas.
 
-<p align="center"><a href="https://ine-faro.streamlit.app/"><img src="docs/evidencia/M-05/final/01-empleo.png" alt="INE FARO: vista de empleo e ingresos, indicadores nacionales y navegación del tablero" width="100%"></a></p>
-
 > [!NOTE]
 > **Para el jurado:** comenzar por la [demo principal en Streamlit](https://ine-faro.streamlit.app/). Si no responde, intentar el [respaldo en Render](https://ine-faro.onrender.com/) o descargar el [ZIP autónomo del corte validado](https://raw.githubusercontent.com/A625A/INE-FARO/63af665b30b567c662b8098946595e2df4ab0c9e/docs/evidencia/entrega/INE-FARO-Dataton.zip). Los servicios alojados pueden requerir tiempo de arranque. El ZIP funciona sin internet después de instalar dependencias. El [guion](docs/guion_demo.md), la [presentación](presentacion.pdf) y la [guía local](docs/entrega/reproduccion.md) permiten seguir el caso incluso sin acceso a los servicios web.
 
