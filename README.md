@@ -33,6 +33,18 @@ Las cuatro estimaciones se publican con reserva e intervalos aproximados. pp = p
 
 El contraste aparece en los siete escenarios R1 evaluados. Esta persistencia se refiere únicamente a los umbrales explorados; no demuestra causalidad ni equivalencia estadística. [Caso completo](docs/caso_demostracion.md) · [Reglas del radar](docs/reglas_radar.md).
 
+## Aplicabilidad institucional
+
+INE FARO está diseñado para complementar el trabajo de los analistas del INE, facilitando la identificación de contrastes territoriales y la priorización de nuevas investigaciones. Por ejemplo, un analista que prepara un boletín territorial puede utilizar el contraste Chimaltenango–Alta Verapaz para decidir si conviene estudiar la brecha de pobreza por área urbana y rural, siempre que exista soporte muestral suficiente.
+
+- **Adopción:** interfaz interactiva que permite explorar indicadores, revisar evidencia y descargar hallazgos sin necesidad de conocimientos de programación.
+- **Mantenimiento:** ante una nueva publicación estadística, el equipo técnico podría revisar los cambios de estructura y metodología, ejecutar los productores documentados, validar los agregados y las reglas, y publicar el nuevo corte tras su revisión.
+- **Escalabilidad:** el procesamiento modular y la separación entre datos, radar e interfaz facilitan incorporar nuevos indicadores, fuentes y reglas. Cada ampliación requiere revisar la compatibilidad estadística y técnica; no se ha probado el escalamiento a otros niveles territoriales.
+- **Implementación:** tecnologías de código abierto, ejecución local y despliegue web sin necesidad de contratar servicios de inteligencia artificial. Un despliegue institucional requeriría definir responsables, infraestructura y un procedimiento de actualización.
+- **Protección de datos:** la aplicación consume resultados agregados y no requiere exponer microdatos durante su funcionamiento; conserva las restricciones de precisión en las vistas y exportaciones correspondientes.
+
+FARO no pretende sustituir el criterio del investigador, sino facilitar el proceso de descubrir, verificar y formular nuevas preguntas sobre Guatemala. Estas posibilidades de adopción y mantenimiento son una propuesta institucional, no una implementación ya aprobada por el INE.
+
 ## Funcionalidades
 
 | Vista | Qué permite hacer |
