@@ -43,6 +43,39 @@ En macOS o Linux, usar `python -m scripts.empacar_m05 --output faro-m05.zip`.
 Consulta la [documentación de M-05](docs/M05_IMPLEMENTACION.md) y el
 [informe de evaluación](docs/evaluation/m05_final/INFORME.md).
 
+El paquete del jurado incluye la [presentación](presentacion.pdf), el
+[guion](docs/guion_demo.md) y capturas para mostrar el contraste de
+Chimaltenango y Alta Verapaz. La [revisión final](docs/revision_final.md)
+describe los controles y el [checklist](docs/checklist_entrega.md) registra
+los pasos de ensayo y entrega.
+
+## Reproducir el corte completo
+
+El ZIP de demo trae los datos agregados. Para recalcular los datos o repetir
+la suite completa, trabajar en un checkout del repositorio. Usar los SAV de
+ENCOVI y los XLSX departamentales y DINESE del corte. Las rutas e inventario
+figuran en [fuentes.csv](docs/fuentes.csv).
+
+1. Usar el [contrato ENEIC](docs/ENEIC_CONTRATO_M05.md) para preparar los
+   archivos de IV-2025. `python scripts/procesar_eneic.py --download` recupera
+   y valida los archivos autorizados y regenera sus agregados.
+2. Colocar los XLSX nacionales de VAB en `data/raw/banguat_nacional/`,
+   manteniendo los nombres y las huellas del
+   [contrato VAB](docs/VAB_CONTRATO_M05.md). Verificar también el cuadro
+   departamental de Banguat del mismo contrato.
+3. Desde el repositorio, ejecutar en ese orden:
+
+   ```sh
+   python scripts/calcular_indicadores_encovi.py
+   python scripts/procesar_hogares.py
+   python scripts/procesar_pib.py
+   python scripts/procesar_vab_informal.py
+   python scripts/build_matriz.py
+   python scripts/radar.py --mode standard --output-dir data/processed
+   python docs/evaluation/m05_final/validar_consumo.py
+   python -m pytest -q
+   ```
+
 ## Reproducir I-04 e I-05
 
 Desde la raíz, con el entorno anterior o con Python 3.12 o posterior:

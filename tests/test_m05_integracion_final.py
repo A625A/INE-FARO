@@ -103,8 +103,22 @@ def test_zip_solo_contiene_una_generacion_publica(tmp_path):
         for nombre, contenido in leer_generacion(DATA).items():
             assert archivo.read(f'data/processed/{nombre}') == contenido
         assert all((i.external_attr >> 16) & 0o170000 != 0o120000 for i in archivo.infolist())
+        assert {'presentacion.pdf', 'docs/caso_demostracion.md', 'docs/guion_demo.md',
+                'docs/revision_final.md', 'docs/checklist_entrega.md'} <= set(archivo.namelist())
     with pytest.raises(FileExistsError):
         empacar(salida)
+
+
+def test_zip_reproducible_con_metadatos_fijos(tmp_path):
+    from scripts.empacar_m05 import FECHA_ZIP
+
+    primero, segundo = tmp_path / 'uno.zip', tmp_path / 'dos.zip'
+    empacar(primero)
+    empacar(segundo)
+    assert primero.read_bytes() == segundo.read_bytes()
+    with ZipFile(primero) as archivo:
+        assert archivo.testzip() is None
+        assert all(i.date_time == FECHA_ZIP for i in archivo.infolist())
 
 
 def test_zip_rechaza_valores_restringidos_presentes():

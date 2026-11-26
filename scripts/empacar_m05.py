@@ -6,7 +6,7 @@ import io
 import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
-from zipfile import ZIP_DEFLATED, ZipFile
+from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 if __name__ == '__main__' and not __package__:
     raise SystemExit('Ejecuta desde la raíz: python -m scripts.empacar_m05 --output faro-m05.zip')
@@ -18,6 +18,7 @@ from scripts.radar_rules.export import serialize
 ROOT = Path(__file__).resolve().parents[1]
 PROCESADOS = 'data/processed'
 RADAR = ('hallazgos.csv', 'hallazgos.json', 'radar_fuentes.json')
+FECHA_ZIP = (2026, 11, 25, 0, 0, 0)
 ARCHIVOS = (
     'app.py', 'dashboard_data.py', 'dashboard_empleo.py', 'dashboard_metodologia.py',
     'dashboard_precision.py', 'dashboard_produccion.py', 'dashboard_radar.py',
@@ -27,6 +28,11 @@ ARCHIVOS = (
     'docs/M05_IMPLEMENTACION.md', 'docs/ENEIC_CONTRATO_M05.md', 'docs/M03_CONTRATO_MATRIZ.md',
     'docs/VAB_CONTRATO_M05.md', 'docs/hallazgos_hogares.md', 'docs/reglas_radar.md',
     'docs/evaluation/m05_final/INFORME.md', 'docs/evaluation/m05_final/HANDOFF_M06.md',
+    'docs/fuentes.csv', 'docs/caso_demostracion.md', 'docs/guion_demo.md',
+    'docs/ESTADO_PROYECTO.md', 'docs/M01_IMPLEMENTACION.md', 'docs/revision_final.md',
+    'docs/checklist_entrega.md', 'docs/evaluation/radar_evaluation.md', 'presentacion.pdf',
+    'docs/evidencia/M-05/final/01-empleo.png', 'docs/evidencia/M-05/final/02-territorio.png',
+    'docs/evidencia/M-05/final/07-calidad.png', 'docs/evidencia/M-05/final/08-contraste-r1.png',
     'scripts/comun.py', 'scripts/radar_rules/__init__.py', 'scripts/radar_rules/export.py',
     'scripts/radar_rules/inputs.py', 'scripts/radar_rules/r1.py', 'scripts/radar_rules/r2.py',
     'scripts/radar_rules/r3.py', 'scripts/radar_rules/r4.py', 'scripts/radar_rules/evidence.py',
@@ -106,9 +112,12 @@ def empacar(salida, raiz=ROOT):
     # Un empaquetado interrumpido se elimina. Un archivo previo se conserva.
     with salida.open('xb') as destino:
         try:
-            with ZipFile(destino, 'w', compression=ZIP_DEFLATED) as archivo:
+            with ZipFile(destino, 'w') as archivo:
                 for nombre, datos in sorted(contenido.items()):
-                    archivo.writestr(nombre, datos)
+                    entrada = ZipInfo(nombre, date_time=FECHA_ZIP)
+                    entrada.create_system = 3
+                    entrada.external_attr = 0o100644 << 16
+                    archivo.writestr(entrada, datos, compress_type=ZIP_DEFLATED, compresslevel=9)
         except BaseException:
             destino.close()
             salida.unlink()
