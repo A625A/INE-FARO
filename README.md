@@ -1,6 +1,6 @@
 <h1 align="center">INE FARO</h1>
 <p align="center"><strong>Inteligencia estadística y territorial para Guatemala</strong><br>Datatón INE 2026 · Prototipo v1.1</p>
-<p align="center"><a href="https://ine-faro.streamlit.app/"><strong>Abrir demo principal</strong></a> · <a href="https://ine-faro.onrender.com/">Demo de respaldo</a> · <a href="presentacion.pdf">Presentación</a> · <a href="docs/entrega/README.md">Expediente técnico</a></p>
+<p align="center"><a href="https://ine-faro.streamlit.app/"><strong>Abrir demo principal</strong></a> · <a href="https://ine-faro.onrender.com/">Demo de respaldo</a> · <a href="https://youtu.be/GJHaQwxRxqs"><strong>Video demostrativo</strong></a> · <a href="presentacion.pdf">Presentación</a> · <a href="docs/entrega/README.md">Expediente técnico</a></p>
 
 > ¿Qué no sabemos todavía sobre Guatemala? Los datos ya están ahí. Solo falta hacerles las preguntas correctas.
 
@@ -194,6 +194,7 @@ En Windows, usar `Get-FileHash -Algorithm SHA256` y comparar con el [registro de
 
 | Recurso | Enlace |
 |---|---|
+| Video demostrativo | [Ver en YouTube](https://youtu.be/GJHaQwxRxqs) |
 | Paquete local | [ZIP validado](docs/evidencia/entrega/INE-FARO-Dataton.zip) |
 | Presentación | [PDF de cinco diapositivas](presentacion.pdf) |
 | Dossier | [Expediente técnico](docs/entrega/README.md) |
