@@ -103,7 +103,7 @@ Se aplicaron los lineamientos de Superdesign para el
 [sistema de diseño](../../../.superdesign/design-system.md) por vía local. La
 versión on-demand del CLI no estaba en la caché y el flujo de canvas requiere
 acceso externo. El kit aportó el imagotipo horizontal RGB, Ubuntu Sans
-variable y su licencia OFL. La guía confirmó los azules institucionales
+variable y su Ubuntu Font Licence 1.0. La guía confirmó los azules institucionales
 `#004080` y `#0080FF` y blanco. Las figuras y la geometría usan los datos
 del proyecto.
 

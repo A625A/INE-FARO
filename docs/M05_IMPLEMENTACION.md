@@ -64,7 +64,7 @@ entorno es un paso independiente de la demostración.
 El sistema de diseño y el inventario del kit están en
 [.superdesign/design-system.md](../.superdesign/design-system.md).
 El imagotipo adjunto se usa para identificar el Datatón y Ubuntu Sans se
-distribuye con su [licencia OFL](../static/UbuntuSans-OFL.txt).
+distribuye con su [Ubuntu Font Licence 1.0](../static/UbuntuSans-LICENSE.txt).
 
 El mapa usa la [capa simplificada GTM ADM1 de geoBoundaries](https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/GTM/ADM1/geoBoundaries-GTM-ADM1_simplified.geojson).
 Límites de referencia de 2017, © [colaboradores de OpenStreetMap](https://www.openstreetmap.org/copyright),

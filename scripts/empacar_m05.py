@@ -23,7 +23,7 @@ ARCHIVOS = (
     'dashboard_precision.py', 'dashboard_produccion.py', 'dashboard_radar.py',
     'dashboard_radar_ui.py', 'dashboard_territorio.py', 'dashboard_ui.py', 'dashboard_utils.py',
     '.streamlit/config.toml', '.superdesign/design-system.md', 'README.md', 'requirements.txt',
-    'static/faro.css', 'static/ine-horizontal-rgb.png', 'static/UbuntuSans.ttf', 'static/UbuntuSans-OFL.txt',
+    'static/faro.css', 'static/ine-horizontal-rgb.png', 'static/UbuntuSans.ttf', 'static/UbuntuSans-LICENSE.txt',
     'docs/M05_IMPLEMENTACION.md', 'docs/ENEIC_CONTRATO_M05.md', 'docs/M03_CONTRATO_MATRIZ.md',
     'docs/VAB_CONTRATO_M05.md', 'docs/hallazgos_hogares.md', 'docs/reglas_radar.md',
     'docs/evaluation/m05_final/INFORME.md', 'docs/evaluation/m05_final/HANDOFF_M06.md',
