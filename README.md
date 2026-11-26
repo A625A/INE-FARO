@@ -203,4 +203,4 @@ En Windows, usar `Get-FileHash -Algorithm SHA256` y comparar con el [registro de
 
 [INE](https://www.ine.gob.gt/) · [Banco de Guatemala: cuadros departamentales](https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024) · [DINESE](https://datos.ine.gob.gt/dataset/directorio-nacional-estadistico-de-empresas-dinese).
 
-El prototipo utiliza tecnologías de código abierto y su código está disponible públicamente. El repositorio no declara una licencia general. Los datos y recursos conservan las condiciones de sus fuentes; consultar el [inventario de fuentes](docs/fuentes.csv).
+El prototipo utiliza tecnologías de código abierto y su código está disponible públicamente. El repositorio no declara una licencia general. Los datos y recursos conservan las condiciones de sus fuentes; consultar las [atribuciones y condiciones de terceros](THIRD_PARTY_NOTICES.md) y el [inventario de fuentes](docs/fuentes.csv).
