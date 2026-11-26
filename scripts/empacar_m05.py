@@ -40,7 +40,13 @@ def leer_generacion(procesados):
     almacen = procesados / '.radar_m04'
     puntero = almacen / 'actual'
     generacion = puntero.resolve(strict=True) if puntero.is_symlink() else procesados.resolve()
-    if puntero.is_symlink() and generacion.parent != almacen.resolve():
+    if puntero.is_file() and not puntero.is_symlink():
+        # Git para Windows materializa el destino como texto con core.symlinks=false.
+        nombre = puntero.read_text(encoding='ascii')
+        if len(nombre) != 64 or any(c not in '0123456789abcdef' for c in nombre):
+            raise ValueError('Puntero de generación M-04 inválido.')
+        generacion = (almacen / nombre).resolve(strict=True)
+    if (puntero.is_symlink() or puntero.is_file()) and generacion.parent != almacen.resolve():
         raise ValueError('El puntero M-04 debe apuntar a una generación local.')
     archivos = {}
     for nombre in RADAR:

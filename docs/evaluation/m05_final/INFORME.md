@@ -55,27 +55,38 @@ de ocupación en el sector informal, de 0.98 pp. El contraste aparece en
 
 ## Pruebas y evidencia de navegador
 
-La suite integrada aprobó **223 pruebas** y dejó fuera las dos expectativas
-heredadas de la interfaz. El recorrido Chromium verificó la copia extraída del
-ZIP en un escritorio de 1440 × 1000 y una pantalla móvil de 390 × 844. Los
-recursos locales, los clics del mapa, los filtros, la navegación y las descargas
-funcionaron con HTTP, HTTPS y WebSocket externos bloqueados. Se registraron cero
-solicitudes externas y cero errores de consola o JavaScript. Después de
-incorporar el contraste destacado, pasaron las dos pruebas de interfaz
-afectadas y el recorrido de dos clics en Chromium, de nuevo desde un ZIP
-extraído en escritorio y móvil. Consulta la
-[verificación del contraste](../../evidencia/M-05/final/chromium-destacado.txt).
+Las dos pruebas heredadas recorren la navegación vigente. Mantienen los controles
+de carga local, cobertura, PIB departamental, supresión de cifras e intervalos,
+diagnóstico por CV y filtros con resultado vacío. El [resultado de pytest](../../evidencia/M-05/final/pytest.txt)
+corresponde a la suite completa.
 
-`python -m pytest -q` sobre la nueva interfaz conserva dos fallos de expectativas
-heredadas. La primera prueba copia solo el PIB y espera la apertura antigua.
-La segunda busca una pestaña de calidad que ahora es una sección de la
-navegación. El archivo original pasó sus 18 pruebas sobre el corte integrado
-anterior al rediseño (`ae5caa7`). Las equivalencias para el nuevo contrato,
-la supresión, la calidad y el enrutamiento están en
-`tests/test_m05_integracion_final.py`.
+**Empleo e ingresos.** Con la leyenda y el título dentro de los 85 px originales,
+la barra invadía las etiquetas del eje en 4,5 px. La gráfica de 125 px usa seis
+marcas entre 0 y 100 %. Chromium midió 7 px libres entre la barra y los números
+en [escritorio](../../evidencia/M-05/final/barra-escritorio.png) y
+[móvil](../../evidencia/M-05/final/barra-movil.png).
+
+**Territorio.** Los 22 códigos de la matriz corresponden a 22 geometrías del
+catálogo. La proyección Mercator conservaba la forma del país, pero el canal
+cuantitativo de Vega descartaba cinco filas con valor nulo al dibujar pobreza
+extrema. El mapa conserva cada geometría y aplica gris según el estado de
+publicación. En Chromium se seleccionó un punto interior de cada departamento
+con ratón y por toque. En cada selección coincidieron el perfil y el selector.
+El CSV conserva vacíos los cinco valores y sus intervalos.
+[Mapa de escritorio](../../evidencia/M-05/final/mapa-escritorio.png) y
+[mapa móvil](../../evidencia/M-05/final/mapa-movil.png).
+
+**Radar.** Las cinco categorías se presentan con su nombre y una explicación de
+los umbrales del corte estándar. Las fichas y exportaciones conservan sus
+identificadores. El recorrido del contraste destacado abre la evidencia en un
+clic y la comparación territorial en dos.
+
+El recorrido Playwright usa un escritorio de 1440 × 1000 y una pantalla táctil
+emulada de 390 × 844. El [registro de Chromium](../../evidencia/M-05/final/chromium.txt)
+incluye navegación, selección, descargas, errores de consola y solicitudes externas.
 
 ```sh
-python -m pytest -q -k 'not test_app_local_y_cobertura_del_mapa and not test_calidad_interactiva_con_csv_integrado'
+python -m pytest -q
 python docs/evaluation/m05_final/validar_consumo.py
 ```
 
@@ -110,7 +121,7 @@ del proyecto.
 ## Límites y decisiones
 
 El ZIP es portable a sistemas sin enlaces simbólicos y se comprobó en macOS.
-La disponibilidad de un entorno Python en Windows queda fuera de esa prueba.
+Se probó el puntero de texto que crea Git para Windows con enlaces desactivados. La instalación de Python y la ejecución en Windows nativo siguen pendientes de verificación.
 El panel de sensibilidad usa los 21 escenarios ya calculados. DINESE se
 mantiene como contexto metodológico. Los cruces de pobreza por perfil del
 hogar y los cortes ENEIC sin publicación validada permanecen pendientes.

@@ -53,11 +53,11 @@ y agrega sus bytes al ZIP como archivos regulares. Los agregados y recursos de
 la aplicación se incluyen mediante una lista de archivos permitidos. El proceso
 verifica los mismos bytes que agrega y rechaza valores indebidamente presentes
 en filas restringidas. El ZIP excluye microdatos, XLSX, evidencia interna,
-enlaces simbólicos y generaciones históricas. Un ZIP existente se conserva.
+enlaces simbólicos y generaciones históricas. Un ZIP existente se conserva. Se admite el puntero de 64 caracteres de un checkout de Git para Windows con enlaces desactivados.
 
 Extraer en una carpeta, instalar las dependencias antes de desconectar la red y
 ejecutar `python -m streamlit run app.py` desde esa carpeta. La instalación del
-entorno es un paso independiente de la demostración.
+entorno es un paso independiente de la demostración. Los comandos de PowerShell para crear el entorno, instalar dependencias y arrancar el ZIP están en el [README](../README.md#ejecutar-la-demostración).
 
 ## Procedencia visual
 

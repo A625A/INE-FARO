@@ -102,6 +102,55 @@ async function download(page, button) {
   return fs.readFile(await file.path(), 'utf8');
 }
 
+async function verificarBarra(page, formato) {
+  const chart = page.getByTestId('stVegaLiteChart').first();
+  const separacion = await chart.evaluate(el => {
+    const barras = [...el.querySelectorAll('.mark-rect path')];
+    const etiquetas = [...el.querySelectorAll('.role-axis-label text')];
+    return Math.min(...etiquetas.map(n => n.getBoundingClientRect().top)) -
+      Math.max(...barras.map(n => n.getBoundingClientRect().bottom));
+  });
+  assert.ok(Number.isFinite(separacion) && separacion >= 6, `Separación barra/eje: ${separacion} px`);
+  await chart.screenshot({ path: path.join(output, `barra-${formato}.png`) });
+  results.push(`${formato}: separación barra/eje de ${Math.floor(separacion)} px.`);
+}
+
+async function verificarMapa(page, formato) {
+  const chart = page.getByTestId('stVegaLiteChart').first();
+  const marcas = chart.locator('.mark-shape path[aria-label*="Pobreza extrema"]');
+  await marcas.first().waitFor();
+  const nombres = await marcas.evaluateAll(ns => ns.map(n =>
+    n.getAttribute('aria-label').match(/Departamento: ([^;]+)/)[1]));
+  assert.equal(new Set(nombres).size, 22);
+  const grises = marcas.locator('xpath=self::*[@fill="#a4a9af"]');
+  assert.equal(await grises.count(), 5);
+  for (const etiqueta of await grises.evaluateAll(ns => ns.map(n => n.getAttribute('aria-label')))) {
+    assert.match(etiqueta, /Pobreza extrema: N\/D · precisión insuficiente/);
+  }
+  await chart.screenshot({ path: path.join(output, `mapa-${formato}.png`) });
+  for (const nombre of nombres) {
+    const forma = marcas.and(chart.locator(`path[aria-label*="Departamento: ${nombre};"]`));
+    await forma.scrollIntoViewIfNeeded();
+    // Un centro de caja puede caer fuera de un departamento cóncavo.
+    const punto = await forma.evaluate(n => {
+      const r = n.getBoundingClientRect();
+      for (const paso of [8, 20]) {
+        for (let i = 1; i < paso; i++) for (let j = 1; j < paso; j++) {
+          const x = r.left + r.width * i / paso, y = r.top + r.height * j / paso;
+          if (document.elementFromPoint(x, y) === n) return { x, y };
+        }
+      }
+    });
+    assert.ok(punto, nombre);
+    if (formato === 'movil') await page.touchscreen.tap(punto.x, punto.y);
+    else await page.mouse.click(punto.x, punto.y);
+    await heading(page, nombre, 3);
+    await ready(page);
+    assert.equal(await select(page, 'Departamento').getByRole('combobox').inputValue(), nombre);
+  }
+  results.push(`${formato}: 22 geometrías con selección física confirmada, cinco restricciones en gris.`);
+}
+
 async function desktop(page) {
   await page.goto(base.href);
   await heading(page, 'Empleo e ingresos');
@@ -111,6 +160,7 @@ async function desktop(page) {
   }
   assert.equal(await page.getByRole('img', { name: 'Instituto Nacional de Estadística' }).evaluate(img => img.naturalWidth > 0), true);
   assert.equal(await page.evaluate(() => Array.from(document.fonts).some(f => f.family.includes('Ubuntu Sans') && f.status === 'loaded')), true);
+  await verificarBarra(page, 'escritorio');
   await evidence(page, '01-empleo');
   results.push('ENEIC: inicio, cuatro gráficas, controles nacionales, tipo y logo locales.');
 
@@ -119,6 +169,7 @@ async function desktop(page) {
   await choose(page, 'Indicador del mapa', 'Pobreza extrema');
   await page.getByText('N/D · precisión insuficiente', { exact: true }).first().waitFor();
   await page.locator('[data-testid="stVegaLiteChart"] path[aria-label*="Pobreza extrema"]').first().waitFor();
+  await verificarMapa(page, 'escritorio');
   await choose(page, 'Departamento', 'Alta Verapaz');
   await heading(page, 'Alta Verapaz', 3);
   await choose(page, 'Comparar con', 'Guatemala');
@@ -163,19 +214,28 @@ async function desktop(page) {
   results.push('Producción: controles 2023, cambio a cadena y CSV nacional sin 2020.');
 
   await section(page, 'Radar de inteligencia');
-  await choose(page, 'Regla', 'R1');
-  await heading(page, 'R1 · Chimaltenango y Alta Verapaz', 3);
+  const guia = page.locator('details').filter({ hasText: 'Cómo se identifican los cinco tipos de hallazgo' });
+  await guia.locator('summary').click();
+  for (const criterio of ['hasta 3 puntos', 'sus respectivas medianas', 'al menos 15 puntos',
+    'sus 17 participaciones productivas', 'al menos el 10 %']) {
+    await guia.getByText(criterio, { exact: false }).first().waitFor();
+  }
+  await guia.locator('summary').click();
+  await choose(page, 'Regla', 'Estructura productiva similar, informalidad diferente');
+  await page.getByRole('heading', { name: /Estructura productiva similar, informalidad diferente ·/ }).waitFor();
+  await choose(page, 'Regla', 'Informalidad similar, realidades diferentes');
+  await heading(page, 'Informalidad similar, realidades diferentes · Chimaltenango y Alta Verapaz', 3);
   await page.getByText('Evidencia adicional requerida', { exact: true }).waitFor();
-  await choose(page, 'Regla', 'R4');
+  await choose(page, 'Regla', 'Especialización productiva y vulnerabilidad social');
   await choose(page, 'Departamento del radar', 'Alta Verapaz');
-  await heading(page, 'R4 · Alta Verapaz · Agricultura', 3);
+  await heading(page, 'Especialización productiva y vulnerabilidad social · Alta Verapaz · Agricultura', 3);
   await evidence(page, '04-radar');
-  await choose(page, 'Regla', 'R2a');
+  await choose(page, 'Regla', 'Alta producción y alta informalidad');
   await page.getByText(/ningún departamento supera simultáneamente/).waitFor();
   assert.equal(JSON.parse(await download(page, 'Descargar selección (JSON)')).hallazgos.length, 0);
-  await choose(page, 'Regla', 'R2b');
+  await choose(page, 'Regla', 'Alta producción con pobreza e informalidad elevadas');
   await choose(page, 'Departamento del radar', 'Santa Rosa');
-  await heading(page, 'R2b · Santa Rosa', 3);
+  await heading(page, 'Alta producción con pobreza e informalidad elevadas · Santa Rosa', 3);
   const hallazgos = JSON.parse(await download(page, 'Descargar selección (JSON)'));
   assert.deepEqual(hallazgos.hallazgos.map(f => f.id), ['R2b:2023:06']);
   await page.getByRole('button', { name: 'Abrir perfil de Santa Rosa' }).click();
@@ -207,9 +267,14 @@ async function mobile(page) {
   await heading(page, 'Empleo e ingresos');
   await charts(page, 4);
   assert.equal(await page.evaluate(() => innerWidth), 390);
+  await verificarBarra(page, 'movil');
   await evidence(page, '06-movil');
   for (const name of ['Territorio', 'Producción', 'Radar de inteligencia', 'Metodología y calidad']) {
     await section(page, name);
+    if (name === 'Territorio') {
+      await choose(page, 'Indicador del mapa', 'Pobreza extrema');
+      await verificarMapa(page, 'movil');
+    }
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth ||
       document.querySelector('[data-testid="stMain"]').scrollWidth > innerWidth);
     assert.equal(overflow, false, name);
@@ -221,7 +286,7 @@ async function destacado(page, movil = false) {
   await page.goto(base.href);
   await heading(page, 'Empleo e ingresos');
   await page.getByRole('button', { name: 'Ver contraste Chimaltenango–Alta Verapaz' }).click();
-  await heading(page, 'R1 · Chimaltenango y Alta Verapaz', 3);
+  await heading(page, 'Informalidad similar, realidades diferentes · Chimaltenango y Alta Verapaz', 3);
   await heading(page, '¿Qué investigar ahora?', 4);
   await ready(page);
   const contraste = page.locator('.st-key-contraste-destacado');

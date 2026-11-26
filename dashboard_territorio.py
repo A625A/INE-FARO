@@ -96,9 +96,9 @@ def mapa_departamental(geometrias, datos, indicador, seleccionado):
                                           labelLimit=125))
     seleccion = alt.selection_point(name='departamento_mapa', fields=['depto_id'],
                                     toggle=False, clear=False)
-    return alt.Chart(alt.Data(values=features)).mark_geoshape().project(type='mercator').encode(
-        color=alt.condition('isValid(datum.valor)', eje, alt.value('#a4a9af')),
-        stroke=alt.condition(alt.datum.depto_id == seleccionado, alt.value('#172841'), alt.value('#ffffff')),
+    return alt.Chart(alt.Data(values=features)).mark_geoshape(invalid=None, cursor='pointer').project(type='mercator').encode(
+        color=alt.condition(alt.datum.calidad == RESTRICCION, alt.value('#a4a9af'), eje),
+        stroke=alt.condition(alt.datum.depto_id == seleccionado, alt.value('#172841'), alt.value('#637488')),
         strokeWidth=alt.condition(alt.datum.depto_id == seleccionado, alt.value(3.1), alt.value(1.1)),
         tooltip=[
             alt.Tooltip('departamento:N', title='Departamento'),

@@ -7,6 +7,21 @@ from dashboard_radar import FUENTE_ENCOVI, MAGNITUDES, REGLAS, exportar_radar
 from dashboard_territorio import ACTIVIDADES
 from dashboard_ui import CONTRASTE_DESTACADO, SECCIONES, cifras, mostrar_tabla, navegar, selector, titulo
 
+CATEGORIAS = {
+    'R1': 'Informalidad similar, realidades diferentes',
+    'R2a': 'Alta producción y alta informalidad',
+    'R2b': 'Alta producción con pobreza e informalidad elevadas',
+    'R3': 'Estructura productiva similar, informalidad diferente',
+    'R4': 'Especialización productiva y vulnerabilidad social',
+}
+DESCRIPCIONES = {
+    'R1': 'Compara pares con hasta 3 puntos de diferencia en ocupación en el sector informal. La pobreza total difiere al menos 15 puntos o el PIB por habitante de uno alcanza al menos 1.5 veces el del otro.',
+    'R2a': 'El PIB por habitante y la ocupación en el sector informal superan sus respectivas medianas departamentales.',
+    'R2b': 'El PIB por habitante supera la mediana departamental, la pobreza total excede su mediana en al menos 15 puntos y la ocupación en el sector informal alcanza o supera la tasa nacional.',
+    'R3': 'Compara pares en el cuarto de menor distancia entre sus 17 participaciones productivas, con al menos 10 puntos de diferencia en ocupación en el sector informal.',
+    'R4': 'Una actividad aporta al menos el 10 % del valor agregado local y pesa al menos 1.5 veces lo que pesa en el conjunto del país. La pobreza y la ocupación en el sector informal superan sus medianas departamentales.',
+}
+
 MOTIVOS = {
     'ambos': 'Brechas de pobreza y PIB por habitante',
     'solo_pobreza': 'Brecha de pobreza',
@@ -28,7 +43,13 @@ NOMBRES = {**DEPARTAMENTOS, 'nacional': 'Guatemala · nacional', '22_departament
 def rotulo(ficha):
     nombres = ' y '.join(DEPARTAMENTOS[c] for c in ficha['territorios'])
     actividad = f' · {ACTIVIDADES[ficha["grupo"]]}' if ficha['grupo'] else ''
-    return f'{ficha["regla"]} · {nombres}{actividad}'
+    return f'{CATEGORIAS[ficha["regla"]]} · {nombres}{actividad}'
+
+
+def nombre_escenario(uid):
+    regla, _, detalle = uid.split(':', 2)
+    territorios, _, grupo = detalle.partition(':')
+    return rotulo({'regla': regla, 'territorios': territorios.split('-'), 'grupo': grupo})
 
 
 def filtrar_radar(radar, regla, depto):
@@ -39,17 +60,23 @@ def filtrar_radar(radar, regla, depto):
 def mostrar_radar(radar):
     titulo('Radar de inteligencia', '¿Qué contrastes territoriales ameritan una investigación?',
            'Corte estándar · 2023 · ENCOVI y Banguat · Reglas M-04 v1.1')
-    st.caption('Hallazgos por regla · ' + ' · '.join(f'{r} {radar["conteos"][r]}' for r in REGLAS))
     if radar['rechazados']:
         st.warning(f'{radar["rechazados"]} fichas excluidas por evidencia o estructura inválida.')
     izquierda, derecha = st.columns(2)
-    regla = selector('Regla', ['Todas', *REGLAS], 'regla_radar', contenedor=izquierda)
+    regla = selector('Regla', ['Todas', *REGLAS], 'regla_radar',
+                     formato=lambda r: CATEGORIAS.get(r, r), contenedor=izquierda)
     depto = selector('Departamento del radar', ['', *DEPARTAMENTOS], 'depto_radar',
                      formato=lambda d: DEPARTAMENTOS.get(d, 'Todos los departamentos'), contenedor=derecha)
+    if regla != 'Todas':
+        st.caption(DESCRIPCIONES[regla])
+    with st.expander('Cómo se identifican los cinco tipos de hallazgo'):
+        for codigo in REGLAS:
+            st.markdown(f'**{CATEGORIAS[codigo]}** · {radar["conteos"][codigo]} hallazgos')
+            st.write(DESCRIPCIONES[codigo])
     seleccion = filtrar_radar(radar, regla, depto)
     st.caption(f'{len(seleccion)} de {len(radar["hallazgos"])} hallazgos válidos en la selección.')
     if regla == 'R2a' and not radar['conteos']['R2a']:
-        st.info('R2a: ningún departamento supera simultáneamente ambas medianas en el corte estándar.')
+        st.info('En esta categoría, ningún departamento supera simultáneamente ambas medianas en el corte estándar.')
     elif not seleccion:
         st.info('La combinación de filtros no tiene hallazgos. Cambia la regla o el departamento.')
     if seleccion:
@@ -60,8 +87,7 @@ def mostrar_radar(radar):
         with st.expander('Listado de la selección'):
             mostrar_tabla(pd.DataFrame([
                 {'Hallazgo': rotulo(f), 'Motivo': MOTIVOS.get(f['motivo'], f['motivo']),
-                 'Escenarios con el hallazgo': f'{f["robustez"]["presentes"]}/{f["robustez"]["escenarios"]}',
-                 'ID': f['id']} for f in seleccion
+                 'Escenarios con el hallazgo': f'{f["robustez"]["presentes"]}/{f["robustez"]["escenarios"]}'} for f in seleccion
             ]))
     descargas = st.columns(2)
     ids = [f['id'] for f in seleccion]
@@ -86,7 +112,7 @@ def mostrar_ficha(radar, ficha):
     evidencias = tabla_evidencias(ficha['evidencias'])
     with st.container(border=True, key='contraste-destacado' if destacada else None):
         st.subheader(rotulo(ficha))
-        st.caption(f'{ficha["id"]} · {MOTIVOS.get(ficha["motivo"], ficha["motivo"])}')
+        st.caption(MOTIVOS.get(ficha['motivo'], ficha['motivo']))
         if destacada:
             mostrar_comparacion_destacada(ficha, evidencias)
             st.markdown('#### ¿Qué investigar ahora?')
@@ -167,7 +193,7 @@ def mostrar_sensibilidad(radar, regla):
     st.caption('21 escenarios precalculados en el universo completo. El filtro de departamento modifica las fichas visibles. La robustez mide estabilidad frente a umbrales y no es una probabilidad estadística.')
     escenarios = [e for e in radar['sensibilidad'] if regla == 'Todas' or e['regla'] == regla]
     renglones = pd.DataFrame([{
-        'Regla': e['regla'], 'Escenario': PARAMETROS.get(e['parametro'], 'Base estándar'),
+        'Categoría': CATEGORIAS[e['regla']], 'Escenario': PARAMETROS.get(e['parametro'], 'Base estándar'),
         'Valor': e['valor'], 'Hallazgos': e['conteo'], 'Entran': len(e['aparecen']),
         'Salen': len(e['desaparecen']),
     } for e in escenarios])
@@ -176,11 +202,11 @@ def mostrar_sensibilidad(radar, regla):
     if alternativos:
         with st.expander('Fichas que entran o salen por escenario'):
             i = st.selectbox('Escenario alternativo', range(len(alternativos)), format_func=lambda i:
-                             f'{alternativos[i]["regla"]} · {PARAMETROS[alternativos[i]["parametro"]]} = {alternativos[i]["valor"]:g}')
+                             f'{CATEGORIAS[alternativos[i]["regla"]]} · {PARAMETROS[alternativos[i]["parametro"]]} = {alternativos[i]["valor"]:g}')
             escenario = alternativos[i]
-            cambios = [(etiqueta, uid) for campo, etiqueta in (('aparecen', 'Entra'), ('desaparecen', 'Sale'))
+            cambios = [(etiqueta, nombre_escenario(uid)) for campo, etiqueta in (('aparecen', 'Entra'), ('desaparecen', 'Sale'))
                        for uid in escenario[campo]]
             if cambios:
-                mostrar_tabla(pd.DataFrame(cambios, columns=['Cambio', 'ID de la ficha']))
+                mostrar_tabla(pd.DataFrame(cambios, columns=['Cambio', 'Hallazgo']))
             else:
                 st.info('Este escenario conserva el mismo conjunto de hallazgos.')

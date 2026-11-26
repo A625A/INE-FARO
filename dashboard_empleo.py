@@ -44,7 +44,8 @@ def mostrar_empleo(datos):
     sectores['participacion'] = [tasa, 100 - tasa]
     grafico(alt.Chart(sectores).mark_bar(size=20).encode(
         x=alt.X('participacion:Q', stack='zero', title='Participación de los ocupados (%)',
-                scale=alt.Scale(domain=[0, 100])),
+                scale=alt.Scale(domain=[0, 100]),
+                axis=alt.Axis(values=[0, 20, 40, 60, 80, 100], labelPadding=7, titlePadding=8)),
         color=alt.Color('sector:N', title=None, sort=['Informal', 'Formal'],
                         scale=alt.Scale(domain=['Informal', 'Formal'], range=[AZUL, AZUL_CLARO]),
                         legend=alt.Legend(orient='top')),
@@ -54,7 +55,7 @@ def mostrar_empleo(datos):
                  alt.Tooltip('valor_oficial:Q', title='Personas (derivado)', format=',.0f'),
                  alt.Tooltip('denominador:Q', title='Ocupados clasificados', format=',.0f'),
                  alt.Tooltip('n:Q', title='Muestra del sector', format=',.0f')],
-    ).properties(height=85))
+    ).properties(height=125))
     st.caption('ENEIC IV-2025 · 21,233 ocupados en la muestra. Los volúmenes por sector se obtuvieron por conciliación indirecta.')
     st.divider()
     st.subheader('Contrastes entre dominios')

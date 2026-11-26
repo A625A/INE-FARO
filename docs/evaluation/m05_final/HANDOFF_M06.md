@@ -8,9 +8,14 @@ leer [el informe](INFORME.md) y probar una copia del
 con dependencias instaladas. El recorrido mínimo muestra los controles
 nacionales de ENEIC. Abre el contraste Chimaltenango–Alta Verapaz, revisa
 «¿Qué investigar ahora?» y lleva ambos departamentos a Territorio desde
-la ficha. Cambia el mapa a pobreza extrema, comprueba la brecha de 2020
-en Producción y abre Santa Rosa
-en R2b, Alta Verapaz en R4 y el resultado vacío de R2a.
+la ficha. Cambia el mapa a pobreza extrema y selecciona Guatemala en gris para mostrar
+la restricción. Los 22 departamentos responden al clic o toque. En Producción,
+comprueba la brecha de 2020. En Radar, abre Santa Rosa desde «Alta producción
+con pobreza e informalidad elevadas» y Alta Verapaz desde «Especialización
+productiva y vulnerabilidad social». «Alta producción y alta informalidad»
+tiene cero hallazgos en el corte estándar. Los códigos se conservan en el JSON.
+Para Windows, sigue la [secuencia de PowerShell](../../../README.md#ejecutar-la-demostración);
+el cierre verificó el ZIP extraído en macOS y el puntero de un checkout sin enlaces.
 
 ## Límites para la presentación
 

@@ -1,0 +1,5 @@
+ZIP de demostración · 25 de noviembre de 2026
+INE-FARO-M05.zip · SHA-256 301afbacb43eb4aa24d085d3cbb5c75ab868850233b1931670220848000cc841
+45 archivos regulares. Integridad CRC verificada.
+El empaquetado desde un checkout con puntero de texto de Git para Windows produjo los mismos 45 archivos, byte por byte, que el checkout con enlace simbólico.
+Ejecución de app.py desde el ZIP extraído en macOS con Python 3.14 y Chromium. Windows nativo no se ejecutó.

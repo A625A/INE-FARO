@@ -19,13 +19,27 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-En Windows, activar con `.venv\Scripts\Activate.ps1`. Con las dependencias
-instaladas, abrir [Streamlit local](http://localhost:8501). La ejecución no
-requiere XLSX, microdatos, servicios cartográficos ni internet.
+En Windows, extraer el ZIP y abrir PowerShell en la carpeta que contiene
+`app.py`. Con Python 3.14 instalado:
 
-La copia portátil incluye archivos regulares para el radar. Desde un checkout
-del repositorio, generar el ZIP con
-`python -m scripts.empacar_m05 --output faro-m05.zip`.
+```powershell
+py -3.14 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m streamlit run app.py
+```
+
+Abrir [Streamlit local](http://localhost:8501). Una vez instaladas las
+dependencias, la demo funciona sin conexión.
+
+Para generar la demo desde el repositorio, usar el mismo entorno y un nombre
+de ZIP nuevo. En PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.empacar_m05 --output faro-m05.zip
+Expand-Archive -LiteralPath faro-m05.zip -DestinationPath faro-demo
+```
+
+En macOS o Linux, usar `python -m scripts.empacar_m05 --output faro-m05.zip`.
 Consulta la [documentación de M-05](docs/M05_IMPLEMENTACION.md) y el
 [informe de evaluación](docs/evaluation/m05_final/INFORME.md).
 

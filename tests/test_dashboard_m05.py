@@ -1,5 +1,6 @@
 """Pruebas del contrato de datos y la navegación en M-05."""
 import json
+import shutil
 from pathlib import Path
 import sys
 
@@ -76,38 +77,57 @@ def test_app_local_y_cobertura_del_mapa(tmp_path, pib):
     mapa = json.loads((ROOT / 'data/reference/departamentos_m05.geojson').read_text())
     nombres = [f['properties']['shapeName'] for f in mapa['features']]
     assert len(nombres) == 22 and set(nombres) == set(pib.departamento)
-    # Una copia aislada asegura que la prueba use exclusivamente el PIB local.
     datos = tmp_path / 'data'
-    (datos / 'processed').mkdir(parents=True)
-    (datos / 'reference').symlink_to(ROOT / 'data/reference')
-    pib.to_csv(datos / 'processed/pib_per_capita.csv', index=False)
+    procesados = datos / 'processed'
+    procesados.mkdir(parents=True)
+    shutil.copytree(ROOT / 'data/reference', datos / 'reference')
+    pib.to_csv(procesados / 'pib_per_capita.csv', index=False)
+    assert cargar_pib(procesados).equals(pib)
+    assert cargar_encovi(procesados, pib) is None
     app = tmp_path / 'app.py'
     app.write_text((ROOT / 'app.py').read_text())
-    vista = AppTest.from_file(str(app), default_timeout=15).run()
-    assert not vista.exception and len(vista.warning) == 1
-    assert len(vista.selectbox[0].options) == 22
-    for nombre in ('Guatemala', 'Quiché', 'Alta Verapaz'):
-        vista.selectbox[0].select(nombre).run()
-        valor = pib.loc[pib.departamento.eq(nombre), 'pib_per_capita'].item()
-        assert not vista.exception and vista.metric[0].value == f'Q {valor:,.0f}'
-    assert set(vista.dataframe[0].value.Departamento) == {'Guatemala', 'Quiché', 'Alta Verapaz'}
-    assert any('M-04' in aviso.value for aviso in vista.info)
+    vista = AppTest.from_file(str(app), default_timeout=20).run()
+    vista.radio(key='seccion').set_value('Territorio').run()
+    assert not vista.exception and 'matriz_departamental.csv' in vista.error[0].value
 
-    ruta = escribir_encovi(datos / 'processed', pib)
-    filas = pd.read_csv(ruta, dtype={'depto_id': str})
-    filas.loc[0, ['valor', 'estado']] = [99.9, 'no_publicable']
-    filas.to_csv(ruta, index=False)
-    vista.selectbox[0].select('Guatemala').run()
-    assert not vista.exception and not vista.warning
-    assert [m.value for m in vista.tabs[0].metric[1:]] == ['N/D', '50.0 %', '50.0 %']
-    assert vista.tabs[0].metric[1].proto.help == 'N/D — precisión insuficiente'
-    detalle = vista.dataframe[0].value.set_index('Indicador')
-    fila = detalle.loc['Ocupación en el sector informal']
-    assert pd.isna(fila['Valor (%)']) and fila['CV (%)'] == 5.0
-    assert fila['Estado'] == 'N/D — precisión insuficiente'
-    assert detalle['Valor (%)'].count() == 2
-    resumen = vista.dataframe[1].value.set_index('Departamento')
-    assert pd.isna(resumen.at['Guatemala', 'Ocupación en el sector informal (%)'])
+    # El contrato territorial vigente concentra PIB y tasas en la matriz M-03.
+    matriz = pd.read_csv(ROOT / 'data/processed/matriz_departamental.csv', dtype={'depto_id': str})
+    matriz.to_csv(procesados / 'matriz_departamental.csv', index=False)
+    vista.run()
+    assert any('Hallazgos relacionados' in aviso.value for aviso in vista.error)
+    assert set(vista.selectbox(key='filtro_depto').options) == set(nombres)
+    tabla = vista.dataframe[0].value
+    assert set(tabla.Departamento) == set(nombres)
+    for codigo in ('01', '14', '16'):
+        vista.selectbox(key='filtro_depto').select(codigo).run()
+        fila = pib.loc[pib.depto_id.eq(codigo)].iloc[0]
+        assert any(h.value == fila.departamento for h in vista.subheader)
+        assert any(f'Q {fila.pib_per_capita:,.0f}' in h.proto.body for h in vista.get('html'))
+        assert not vista.exception
+
+    for archivo in ('hallazgos.json', 'perfiles_hogares.csv'):
+        shutil.copyfile(ROOT / 'data/processed' / archivo, procesados / archivo)
+
+    # Una cifra restringida introducida en el archivo jamás debe llegar a la vista.
+    for indicador in INDICADORES:
+        for campo, valor in dict(valor=50.0, n=100, cv=5, ic95_inf=45, ic95_sup=55,
+                                 estado='publicable_con_reserva').items():
+            matriz.loc[matriz.depto_id.eq('01'), f'{indicador}_{campo}_2023'] = valor
+    matriz.loc[matriz.depto_id.eq('01'), ['ocupacion_sector_informal_valor_2023',
+              'ocupacion_sector_informal_estado_2023']] = [99.9, 'no_publicable']
+    matriz.to_csv(procesados / 'matriz_departamental.csv', index=False)
+    vista.selectbox(key='filtro_depto').select('01').run()
+    assert not vista.exception and not vista.error and not vista.warning
+    ficha = next(h.proto.body for h in vista.get('html') if 'faro-cifras' in h.proto.body and '<strong>' in h.proto.body)
+    assert ficha.count('50.0 %') == 2 and 'N/D · precisión insuficiente' in ficha and '99.9' not in ficha
+    resumen = vista.dataframe[0].value.set_index('Departamento')
+    assert resumen.at['Guatemala', 'Valor'] == 'N/D · precisión insuficiente'
+    detalle = vista.dataframe[1].value.set_index('Indicador').loc['Ocupación en el sector informal']
+    assert detalle['CV (%)'] == 5 and pd.isna(detalle['IC95 inferior (%)']) and pd.isna(detalle['IC95 superior (%)'])
+    vista.selectbox(key='filtro_comparar').select('16').run()
+    comparacion = vista.dataframe[2].value.set_index('Indicador')
+    assert pd.isna(comparacion.at['Ocupación en el sector informal', 'Guatemala'])
+    assert comparacion.Guatemala.iloc[:3].count() == 2
 
 
 def test_precision_csv_integrado(pib):
@@ -154,18 +174,17 @@ def test_umbral_independiente_del_estado_de_origen(tmp_path, pib, cv, n, clasifi
 
 def test_calidad_interactiva_con_csv_integrado():
     vista = AppTest.from_file(str(ROOT / 'app.py'), default_timeout=20).run()
-    calidad = next((tab for tab in vista.tabs if tab.label == 'Calidad estadística'), None)
-    assert calidad is not None
-    assert [m.value for m in calidad.metric] == ['66', '61', '5']
-    calidad.selectbox[2].select('No publicable').run()
-    calidad = vista.tabs[-1]
-    assert [m.value for m in calidad.metric] == ['5', '0', '5']
-    calidad.selectbox[0].select('Guatemala').run()
-    diagnostico = vista.tabs[-1].dataframe[0].value
+    vista.radio(key='seccion').set_value('Metodología y calidad').run()
+    assert any(h.value == 'Calidad estadística' for h in vista.header)
+    assert [m.value for m in vista.metric] == ['66', '61', '5']
+    vista.selectbox(key='calidad_clasificacion').select('No publicable').run()
+    assert [m.value for m in vista.metric] == ['5', '0', '5']
+    vista.selectbox(key='calidad_departamento').select('Guatemala').run()
+    diagnostico = vista.dataframe[0].value
     assert list(diagnostico.Departamento) == ['Guatemala']
     assert set(diagnostico) == {'Departamento', 'Indicador', 'Clasificación', 'CV (%)',
                                 'Muestra (n)', 'Estado', 'Exceso (pp)'}
     assert diagnostico.iloc[0]['Exceso (pp)'] == pytest.approx(8.60323)
-    vista.tabs[-1].selectbox[1].select('Pobreza total').run()
-    assert [m.value for m in vista.tabs[-1].metric] == ['0', '0', '0']
-    assert vista.tabs[-1].info and not vista.exception
+    vista.selectbox(key='calidad_indicador').select('Pobreza total').run()
+    assert [m.value for m in vista.metric] == ['0', '0', '0']
+    assert vista.info and not vista.exception

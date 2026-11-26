@@ -1,8 +1,14 @@
-Chromium 158.0.8127.38 · Red externa bloqueada (HTTP, HTTPS y WebSocket)
+Chromium 149.0.7827.55 · Red externa bloqueada (HTTP, HTTPS y WebSocket)
+✓ escritorio: separación barra/eje de 7 px.
 ✓ ENEIC: inicio, cuatro gráficas, controles nacionales, tipo y logo locales.
+✓ escritorio: 22 geometrías con selección física confirmada, cinco restricciones en gris.
 ✓ Territorio: selector, indicador, tooltip, clics en mapa, comparación y CSV con cinco valores e intervalos suprimidos.
 ✓ Producción: controles 2023, cambio a cadena y CSV nacional sin 2020.
 ✓ Radar: R1, Santa Rosa R2b y enlace recíproco, Alta Verapaz R4, R2a vacío y descargas filtradas.
 ✓ Metodología: filtros de calidad y cinco diagnósticos restringidos.
+✓ Escritorio: R1 en un clic con comparación, evidencia abierta y ficha de investigación. Comparación territorial preseleccionada en el segundo clic.
+✓ movil: separación barra/eje de 7 px.
+✓ movil: 22 geometrías con selección física confirmada, cinco restricciones en gris.
 ✓ Móvil 390×844: cinco secciones accesibles y sin desbordamiento horizontal.
+✓ Móvil: R1 en un clic con comparación, evidencia abierta y ficha de investigación. Comparación territorial preseleccionada en el segundo clic.
 0 errores de consola o JavaScript. 0 solicitudes externas.

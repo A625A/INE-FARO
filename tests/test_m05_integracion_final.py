@@ -141,3 +141,31 @@ def test_contraste_destacado_en_dos_interacciones():
     assert app.title[0].value == 'Territorio' and not app.exception and not app.error
     assert app.selectbox(key='filtro_depto').value == '04'
     assert app.selectbox(key='filtro_comparar').value == '16'
+
+
+def test_categorias_del_radar_conservan_codigos_en_el_filtro():
+    app = abrir()
+    ir(app, 'Radar de inteligencia')
+    filtro = app.selectbox(key='filtro_regla_radar')
+    assert filtro.options == ['Todas', 'Informalidad similar, realidades diferentes',
+                              'Alta producción y alta informalidad',
+                              'Alta producción con pobreza e informalidad elevadas',
+                              'Estructura productiva similar, informalidad diferente',
+                              'Especialización productiva y vulnerabilidad social']
+    filtro.select('R1').run()
+    assert app.selectbox(key='filtro_ficha_radar').value.startswith('R1:')
+    assert any('3 puntos' in x.value for x in app.caption)
+
+
+def test_generacion_con_puntero_de_git_para_windows(tmp_path):
+    import shutil
+    origen = (DATA / '.radar_m04/actual').resolve()
+    almacen = tmp_path / '.radar_m04'
+    shutil.copytree(origen, almacen / origen.name)
+    (almacen / 'actual').write_text(origen.name)
+    assert leer_generacion(tmp_path) == leer_generacion(DATA)
+
+
+def test_rotulo_de_escenario_preserva_el_grupo_electricidad():
+    from dashboard_radar_ui import nombre_escenario
+    assert nombre_escenario('R4:2023:16:D-E').endswith('Alta Verapaz · Electricidad, gas y agua')
