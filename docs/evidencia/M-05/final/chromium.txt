@@ -1,0 +1,8 @@
+Chromium 158.0.8127.38 · Red externa bloqueada (HTTP, HTTPS y WebSocket)
+✓ ENEIC: inicio, cuatro gráficas, controles nacionales, tipo y logo locales.
+✓ Territorio: selector, indicador, tooltip, clics en mapa, comparación y CSV con cinco valores e intervalos suprimidos.
+✓ Producción: controles 2023, cambio a cadena y CSV nacional sin 2020.
+✓ Radar: R1, Santa Rosa R2b y enlace recíproco, Alta Verapaz R4, R2a vacío y descargas filtradas.
+✓ Metodología: filtros de calidad y cinco diagnósticos restringidos.
+✓ Móvil 390×844: cinco secciones accesibles y sin desbordamiento horizontal.
+0 errores de consola o JavaScript. 0 solicitudes externas.

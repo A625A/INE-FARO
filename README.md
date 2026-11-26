@@ -82,9 +82,10 @@ PIB no es ingreso ni consumo de hogares. No sumar medidas distintas ni exigir
 aditividad a volúmenes encadenados. Las empresas DINESE no son personas ocupadas;
 un aumento de registros no prueba creación empresarial ni formalización laboral.
 
-La definición principal acordada es proporción de población ocupada en el sector
-informal según ENCOVI 2023. I-02/I-03/M-01 deben verificar universo, denominador,
-códigos, pesos y precisión, e intentar reproducir 70.3% nacional antes de usarla.
+La medición territorial usa la proporción de población ocupada en el sector
+informal según ENCOVI 2023. M-01 reproduce 70.3 % a escala nacional y documenta
+el universo, los ponderadores y la precisión aproximada. La vista de empleo usa
+los agregados públicos de ENEIC IV-2025.
 
 Fuentes: [Banguat](https://banguat.gob.gt/page/cuadros-estadisticos-por-departamento-2013-2024),
 [DINESE](https://datos.ine.gob.gt/dataset/directorio-nacional-estadistico-de-empresas-dinese),

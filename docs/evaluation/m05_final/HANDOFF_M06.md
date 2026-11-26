@@ -6,8 +6,10 @@ Partir de `feature/M-05-integracion-final`. Verificar la referencia remota,
 leer [el informe](INFORME.md) y probar una copia del
 [ZIP portable](../../M05_IMPLEMENTACION.md#zip-de-demostración-para-windows)
 con dependencias instaladas. El recorrido mínimo muestra los controles
-nacionales de ENEIC, cambia el mapa a pobreza extrema, compara dos
-departamentos, comprueba la brecha de 2020 en Producción y abre Santa Rosa
+nacionales de ENEIC. Abre el contraste Chimaltenango–Alta Verapaz, revisa
+«¿Qué investigar ahora?» y lleva ambos departamentos a Territorio desde
+la ficha. Cambia el mapa a pobreza extrema, comprueba la brecha de 2020
+en Producción y abre Santa Rosa
 en R2b, Alta Verapaz en R4 y el resultado vacío de R2a.
 
 ## Límites para la presentación

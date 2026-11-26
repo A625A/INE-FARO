@@ -1,0 +1,36 @@
+{
+  "controles": {
+    "departamentos": 22,
+    "encovi": 66,
+    "encovi_restringidas": 5,
+    "hogares": 207,
+    "hogares_restringidos": 14,
+    "eneic": 21,
+    "vab_nacional": 22,
+    "vab_grupos": 374,
+    "radar": {
+      "R1": 26,
+      "R2a": 0,
+      "R2b": 1,
+      "R3": 7,
+      "R4": 10
+    },
+    "escenarios": 21
+  },
+  "casos_recalculados": [
+    "R1:2023:04-16",
+    "R2a: universo completo",
+    "R2b:2023:06",
+    "R3:2023:04-18",
+    "R4:2023:16:A"
+  ],
+  "sha256": {
+    "matriz_departamental.csv": "2632738d633d96d2234cb8440067f0e5c024373316fc2d853a9f77041ae14673",
+    "indicadores_encovi_2023.csv": "1cd9c7350703375ee4e088a844bc44b75f99319f006fedfce55660334c66f21f",
+    "perfiles_hogares.csv": "1b6550363718d2478b382f8a61d2495a8ad05e840a05fdfc55e4703a5f3504ce",
+    "eneic_iv_2025/agregados_publicos.csv": "61d290743e58000f2ad5870626c9be98eab86b28871648ac5b63172a93c56df1",
+    "vab_informal_nacional.csv": "d777ced736e27df37967ec0cdf9cd4ce7b41241e6f5f8218907d2d1a5d0e60d1",
+    "vab_informal_grupo.csv": "88286684118afe9520d96634ac9ca25a46075dcd4ccc4cddc3e4b50ac13d7bba",
+    "hallazgos.json": "85839f251a8de7a2c441452dee9a0e9e39b6abfec0a7103a17ddb1899bf2e4c6"
+  }
+}

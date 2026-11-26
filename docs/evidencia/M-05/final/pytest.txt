@@ -1,0 +1,14 @@
+Suite de regresión integrada · Python 3.14
+$ python -m pytest -q -k 'not test_app_local_y_cobertura_del_mapa and not test_calidad_interactiva_con_csv_integrado'
+........................................................................ [ 32%]
+........................................................................ [ 64%]
+........................................................................ [ 96%]
+.......                                                                  [100%]
+223 passed, 2 deselected in 132.07s (0:02:12)
+
+Suite original de interfaz en ae5caa7
+$ python -m pytest -q tests/test_dashboard_m05.py
+18 passed in 3.92s
+
+Regresión dirigida tras incorporar el contraste destacado
+2 passed, 5 deselected in 3.67s

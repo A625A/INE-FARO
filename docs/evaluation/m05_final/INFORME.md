@@ -44,7 +44,27 @@ en las evaluaciones de los productores. La robustez mide estabilidad frente a
 umbrales. Las tasas ENCOVI conservan precisión aproximada. Los intervalos de
 ENEIC proceden del boletín cuando están disponibles.
 
+## Contraste destacado
+
+Desde Empleo e ingresos, **Ver contraste Chimaltenango–Alta Verapaz** abre
+R1:2023:04-16 con ambas estimaciones, sus fuentes y diagnósticos abiertos, y
+la ficha «¿Qué investigar ahora?». El segundo clic abre Territorio con ambos
+departamentos seleccionados. La brecha de pobreza total es de 42.55 pp y la
+de ocupación en el sector informal, de 0.98 pp. El contraste aparece en
+7 de 7 escenarios de R1. Los datos proceden de la ficha validada de M-04.
+
 ## Pruebas y evidencia de navegador
+
+La suite integrada aprobó **223 pruebas** y dejó fuera las dos expectativas
+heredadas de la interfaz. El recorrido Chromium verificó la copia extraída del
+ZIP en un escritorio de 1440 × 1000 y una pantalla móvil de 390 × 844. Los
+recursos locales, los clics del mapa, los filtros, la navegación y las descargas
+funcionaron con HTTP, HTTPS y WebSocket externos bloqueados. Se registraron cero
+solicitudes externas y cero errores de consola o JavaScript. Después de
+incorporar el contraste destacado, pasaron las dos pruebas de interfaz
+afectadas y el recorrido de dos clics en Chromium, de nuevo desde un ZIP
+extraído en escritorio y móvil. Consulta la
+[verificación del contraste](../../evidencia/M-05/final/chromium-destacado.txt).
 
 `python -m pytest -q` sobre la nueva interfaz conserva dos fallos de expectativas
 heredadas. La primera prueba copia solo el PIB y espera la apertura antigua.
@@ -67,7 +87,7 @@ Los scripts de consumo, capturas y resultado de Chromium se encuentran en
 Streamlit con `--server.port 8516`, instalar Playwright en un entorno Node
 separado, instalar Chromium para Playwright y ejecutar
 `node tests/browser/m05.cjs`. Cuando Chromium está instalado en otra ruta se
-puede fijar `FARO_CHROME`. `BASE_URL` permite probar el ZIP extraído.
+puede fijar `FARO_CHROME`. `BASE_URL` permite probar el ZIP extraído. El argumento `--destacado` ejecuta solo el recorrido prioritario.
 
 ## Diseño y proceso aplicado
 

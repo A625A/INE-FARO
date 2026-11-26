@@ -1,0 +1,4 @@
+Chromium 158.0.8127.38 · Red externa bloqueada (HTTP, HTTPS y WebSocket)
+✓ Escritorio: R1 en un clic con comparación, evidencia abierta y ficha de investigación. Comparación territorial preseleccionada en el segundo clic.
+✓ Móvil: R1 en un clic con comparación, evidencia abierta y ficha de investigación. Comparación territorial preseleccionada en el segundo clic.
+0 errores de consola o JavaScript. 0 solicitudes externas.
