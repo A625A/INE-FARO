@@ -1,5 +1,9 @@
 # Estado de Fuentes de Datos — INE FARO
 
+Este registro conserva el estado inicial de I-01. Para la integración del
+Datatón consultar el [expediente v1.1](entrega/README.md) y el
+[inventario del corte](fuentes.csv).
+
 **Fecha de actualización:** 25 de noviembre de 2026
 **Rama:** `fix/i01-fuentes`, creada desde `main` en `b3f9f4a`
 **Estado de GitHub verificado:** `main` contiene I-02/I-03 validados y documentados, e I-04/I-05 validados localmente. Las fases M siguen pendientes.

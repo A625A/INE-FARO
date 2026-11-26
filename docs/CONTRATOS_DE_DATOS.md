@@ -1,7 +1,8 @@
 # Contratos I-04 / I-05
 
-Versión local validada el 24/11/2026. Extiende las propuestas del paquete de
-contexto; no altera consumidores existentes, pues aún no están publicados.
+Contrato de origen validado el 24 de noviembre de 2026 para las salidas de PIB
+departamental y DINESE. El [expediente del corte v1.1](entrega/README.md) y su
+[arquitectura](entrega/arquitectura.md) describen los consumidores integrados.
 
 | Archivo | Clave | Columnas |
 |---|---|---|
@@ -19,5 +20,6 @@ VAB e impuestos. Per cápita usa quetzales por habitante y va separado.
 DINESE: conteos por snapshot; el único uso habilitado es descriptivo transversal.
 Las combinaciones ausentes no son filas vacías ni estimaciones imputadas.
 
-La tabla de indicadores ENCOVI, la matriz departamental y los hallazgos siguen
-pendientes. Estos contratos no autorizan joins individuales entre instituciones.
+La [matriz M-03](M03_CONTRATO_MATRIZ.md) incorpora los indicadores ENCOVI y el
+PIB departamental de 2023. Es la entrada departamental del [radar M-04](reglas_radar.md).
+Los cruces entre instituciones usan agregados territoriales.
