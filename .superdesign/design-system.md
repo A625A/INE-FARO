@@ -24,3 +24,7 @@ La paleta principal y Ubuntu Sans coinciden con la especificación v1.1. FARO us
 - Mapa secuencial azul o categórico para actividad, relleno gris para estimaciones restringidas y borde oscuro para la selección. El selector de departamento ofrece el mismo acceso con teclado. El mapa no requiere teselas externas.
 - Las tablas preservan el orden de lectura, dan prioridad a valor y unidad y mantienen los diagnósticos visibles. Los estados vacíos explican qué filtro buscar. La restricción muestra únicamente el diagnóstico. Un contrato inválido identifica el bloque afectado.
 - En móvil la cabecera y navegación se ajustan y las columnas se apilan. Los gráficos permiten inspección táctil y los datos tabulares ofrecen desplazamiento interno. El texto y el foco mantienen contraste en fondo blanco y azul auxiliar.
+
+## Contraste destacado
+
+El acceso principal de Empleo e ingresos abre el R1 de Chimaltenango y Alta Verapaz. La ficha prioriza las tres magnitudes en azul institucional y una tabla con los departamentos en columnas. «¿Qué investigar ahora?» reúne la interpretación, la robustez y el siguiente paso de investigación. El diagnóstico se abre de inicio. La comparación territorial conserva ambos departamentos en el segundo clic. El imagotipo original figura en la cabecera y la tabla ajusta las etiquetas al ancho móvil.

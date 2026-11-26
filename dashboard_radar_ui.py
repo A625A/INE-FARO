@@ -5,7 +5,7 @@ import streamlit as st
 from dashboard_data import DEPARTAMENTOS, NOMBRES_ENCOVI, PIB
 from dashboard_radar import FUENTE_ENCOVI, MAGNITUDES, REGLAS, exportar_radar
 from dashboard_territorio import ACTIVIDADES
-from dashboard_ui import SECCIONES, cifras, mostrar_tabla, navegar, selector, titulo
+from dashboard_ui import CONTRASTE_DESTACADO, SECCIONES, cifras, mostrar_tabla, navegar, selector, titulo
 
 MOTIVOS = {
     'ambos': 'Brechas de pobreza y PIB por habitante',
@@ -39,7 +39,7 @@ def filtrar_radar(radar, regla, depto):
 def mostrar_radar(radar):
     titulo('Radar de inteligencia', '¿Qué contrastes territoriales ameritan una investigación?',
            'Corte estándar · 2023 · ENCOVI y Banguat · Reglas M-04 v1.1')
-    cifras([(r, str(n), nombre) for (r, nombre), n in zip(REGLAS.items(), radar['conteos'].values())])
+    st.caption('Hallazgos por regla · ' + ' · '.join(f'{r} {radar["conteos"][r]}' for r in REGLAS))
     if radar['rechazados']:
         st.warning(f'{radar["rechazados"]} fichas excluidas por evidencia o estructura inválida.')
     izquierda, derecha = st.columns(2)
@@ -54,8 +54,8 @@ def mostrar_radar(radar):
         st.info('La combinación de filtros no tiene hallazgos. Cambia la regla o el departamento.')
     if seleccion:
         vistas = {f['id']: f for f in seleccion}
-        ficha_id = selector('Hallazgo', list(vistas), 'ficha_radar',
-                             formato=lambda i: rotulo(vistas[i]))
+        ficha_id = selector('Hallazgo', list(vistas), 'ficha_radar', default=CONTRASTE_DESTACADO,
+                            formato=lambda i: rotulo(vistas[i]))
         mostrar_ficha(radar, vistas[ficha_id])
         with st.expander('Listado de la selección'):
             mostrar_tabla(pd.DataFrame([
@@ -82,24 +82,30 @@ def valor_magnitud(campo, valor):
 
 
 def mostrar_ficha(radar, ficha):
-    with st.container(border=True):
+    destacada = ficha['id'] == CONTRASTE_DESTACADO
+    evidencias = tabla_evidencias(ficha['evidencias'])
+    with st.container(border=True, key='contraste-destacado' if destacada else None):
         st.subheader(rotulo(ficha))
         st.caption(f'{ficha["id"]} · {MOTIVOS.get(ficha["motivo"], ficha["motivo"])}')
+        if destacada:
+            mostrar_comparacion_destacada(ficha, evidencias)
+            st.markdown('#### ¿Qué investigar ahora?')
         st.write(ficha['explicacion'])
         robustez = ficha['robustez']
         st.markdown(f'**Robustez frente a umbrales** · Presente en {robustez["presentes"]} de {robustez["escenarios"]} escenarios de su regla.')
-        mostrar_tabla(pd.DataFrame([
-            {'Magnitud': MAGNITUDES[k], 'Resultado': valor_magnitud(k, v)}
-            for k, v in ficha['magnitudes'].items()
-        ]))
+        if not destacada:
+            mostrar_tabla(pd.DataFrame([
+                {'Magnitud': MAGNITUDES[k], 'Resultado': valor_magnitud(k, v)}
+                for k, v in ficha['magnitudes'].items()
+            ]))
         st.markdown('**Pregunta de investigación**')
         st.write(ficha['pregunta'])
         st.markdown('**Evidencia adicional requerida**')
         st.write(ficha['evidencia_requerida'])
-        with st.expander('Evidencias estadísticas'):
-            mostrar_tabla(tabla_evidencias(ficha['evidencias']))
-            st.caption('Los CV e IC95 de ENCOVI son aproximados por DEPTO/UPM. Las revisiones identifican el corte de cuentas departamentales.')
         st.caption(f'Limitación · {ficha["limitacion"]}')
+        with st.expander('Evidencias estadísticas', expanded=destacada):
+            mostrar_tabla(evidencias)
+            st.caption('Los CV e IC95 de ENCOVI son aproximados por DEPTO/UPM. Las revisiones identifican el corte de cuentas departamentales.')
         columnas = st.columns(len(ficha['territorios']))
         for columna, depto in zip(columnas, ficha['territorios']):
             columna.button(f'Abrir perfil de {DEPARTAMENTOS[depto]}', key=f'perfil_{depto}',
@@ -107,6 +113,29 @@ def mostrar_ficha(radar, ficha):
         st.download_button('Descargar esta ficha (JSON)', exportar_radar(radar, [ficha['id']]),
                            f'{ficha["id"].replace(":", "-")}.json', 'application/json',
                            on_click='ignore')
+
+
+def mostrar_comparacion_destacada(ficha, evidencias):
+    cifras([
+        ('Brecha de pobreza total', valor_magnitud('brecha_pobreza_pp', ficha['magnitudes'].get('brecha_pobreza_pp')), ''),
+        ('Brecha de ocupación en el sector informal',
+         valor_magnitud('brecha_informalidad_pp', ficha['magnitudes'].get('brecha_informalidad_pp')), ''),
+        ('Razón de PIB por habitante',
+         valor_magnitud('razon_pib_por_habitante', ficha['magnitudes'].get('razon_pib_por_habitante')), ''),
+    ])
+    nombres = [DEPARTAMENTOS[d] for d in ficha['territorios']]
+    valores = evidencias.assign(
+        Resultado=[f'{valor} %' if unidad == '%' else f'Q {valor}'
+                   for valor, unidad in zip(evidencias.Valor, evidencias.Unidad)],
+    )
+    orden = [NOMBRES_ENCOVI['ocupacion_sector_informal'], NOMBRES_ENCOVI['pobreza_total'], PIB]
+    comparacion = valores.pivot(index='Indicador', columns='Territorio', values='Resultado')
+    st.table(comparacion.reindex(index=orden, columns=nombres).fillna('No evaluable').reset_index())
+    st.caption('Estimaciones puntuales de ENCOVI y Banguat, 2023. PIB en quetzales corrientes por habitante.')
+    depto, comparar = ficha['territorios']
+    st.button('Abrir comparación en Territorio', key='comparar_contraste_destacado',
+              on_click=navegar, args=(SECCIONES[1],),
+              kwargs={'depto': depto, 'comparar': comparar, 'indicador_mapa': 'pobreza_total'})
 
 
 def tabla_evidencias(evidencias):

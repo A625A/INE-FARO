@@ -3,7 +3,8 @@ import altair as alt
 import streamlit as st
 
 from dashboard_data import DOMINIOS, MEDIDAS_ENEIC, RAMAS_ENEIC
-from dashboard_ui import AZUL, AZUL_CLARO, barras, cifras, descargar_csv, grafico, mostrar_tabla, titulo
+from dashboard_ui import (AZUL, AZUL_CLARO, CONTRASTE_DESTACADO, SECCIONES, barras, cifras,
+                          descargar_csv, grafico, mostrar_tabla, navegar, titulo)
 
 RAMAS_CORTAS = dict(zip(RAMAS_ENEIC, (
     'Agricultura', 'Industrias', 'Construcción', 'Comercio y afines', 'Información',
@@ -32,6 +33,9 @@ def mostrar_empleo(datos):
         ('Ingreso laboral medio', f'Q {nacional.at["media_ingreso", "valor_oficial"]:,.0f}',
          f'Por mes · {nacional.at["media_ingreso", "cobertura_pct"]:.2f} % de cobertura ponderada'),
     ])
+    st.button('Ver contraste Chimaltenango–Alta Verapaz', key='abrir_contraste_destacado',
+              type='primary', on_click=navegar, args=(SECCIONES[3],),
+              kwargs={'regla_radar': 'R1', 'depto_radar': '', 'ficha_radar': CONTRASTE_DESTACADO})
     st.subheader('Sector de la unidad económica')
     sectores = nacional.loc[['peso_informal', 'peso_formal']].reset_index()
     sectores['sector'] = ['Informal', 'Formal']

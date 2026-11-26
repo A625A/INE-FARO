@@ -117,3 +117,27 @@ def test_zip_rechaza_valores_restringidos_presentes():
     contenido[archivo] = datos.to_csv(index=False, lineterminator='\n').encode('utf-8')
     with pytest.raises(ValueError, match='M-02: la copia contiene valores restringidos'):
         agregados_publicos(contenido)
+
+
+def test_contraste_destacado_en_dos_interacciones():
+    app = abrir()
+    app.button(key='abrir_contraste_destacado').click().run()
+    assert app.title[0].value == 'Radar de inteligencia' and not app.exception and not app.error
+    assert app.selectbox(key='filtro_ficha_radar').value == 'R1:2023:04-16'
+
+    comparacion = app.table[0].value
+    assert list(comparacion) == ['Indicador', 'Chimaltenango', 'Alta Verapaz']
+    pobreza = comparacion.set_index('Indicador').loc['Pobreza total']
+    assert list(pobreza) == ['47.75 %', '90.30 %']
+    evidencia = next(t.value for t in app.dataframe if 'Calidad' in t.value)
+    assert len(evidencia) == 6
+    assert evidencia.Calidad.str.contains('IC95').sum() == 4
+    assert any('¿Qué investigar ahora?' in m.value for m in app.markdown)
+    for fragmento in ('7 de 7 escenarios', 'Pregunta de investigación',
+                      'Evidencia adicional requerida', 'Limitación'):
+        assert any(fragmento in m.value for m in [*app.markdown, *app.caption])
+
+    app.button(key='comparar_contraste_destacado').click().run()
+    assert app.title[0].value == 'Territorio' and not app.exception and not app.error
+    assert app.selectbox(key='filtro_depto').value == '04'
+    assert app.selectbox(key='filtro_comparar').value == '16'

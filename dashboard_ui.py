@@ -12,6 +12,7 @@ TINTA = '#10243B'
 FUENTE = 'Ubuntu Sans'
 SECCIONES = ('Empleo e ingresos', 'Territorio', 'Producción',
              'Radar de inteligencia', 'Metodología y calidad')
+CONTRASTE_DESTACADO = 'R1:2023:04-16'
 
 
 def cabecera():

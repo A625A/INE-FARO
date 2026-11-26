@@ -53,3 +53,14 @@
     .st-key-seccion [role="radiogroup"] label {padding: 8px 2px;}
     .st-key-seccion [role="radiogroup"] label p {font-size: .875rem;}
 }
+
+.st-key-contraste-destacado {
+    padding-inline-start: 16px;
+    border-inline-start: 3px solid var(--faro-azul);
+}
+.st-key-contraste-destacado [data-testid="stTable"] table {
+    font-variant-numeric: tabular-nums;
+}
+.st-key-contraste-destacado [data-testid="stTable"] :is(th, td) {
+    white-space: normal;
+}
